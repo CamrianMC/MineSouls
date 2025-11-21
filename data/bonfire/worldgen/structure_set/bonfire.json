@@ -1,0 +1,79 @@
+{
+  "structures": [
+    {
+      "structure": "bonfire:bonfire",
+      "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 42,
+        "separation": 40,
+        "salt": 183947291,
+        "frequency_reduction_method": "legacy_type_2",
+        "frequency": 0.001,
+        "dimension": "minecraft:overworld",
+        "biomes": "#bonfire:has_bonfire_overworld",
+        "project_start_to_heightmap": "WORLD_SURFACE_WG",
+        "height": {
+          "type": "minecraft:uniform",
+          "min_inclusive": { "absolute": 0 },
+          "max_inclusive": { "absolute": 0 }
+        }
+      }
+    },
+    {
+      "structure": "bonfire:bonfire",
+      "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 16,
+        "separation": 12,
+        "salt": 183947292,
+        "frequency_reduction_method": "legacy_type_2",
+        "frequency": 0.001,
+        "dimension": "minecraft:overworld",
+        "biomes": "#bonfire:has_bonfire_overworld",
+        "project_start_to_heightmap": "NONE",
+        "height": {
+          "type": "minecraft:uniform",
+          "min_inclusive": { "absolute": -40 },
+          "max_inclusive": { "absolute": 50 }
+        }
+      }
+    },
+    {
+      "structure": "bonfire:bonfire",
+      "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 34,
+        "separation": 24,
+        "salt": 183947293,
+        "frequency_reduction_method": "legacy_type_2",
+        "frequency": 0.001,
+        "dimension": "minecraft:the_nether",
+        "biomes": "#bonfire:has_bonfire_nether",
+        "height": {
+          "type": "minecraft:uniform",
+          "min_inclusive": { "absolute": 15 },
+          "max_inclusive": { "absolute": 90 }
+        }
+      }
+    },
+    {
+      "structure": "bonfire:bonfire",
+      "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 34,
+        "separation": 24,
+        "salt": 183947294,
+        "frequency_reduction_method": "legacy_type_2",
+        "frequency": 0.001,
+        "dimension": "minecraft:the_end",
+        "biomes": "#bonfire:has_bonfire_end",
+        "project_start_to_heightmap": "WORLD_SURFACE_WG",
+        "height": {
+          "type": "minecraft:uniform",
+          "min_inclusive": { "absolute": 0 },
+          "max_inclusive": { "absolute": 0 }
+        }
+      }
+    }
+  ]
+}
