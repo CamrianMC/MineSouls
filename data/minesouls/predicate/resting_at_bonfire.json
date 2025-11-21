@@ -2,38 +2,66 @@
   "condition": "minecraft:all_of",
   "terms": [
     {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
+      "condition": "minecraft:location_check",
       "predicate": {
-        "location": {
-          "position": {
-            "y": {
-              "min": -45
+        "block": { "blocks": ["minecraft:bedrock"] },
+        "offset": { "y": -1 }
+      }
+    },
+    {
+      "condition": "minecraft:nearby_blocks",
+      "nearby_blocks": [
+        {
+          "block": "minecraft:campfire",
+          "state": { "lit": true },
+          "distance": {
+            "absolute": {
+              "min": 0.1,
+              "max": 2.0
             }
-          },
-          "block": {
-            "blocks": [
-              "minecraft:bedrock"
-            ],
-            "offset": [0, -1, 0]
+          }
+        }
+      ]
+    },
+
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:overworld",
+            "position": { "y": { "min": -50 } }
           }
         },
-        "distance": {
-          "absolute": {
-            "max": 1.5
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:the_nether",
+            "position": { "y": { "min": 11 } }
           }
         },
-        "nearby_blocks": [
+        {
+          "condition": "minecraft:location_check",
+          "predicate": { "dimension": "minecraft:the_end" }
+        }
+      ]
+    },
+
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:all_of",
+        "terms": [
+          { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_end" } },
           {
-            "block": "minecraft:campfire",
-            "state": {
-              "lit": true
-            },
-            "distance": {
-              "absolute": {
-                "max": 1.0
+            "condition": "minecraft:nearby_blocks",
+            "nearby_blocks": [
+              {
+                "block": "minecraft:end_gateway",
+                "distance": { "absolute": { "max": 10.0 } }
               }
-            }
+            ]
           }
         ]
       }
