@@ -1,0 +1,42 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "position": {
+            "y": {
+              "min": -45
+            }
+          },
+          "block": {
+            "blocks": [
+              "minecraft:bedrock"
+            ],
+            "offset": [0, -1, 0]
+          }
+        },
+        "distance": {
+          "absolute": {
+            "max": 1.5
+          }
+        },
+        "nearby_blocks": [
+          {
+            "block": "minecraft:campfire",
+            "state": {
+              "lit": true
+            },
+            "distance": {
+              "absolute": {
+                "max": 1.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
