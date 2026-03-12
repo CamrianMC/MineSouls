@@ -9,3 +9,6 @@ execute as @a run function minesouls:estus_flask/check_limit
 # they are holding so the count is available inside the on_use reward function
 # (which fires after the item is already consumed).
 execute as @a run function minesouls:estus_flask/track_uses
+
+# Bonfire rest: decrement the per-player cooldown each tick until it reaches 0
+execute as @a[scores={ms.bonfire_rest=1..}] run scoreboard players remove @s ms.bonfire_rest 1

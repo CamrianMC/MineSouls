@@ -6,3 +6,10 @@ tellraw @a {"text":"MineSouls datapack loaded!","color":"green"}
 # Estus Flask scoreboard: tracks the number of uses on the flask currently
 # held by each player (used to preserve the count across the consumption tick)
 scoreboard objectives add ms.estus_uses dummy
+
+# Bonfire rest scoreboards
+scoreboard objectives add ms.bonfire_rest dummy
+scoreboard objectives add ms.bonfire_x dummy
+scoreboard objectives add ms.bonfire_y dummy
+scoreboard objectives add ms.bonfire_z dummy
+scoreboard objectives add ms.bonfire_dim dummy

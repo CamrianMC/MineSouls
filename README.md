@@ -1,6 +1,6 @@
 # MineSouls
 
-A Minecraft datapack template for version 1.21.10.
+A Minecraft datapack for version 1.21.4+.
 
 ## Structure
 
@@ -8,7 +8,7 @@ This datapack follows the standard Minecraft datapack structure:
 
 ```
 MineSouls/
-├── pack.mcmeta                           # Datapack metadata (pack_format: 48)
+├── pack.mcmeta                           # Datapack metadata (pack_format: 61)
 ├── data/
 │   ├── minesouls/                        # Your namespace
 │   │   └── function/
@@ -38,8 +38,8 @@ This is a template datapack. To use it:
 
 ## Version Compatibility
 
-- **Minecraft Version:** 1.21.10
-- **Pack Format:** 48
+- **Minecraft Version:** 1.21.4+
+- **Pack Format:** 61
 
 ## Development
 
