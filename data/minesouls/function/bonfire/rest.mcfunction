@@ -11,16 +11,16 @@
 # Revoke the advancement immediately so it can re-trigger after the cooldown
 advancement revoke @s only minesouls:bonfire/resting
 
-# Skip all effects while the cooldown is still ticking down
-execute if score @s ms.bonfire_rest matches 1.. run return 0
-
 # === Rested effects ===
-
-# Notify the player
-tellraw @s {"text":"You feel rested.","color":"green","italic":false}
 
 # Regeneration X (amplifier 9) for 1 second (20 ticks); hide particles
 effect give @s minecraft:regeneration 1 9 true
+
+# Skip remaining effects while the cooldown is still ticking down
+execute if score @s ms.bonfire_rest matches 1.. run return 1
+
+# Notify the player
+tellraw @s {"text":"You feel rested.","color":"green","italic":false}
 
 # Reset Estus Flask: remove any active or depleted flask, then give a fresh full one
 clear @s minecraft:honey_bottle[minecraft:custom_data~{minesouls:{estus_flask:true}}]
