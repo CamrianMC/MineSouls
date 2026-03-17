@@ -12,3 +12,6 @@ execute as @a run function minesouls:estus_flask/track_uses
 
 # Bonfire rest: decrement the per-player cooldown each tick until it reaches 0
 execute as @a[scores={ms.bonfire_rest=1..}] run scoreboard players remove @s ms.bonfire_rest 1
+
+# Bonfire respawn: teleport each player to their bonfire after they die and respawn
+execute as @a run function minesouls:bonfire/on_respawn

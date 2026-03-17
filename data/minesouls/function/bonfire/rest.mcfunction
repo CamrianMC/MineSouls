@@ -28,6 +28,9 @@ clear @s minecraft:glass_bottle[minecraft:custom_data~{minesouls:{estus_empty:tr
 give @s minecraft:honey_bottle[minecraft:custom_name='{"text":"Estus Flask","italic":false,"color":"gold"}',minecraft:lore=['{"text":"An undead favorite. Restores HP","italic":true,"color":"dark_purple"}','{"text":"Uses: 10/10","italic":false,"color":"dark_aqua"}'],minecraft:custom_data={minesouls:{estus_flask:true,estus_uses:10}},minecraft:food={nutrition:0,saturation:0.0},minecraft:item_model:"minesouls:estus_flask"] 1
 scoreboard players set @s ms.estus_uses 10
 
+# Mark that this player has a bonfire set (used by respawn-teleport logic)
+scoreboard players set @s ms.has_bonfire 1
+
 # Store the player's bonfire coordinates (block position)
 execute store result score @s ms.bonfire_x run data get entity @s Pos[0] 1
 execute store result score @s ms.bonfire_y run data get entity @s Pos[1] 1

@@ -13,3 +13,10 @@ scoreboard objectives add ms.bonfire_x dummy
 scoreboard objectives add ms.bonfire_y dummy
 scoreboard objectives add ms.bonfire_z dummy
 scoreboard objectives add ms.bonfire_dim dummy
+scoreboard objectives add ms.has_bonfire dummy
+
+# Respawn-teleport scoreboards
+scoreboard objectives add ms.deaths minecraft.custom:minecraft.deaths
+scoreboard objectives add ms.prev_deaths dummy
+scoreboard objectives add ms.pending_tp dummy
+scoreboard objectives add ms.initialized dummy
