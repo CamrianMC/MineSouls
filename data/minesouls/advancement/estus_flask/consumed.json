@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consumed_estus_flask": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{estus_flask:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:estus_flask/on_use"
+  }
+}
