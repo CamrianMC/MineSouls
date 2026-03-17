@@ -20,3 +20,10 @@ scoreboard objectives add ms.deaths minecraft.custom:minecraft.deaths
 scoreboard objectives add ms.prev_deaths dummy
 scoreboard objectives add ms.pending_tp dummy
 scoreboard objectives add ms.initialized dummy
+
+# Darksign scoreboards
+scoreboard objectives add ms.darksign_clicks dummy
+scoreboard objectives add ms.darksign_timer dummy
+scoreboard objectives add ms.spawn_x dummy
+scoreboard objectives add ms.spawn_y dummy
+scoreboard objectives add ms.spawn_z dummy

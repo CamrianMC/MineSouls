@@ -15,3 +15,6 @@ execute as @a[scores={ms.bonfire_rest=1..}] run scoreboard players remove @s ms.
 
 # Bonfire respawn: teleport each player to their bonfire after they die and respawn
 execute as @a run function minesouls:bonfire/on_respawn
+
+# Darksign: tick the per-player countdown for anyone currently using the Darksign
+execute as @a[scores={ms.darksign_timer=1..}] run function minesouls:darksign/tick
