@@ -18,5 +18,12 @@ execute if predicate minesouls:in_end run scoreboard players set @s ms.bonfire_d
 # Mark that this player now has a bonfire location stored
 scoreboard players set @s ms.has_bonfire 1
 
+# Preserve the player's first-join position as a permanent worldspawn reference.
+# These coordinates are captured at the overworld worldspawn (before any bonfire
+# is set) and are used by the Darksign when the player right-clicks 3+ times.
+scoreboard players operation @s ms.spawn_x = @s ms.bonfire_x
+scoreboard players operation @s ms.spawn_y = @s ms.bonfire_y
+scoreboard players operation @s ms.spawn_z = @s ms.bonfire_z
+
 # Mark as initialized so this function never runs again for this player
 scoreboard players set @s ms.initialized 1

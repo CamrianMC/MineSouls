@@ -43,3 +43,6 @@ execute if predicate minesouls:in_end run scoreboard players set @s ms.bonfire_d
 
 # Set cooldown to 200 ticks (10 seconds) to prevent message and effect spam
 scoreboard players set @s ms.bonfire_rest 200
+
+# Give the player a Darksign (silently refused if they already have one)
+function minesouls:darksign/give
