@@ -1,6 +1,6 @@
 # Darksign resolve: fires when the 4-second countdown expires.
-# Determines whether to teleport the player to their bonfire (1-2 right-clicks)
-# or to worldspawn (3+ right-clicks), then resets the Darksign state.
+# Determines whether to teleport the player to their bonfire (1 right-click)
+# or to worldspawn (2+ right-clicks), then resets the Darksign state.
 #
 # For 3+ right-clicks, the bonfire coordinates are intentionally overwritten
 # with the worldspawn coordinates (per spec). This resets the player's bonfire
@@ -8,10 +8,10 @@
 
 # For 3+ right-clicks: overwrite the bonfire coordinates with the stored
 # worldspawn coordinates so teleport_home sends the player to worldspawn.
-execute if score @s ms.darksign_clicks matches 3.. run scoreboard players operation @s ms.bonfire_x = @s ms.spawn_x
-execute if score @s ms.darksign_clicks matches 3.. run scoreboard players operation @s ms.bonfire_y = @s ms.spawn_y
-execute if score @s ms.darksign_clicks matches 3.. run scoreboard players operation @s ms.bonfire_z = @s ms.spawn_z
-execute if score @s ms.darksign_clicks matches 3.. run scoreboard players set @s ms.bonfire_dim 0
+execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operation @s ms.bonfire_x = @s ms.spawn_x
+execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operation @s ms.bonfire_y = @s ms.spawn_y
+execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operation @s ms.bonfire_z = @s ms.spawn_z
+execute if score @s ms.darksign_clicks matches 2.. run scoreboard players set @s ms.bonfire_dim 0
 
 # Teleport the player (to their bonfire, or to worldspawn if coords were overwritten)
 function minesouls:bonfire/teleport_home
