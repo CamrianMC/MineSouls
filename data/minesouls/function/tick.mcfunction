@@ -18,3 +18,9 @@ execute as @a run function minesouls:bonfire/on_respawn
 
 # Darksign: tick the per-player countdown for anyone currently using the Darksign
 execute as @a[scores={ms.darksign_timer=1..}] run function minesouls:darksign/tick
+
+# Flask of Wondrous Physik: enforce 1-flask limit per player
+execute as @a run function minesouls:flask_of_wondrous_physik/check_limit
+
+# Flask of Wondrous Physik: tick the per-player cycle cooldown
+execute as @a[scores={ms.physik_cycle_timer=1..}] run scoreboard players remove @s ms.physik_cycle_timer 1
