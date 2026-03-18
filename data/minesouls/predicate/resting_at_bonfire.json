@@ -3,68 +3,41 @@
   "terms": [
     {
       "condition": "minecraft:location_check",
+      "offsetY": -1,
       "predicate": {
-        "block": { "blocks": ["minecraft:bedrock"] },
-        "offset": { "y": -1 }
+        "block": { "blocks": ["minecraft:bedrock"] }
       }
     },
     {
-      "condition": "minecraft:nearby_blocks",
-      "nearby_blocks": [
-        {
-          "block": "minecraft:campfire",
-          "state": { "lit": true },
-          "distance": {
-            "absolute": {
-              "min": 0.1,
-              "max": 2.0
-            }
-          }
-        }
-      ]
-    },
-
-    {
-      "condition": "minecraft:alternative",
+      "condition": "minecraft:any_of",
       "terms": [
-        {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "dimension": "minecraft:overworld",
-            "position": { "y": { "min": -50 } }
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "predicate": {
-            "dimension": "minecraft:the_nether",
-            "position": { "y": { "min": 11 } }
-          }
-        },
-        {
-          "condition": "minecraft:location_check",
-          "predicate": { "dimension": "minecraft:the_end" }
-        }
+        { "condition": "minecraft:location_check", "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": 1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetZ": 1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetZ": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": 1, "offsetZ": 1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": 1, "offsetZ": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": -1, "offsetZ": 1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": -1, "offsetZ": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": 2, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": -2, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetZ": 2, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetZ": -2, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetY": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": 1, "offsetY": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetX": -1, "offsetY": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetY": -1, "offsetZ": 1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } },
+        { "condition": "minecraft:location_check", "offsetY": -1, "offsetZ": -1, "predicate": { "block": { "blocks": ["minecraft:campfire"], "state": { "lit": "true" } } } }
       ]
     },
-
     {
-      "condition": "minecraft:inverted",
-      "term": {
-        "condition": "minecraft:all_of",
-        "terms": [
-          { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_end" } },
-          {
-            "condition": "minecraft:nearby_blocks",
-            "nearby_blocks": [
-              {
-                "block": "minecraft:end_gateway",
-                "distance": { "absolute": { "max": 10.0 } }
-              }
-            ]
-          }
-        ]
-      }
+      "condition": "minecraft:any_of",
+      "terms": [
+        { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:overworld", "position": { "y": { "min": -50 } } } },
+        { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_nether", "position": { "y": { "min": 11 } } } },
+        { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_end" } }
+      ]
     }
   ]
 }

@@ -2,8 +2,5 @@
   "replace": false,
   "values": [
     "#minecraft:is_overworld"
-  ],
-  "remove": [
-    "#minecraft:is_ocean"
   ]
 }

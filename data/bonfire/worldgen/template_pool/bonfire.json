@@ -1,5 +1,4 @@
 {
-  "name": "bonfire:bonfire",
   "fallback": "minecraft:empty",
   "elements": [
     {

@@ -16,5 +16,5 @@ execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players operati
 
 # Once the player is alive again (Health > 0, i.e. they clicked Respawn) and
 # they have a bonfire stored, teleport them there and clear the pending flag.
-execute if score @s ms.pending_tp matches 1 if score @s ms.has_bonfire matches 1 unless entity @s[nbt={Health:0.0f}] run function minesouls:bonfire/teleport_home
-execute if score @s ms.pending_tp matches 1 unless entity @s[nbt={Health:0.0f}] run scoreboard players set @s ms.pending_tp 0
+execute if score @s ms.pending_tp matches 1 if score @s ms.has_bonfire matches 1 if entity @s[predicate=minesouls:is_alive] run function minesouls:bonfire/teleport_home
+execute if score @s ms.pending_tp matches 1 if entity @s[predicate=minesouls:is_alive] run scoreboard players set @s ms.pending_tp 0
