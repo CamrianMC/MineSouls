@@ -27,3 +27,8 @@ scoreboard objectives add ms.darksign_timer dummy
 scoreboard objectives add ms.spawn_x dummy
 scoreboard objectives add ms.spawn_y dummy
 scoreboard objectives add ms.spawn_z dummy
+
+# Flask of Wondrous Physik scoreboards
+scoreboard objectives add ms.physik_type dummy
+scoreboard objectives add ms.physik_cycle_timer dummy
+scoreboard objectives add ms.physik_count dummy

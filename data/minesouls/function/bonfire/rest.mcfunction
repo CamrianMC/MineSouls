@@ -46,3 +46,6 @@ scoreboard players set @s ms.bonfire_rest 200
 
 # Give the player a Darksign (silently refused if they already have one)
 function minesouls:darksign/give
+
+# Give the player a Flask of Wondrous Physik (silently refused if already held)
+function minesouls:flask_of_wondrous_physik/give
