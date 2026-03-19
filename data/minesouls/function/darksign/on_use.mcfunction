@@ -28,11 +28,14 @@ xp set @s 0 levels
 xp set @s 0 points
 
 # Apply nausea for the exact duration of the countdown (4 seconds)
-effect give @s minecraft:nausea 4 0
+effect give @s minecraft:nausea 4 9 true
 
 # Play the nether portal travel sound once at the start of the countdown
-execute at @s run playsound minecraft:block.portal.travel player @s ~ ~ ~ 1 1
+execute at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 1 1
 
 # Start the 4-second (80 tick) countdown and record the first click
 scoreboard players set @s ms.darksign_timer 80
 scoreboard players set @s ms.darksign_clicks 1
+
+# Sound effect on second click
+execute if score @s ms.darksign_clicks matches 2.. run execute at @s run playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 1 1
