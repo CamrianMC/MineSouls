@@ -1,9 +1,7 @@
 # Second Wind – Warrior Tier 2 Perk 2
 # Slowly restore health while below 50% HP (below 10 HP / 20 HP max).
 # Heals ~1 HP every 3 seconds via a periodic Regeneration I burst.
-
-# Get current health (integer, truncated)
-execute store result score @s ms.health run data get entity @s Health 1
+# Health is automatically tracked by the ms.health scoreboard (health criterion).
 
 # If health is at or above 50% (10+ HP), reset timer and stop
 execute if score @s ms.health matches 10.. run scoreboard players set @s ms.second_wind 0

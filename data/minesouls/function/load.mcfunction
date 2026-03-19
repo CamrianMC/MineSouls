@@ -50,7 +50,7 @@ scoreboard objectives add ms.cb_perk dummy
 
 # Warrior Tier 2 perk scoreboards
 scoreboard objectives add ms.second_wind dummy
-scoreboard objectives add ms.health dummy
+scoreboard objectives add ms.health health
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
