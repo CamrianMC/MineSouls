@@ -20,3 +20,8 @@ scoreboard players set @s ms.class_tier 1
 
 # Notify the player
 tellraw @s [{"text":"Tier 1 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]
+
+# Warrior-specific perk descriptions
+execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Charge","color":"gold","bold":true},{"text":" – +20% speed when looking at enemies","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Turtle Shell","color":"gold","bold":true},{"text":" – 20% damage reduction while blocking","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Javelineer","color":"gold","bold":true},{"text":" – +2 thrown projectile damage","color":"gray"}]

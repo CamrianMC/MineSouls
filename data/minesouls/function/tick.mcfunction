@@ -27,3 +27,9 @@ execute as @a[scores={ms.physik_cycle_timer=1..}] run scoreboard players remove 
 
 # Class book: enable triggers, process selections, remove book when off bedrock
 execute as @a run function minesouls:class_book/tick
+
+# Warrior Tier 1 perks: Charge, Turtle Shell (per-player tick)
+execute as @a[scores={ms.class=1,ms.t1_perk=1..2}] run function minesouls:perk/warrior/t1/tick
+
+# Warrior Tier 1 perk: Javelineer projectile tracking (global tick)
+function minesouls:perk/warrior/t1/javelineer_tick
