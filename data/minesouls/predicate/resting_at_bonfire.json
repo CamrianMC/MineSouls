@@ -36,7 +36,7 @@
       "terms": [
         { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:overworld", "position": { "y": { "min": -50 } } } },
         { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_nether", "position": { "y": { "min": 11 } } } },
-        { "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_end" } }
+        { "condition": "minecraft:all_of","terms": [{ "condition": "minecraft:location_check", "predicate": { "dimension": "minecraft:the_end" } },{"condition": "minecraft:inverted","term": {"condition": "minecraft:location_check","predicate": {"position": { "y": { "min": 73, "max": 77 } }}}}]}
       ]
     }
   ]

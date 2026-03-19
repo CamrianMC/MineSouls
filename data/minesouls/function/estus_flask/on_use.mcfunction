@@ -3,16 +3,13 @@
 #
 # Execution order:
 #   1. Revoke the advancement so it can fire again on the next use.
-#   2. Remove the glass bottle returned by honey_bottle consumption.
-#   3. Apply healing only if the flask had remaining uses (score from last tick).
-#   4. Decrement the use counter.
-#   5. Give back the flask with the updated use count, or the depleted item.
+#   2. Apply healing only if the flask had remaining uses (score from last tick).
+#   3. Decrement the use counter.
+#   4. Give back the flask with the updated use count, or the depleted item.
+# Note: no glass bottle cleanup needed; !minecraft:use_remainder suppresses it.
 
 # Allow the advancement to trigger again
 advancement revoke @s only minesouls:estus_flask/consumed
-
-# honey_bottle returns a glass bottle on consumption; remove it
-clear @s minecraft:glass_bottle 1
 
 # Regeneration IV (amplifier 3) heals 1 HP every 6.25 ticks (50 / 2^3).
 # Over 3 seconds (60 ticks) that is ~9-10 HP, approximately half the default

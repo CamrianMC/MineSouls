@@ -13,6 +13,9 @@ execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operat
 execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operation @s ms.bonfire_z = @s ms.spawn_z
 execute if score @s ms.darksign_clicks matches 2.. run scoreboard players set @s ms.bonfire_dim 0
 
+# Play travel sound again at the moment of teleportation (after the countdown and nausea end)
+execute at @s run playsound minecraft:block.portal.travel player @s ~ ~ ~ 1 1
+
 # Teleport the player (to their bonfire, or to worldspawn if coords were overwritten)
 function minesouls:bonfire/teleport_home
 
