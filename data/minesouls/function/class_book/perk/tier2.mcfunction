@@ -22,3 +22,8 @@ scoreboard players set @s ms.class_tier 2
 
 # Notify the player
 tellraw @s [{"text":"Tier 2 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]
+
+# Warrior-specific perk descriptions
+execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Victory Rush","color":"gold","bold":true},{"text":" – Melee kills restore 4 HP (2 hearts)","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Second Wind","color":"gold","bold":true},{"text":" – Slowly restore health below 50% HP","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Aura Farming","color":"gold","bold":true},{"text":" – Ranged/AoE damage reduced while threats are nearby","color":"gray"}]

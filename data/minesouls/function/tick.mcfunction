@@ -33,3 +33,6 @@ execute as @a[scores={ms.class=1,ms.t1_perk=1..2}] run function minesouls:perk/w
 
 # Warrior Tier 1 perk: Javelineer projectile tracking (global tick)
 function minesouls:perk/warrior/t1/javelineer_tick
+
+# Warrior Tier 2 perks: Second Wind, Aura Farming (per-player tick)
+execute as @a[scores={ms.class=1,ms.t2_perk=2..3}] run function minesouls:perk/warrior/t2/tick
