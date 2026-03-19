@@ -1,0 +1,24 @@
+# Tier 2 perk handler – Cost: 15 experience levels
+# Called from select_perk.mcfunction with ms.cb_perk set (1-3).
+
+# Check the player hasn't already selected a Tier 2 perk
+execute if score @s ms.t2_perk matches 1.. run tellraw @s {"text":"You already selected a Tier 2 perk!","color":"red"}
+execute if score @s ms.t2_perk matches 1.. run return 0
+
+# Check tier prerequisite (must have completed Tier 1)
+execute unless score @s ms.class_tier matches 1.. run tellraw @s {"text":"You must complete Tier 1 first!","color":"red"}
+execute unless score @s ms.class_tier matches 1.. run return 0
+
+# Check experience level requirement
+execute unless entity @s[level=15..] run tellraw @s {"text":"You need at least 15 experience levels for Tier 2!","color":"red"}
+execute unless entity @s[level=15..] run return 0
+
+# Consume cost
+experience add @s -15 levels
+
+# Set the selected perk and update class tier
+scoreboard players operation @s ms.t2_perk = @s ms.cb_perk
+scoreboard players set @s ms.class_tier 2
+
+# Notify the player
+tellraw @s [{"text":"Tier 2 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]

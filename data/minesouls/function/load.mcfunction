@@ -32,3 +32,23 @@ scoreboard objectives add ms.spawn_z dummy
 scoreboard objectives add ms.physik_type dummy
 scoreboard objectives add ms.physik_cycle_timer dummy
 scoreboard objectives add ms.physik_count dummy
+
+# Class book scoreboards
+scoreboard objectives add ms.class dummy
+scoreboard objectives add ms.class_tier dummy
+scoreboard objectives add ms.t1_perk dummy
+scoreboard objectives add ms.t2_perk dummy
+scoreboard objectives add ms.t3_perk dummy
+scoreboard objectives add ms.t4_perk dummy
+scoreboard objectives add ms.t5_perk dummy
+scoreboard objectives add ms.class_select trigger
+scoreboard objectives add ms.perk_select trigger
+scoreboard objectives add ms.cb_temp dummy
+scoreboard objectives add ms.cb_class dummy
+scoreboard objectives add ms.cb_tier dummy
+scoreboard objectives add ms.cb_perk dummy
+
+# Constants for scoreboard math (used by class book perk selection)
+scoreboard objectives add ms.const dummy
+scoreboard players set #10 ms.const 10
+scoreboard players set #100 ms.const 100

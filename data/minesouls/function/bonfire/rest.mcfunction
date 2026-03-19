@@ -49,3 +49,6 @@ function minesouls:darksign/give
 
 # Give the player a Flask of Wondrous Physik (silently refused if already held)
 function minesouls:flask_of_wondrous_physik/give
+
+# Give the player a Class Book (silently refused if already held)
+function minesouls:class_book/give
