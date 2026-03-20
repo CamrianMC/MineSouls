@@ -26,7 +26,7 @@ tellraw @s {"text":"You feel rested.","color":"green","italic":false}
 # Reset Estus Flask: remove any active or depleted flask, then give a fresh full one
 clear @s minecraft:honey_bottle[minecraft:custom_data~{minesouls:{estus_flask:true}}]
 clear @s minecraft:glass_bottle[minecraft:custom_data~{minesouls:{estus_empty:true}}]
-give @s minecraft:honey_bottle[minecraft:custom_name={"text":"Estus Flask","italic":false,"color":"gold"},minecraft:lore=[{"text":"An undead favorite. Restores HP","italic":true,"color":"dark_purple"},{"text":"Uses: 10/10","italic":false,"color":"dark_aqua"}],minecraft:custom_data={minesouls:{estus_flask:true,estus_uses:10}},minecraft:food={nutrition:0,saturation:0.0,can_always_eat:true},!minecraft:use_remainder,minecraft:item_model="minesouls:estus_flask"] 1
+give @s minecraft:honey_bottle[minecraft:custom_name={"text":"Estus Flask","italic":false,"color":"gold"},minecraft:lore=[{"text":"An undead favorite. Restores HP","italic":true,"color":"dark_purple"},{"text":"Uses: 10/10","italic":false,"color":"dark_aqua"}],minecraft:custom_data={minesouls:{estus_flask:true,estus_uses:10}},minecraft:food={nutrition:2,saturation:0.0,can_always_eat:true},!minecraft:use_remainder,minecraft:item_model="minesouls:estus_flask"] 1
 scoreboard players set @s ms.estus_uses 10
 
 # Mark that this player has a bonfire set (used by respawn-teleport logic)
