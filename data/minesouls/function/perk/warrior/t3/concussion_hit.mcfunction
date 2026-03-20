@@ -7,6 +7,9 @@ advancement revoke @s only minesouls:perk/warrior/t3/concussion
 # Check cooldown (10 seconds = 200 ticks); if on cooldown, do nothing
 execute if score @s ms.concussion_cd matches 1.. run return 0
 
+# Verify a hostile target is within melee range before applying cooldown
+execute unless entity @e[type=#minesouls:hostile,distance=..4,limit=1] run return 0
+
 # Stun the nearest hostile mob within 4 blocks (melee range) for 3 seconds (60 ticks)
 tag @e[type=#minesouls:hostile,distance=..4,sort=nearest,limit=1] add ms_concussion_target
 execute as @e[tag=ms_concussion_target,limit=1] run data merge entity @s {NoAI:1b}

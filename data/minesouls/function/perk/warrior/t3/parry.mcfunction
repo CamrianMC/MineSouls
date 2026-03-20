@@ -10,6 +10,7 @@ execute unless predicate minesouls:blocking_with_shield run tag @s remove ms_par
 execute unless predicate minesouls:blocking_with_shield run scoreboard players set @s ms.parry_timer 0
 
 # --- Detect blocking start (first frame of shield raise) ---
+# Set to 11 because the decrement below fires on the same tick, yielding a 10-tick active window
 execute if predicate minesouls:blocking_with_shield unless entity @s[tag=ms_parry_blocking] run scoreboard players set @s ms.parry_timer 11
 execute if predicate minesouls:blocking_with_shield unless entity @s[tag=ms_parry_blocking] run tag @s add ms_parry_blocking
 
