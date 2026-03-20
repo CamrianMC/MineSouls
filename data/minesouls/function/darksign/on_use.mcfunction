@@ -12,7 +12,7 @@
 advancement revoke @s only minesouls:darksign/used
 
 # Give the Darksign back immediately (the player should always keep it)
-function minesouls:darksign/give
+execute if score @s ms.darksign_timer matches 79 run function minesouls:darksign/give
 
 # If the countdown is already running, just count this click and return
 execute if score @s ms.darksign_timer matches 1.. run scoreboard players add @s ms.darksign_clicks 1
@@ -28,7 +28,7 @@ xp set @s 0 levels
 xp set @s 0 points
 
 # Apply nausea for the exact duration of the countdown (4 seconds)
-effect give @s minecraft:nausea 4 9 true
+effect give @s minecraft:nausea 60 255 false
 
 # Play the nether portal travel sound once at the start of the countdown
 execute at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 1 1

@@ -29,4 +29,3 @@ execute if score @s ms.estus_uses matches 1.. run function minesouls:estus_flask
 # … or give the depleted flask when all uses are exhausted
 execute if score @s ms.estus_uses matches ..0 run function minesouls:estus_flask/give_depleted
 
-clear @s glass_bottle 1

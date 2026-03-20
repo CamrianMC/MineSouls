@@ -6,6 +6,8 @@
 # with the worldspawn coordinates (per spec). This resets the player's bonfire
 # to worldspawn; they must rest at a bonfire again to set a new location.
 
+effect clear @s minecraft:nausea
+
 # For 3+ right-clicks: overwrite the bonfire coordinates with the stored
 # worldspawn coordinates so teleport_home sends the player to worldspawn.
 execute if score @s ms.darksign_clicks matches 2.. run scoreboard players operation @s ms.bonfire_x = @s ms.spawn_x
