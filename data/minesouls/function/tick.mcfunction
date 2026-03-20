@@ -36,3 +36,9 @@ function minesouls:perk/warrior/t1/javelineer_tick
 
 # Warrior Tier 2 perks: Second Wind, Aura Farming (per-player tick)
 execute as @a[scores={ms.class=1,ms.t2_perk=2..3}] run function minesouls:perk/warrior/t2/tick
+
+# Warrior Tier 3 perks: Thunder Clap, Concussion cooldown, Parry (per-player tick)
+execute as @a[scores={ms.class=1,ms.t3_perk=1..3}] at @s run function minesouls:perk/warrior/t3/tick
+
+# Stun system: decrement stun timers on affected entities
+execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick

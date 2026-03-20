@@ -52,6 +52,15 @@ scoreboard objectives add ms.cb_perk dummy
 scoreboard objectives add ms.second_wind dummy
 scoreboard objectives add ms.health health
 
+# Warrior Tier 3 perk scoreboards
+scoreboard objectives add ms.tc_fall dummy
+scoreboard objectives add ms.tc_max dummy
+scoreboard objectives add ms.concussion_cd dummy
+scoreboard objectives add ms.parry_timer dummy
+scoreboard objectives add ms.parry_blocked minecraft.custom:minecraft.damage_blocked_by_shield
+scoreboard objectives add ms.parry_prev dummy
+scoreboard objectives add ms.stun_timer dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10

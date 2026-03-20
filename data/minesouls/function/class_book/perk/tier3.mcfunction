@@ -22,3 +22,8 @@ scoreboard players set @s ms.class_tier 3
 
 # Notify the player
 tellraw @s [{"text":"Tier 3 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]
+
+# Warrior-specific perk descriptions
+execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Thunder Clap","color":"gold","bold":true},{"text":" – Landing from 2+ blocks damages and knocks back nearby enemies","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Concussion","color":"gold","bold":true},{"text":" – Critical hits stun enemies for 3 seconds (10s cooldown)","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Parry","color":"gold","bold":true},{"text":" – Blocking just before a melee attack stuns the attacker for 5 seconds","color":"gray"}]
