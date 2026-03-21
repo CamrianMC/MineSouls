@@ -12,7 +12,7 @@
 advancement revoke @s only minesouls:darksign/used
 
 # Give the Darksign back immediately (the player should always keep it)
-function minesouls:darksign/give
+give @s minecraft:paper[minecraft:custom_name={"text":"Darksign","italic":false,"color":"dark_red"},minecraft:lore=[{"text":"The mark of an Undead. Returns you home at the cost of your souls.","italic":true,"color":"dark_gray"},{"text":"Activate twice to return to worldspawn.","italic":true,"color":"dark_gray"}],minecraft:custom_data={minesouls:{darksign:true}},minecraft:food={nutrition:0,saturation:0.0,can_always_eat:true},minecraft:consumable={consume_seconds:0.05f,animation:"none",sound:"minecraft:block.amethyst_block.chime"},minecraft:max_stack_size=1,minecraft:enchantment_glint_override=true,minecraft:item_model="minesouls:darksign"] 1
 
 # If the countdown is already running, just count this click and return
 execute if score @s ms.darksign_timer matches 1.. run scoreboard players add @s ms.darksign_clicks 1
@@ -28,11 +28,14 @@ xp set @s 0 levels
 xp set @s 0 points
 
 # Apply nausea for the exact duration of the countdown (4 seconds)
-effect give @s minecraft:nausea 4 0
+effect give @s minecraft:nausea 60 255 false
 
 # Play the nether portal travel sound once at the start of the countdown
-execute at @s run playsound minecraft:block.portal.travel player @s ~ ~ ~ 1 1
+execute at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 1 1
 
 # Start the 4-second (80 tick) countdown and record the first click
 scoreboard players set @s ms.darksign_timer 80
 scoreboard players set @s ms.darksign_clicks 1
+
+# Sound effect on second click
+execute if score @s ms.darksign_clicks matches 2.. run tellraw @s {"text":"Worldspawn imminent!","color":"dark_red","italic":false}

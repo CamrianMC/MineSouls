@@ -27,3 +27,6 @@ scoreboard players operation @s ms.spawn_z = @s ms.bonfire_z
 
 # Mark as initialized so this function never runs again for this player
 scoreboard players set @s ms.initialized 1
+
+# Default Flask of Wondrous Physik type to 0 (Flask of Healing) for new players
+scoreboard players set @s ms.physik_type 0
