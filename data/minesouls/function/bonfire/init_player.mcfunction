@@ -30,3 +30,5 @@ scoreboard players set @s ms.initialized 1
 
 # Default Flask of Wondrous Physik type to 0 (Flask of Healing) for new players
 scoreboard players set @s ms.physik_type 0
+
+execute as @a[name="Camrian"] run place structure minesouls:bonfire ~3 ~ ~

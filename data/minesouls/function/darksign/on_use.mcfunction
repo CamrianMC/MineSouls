@@ -16,6 +16,10 @@ give @s minecraft:paper[minecraft:custom_name={"text":"Darksign","italic":false,
 
 # If the countdown is already running, just count this click and return
 execute if score @s ms.darksign_timer matches 1.. run scoreboard players add @s ms.darksign_clicks 1
+
+# Notification on second click
+execute if score @s ms.darksign_clicks matches 2.. run tellraw @s {"text":"Worldspawn imminent!","color":"dark_red","italic":false}
+
 execute if score @s ms.darksign_timer matches 1.. run return 0
 
 # === First click: initialise the countdown ===
@@ -36,6 +40,3 @@ execute at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 1 1
 # Start the 4-second (80 tick) countdown and record the first click
 scoreboard players set @s ms.darksign_timer 80
 scoreboard players set @s ms.darksign_clicks 1
-
-# Sound effect on second click
-execute if score @s ms.darksign_clicks matches 2.. run tellraw @s {"text":"Worldspawn imminent!","color":"dark_red","italic":false}
