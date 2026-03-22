@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "used_darksign": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{darksign:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:darksign/on_use"
+  }
+}

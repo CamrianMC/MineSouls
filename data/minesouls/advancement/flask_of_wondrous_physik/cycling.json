@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "sneaking_at_bonfire": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "minesouls:resting_at_bonfire"
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_sneaking": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:flask_of_wondrous_physik/cycle"
+  }
+}

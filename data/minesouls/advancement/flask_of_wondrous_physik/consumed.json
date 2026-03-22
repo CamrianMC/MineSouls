@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consumed_physik_flask": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{physik_flask:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:flask_of_wondrous_physik/on_use"
+  }
+}

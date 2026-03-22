@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "shield_raised": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:shield"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:perk/warrior/on_shield_raise"
+  }
+}

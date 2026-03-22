@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "minesouls:bonfire",
+      "weight": 1
+    },
+    {
+      "structure": "minesouls:bonfire_underground",
+      "weight": 1
+    },
+    {
+      "structure": "minesouls:bonfire_nether",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 36,
+    "separation": 24,
+    "salt": 694232001
+  }
+}
