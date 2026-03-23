@@ -25,3 +25,8 @@ tellraw @s [{"text":"Tier 1 Perk ","color":"green"},{"score":{"name":"@s","objec
 execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Charge","color":"gold","bold":true},{"text":" – +20% speed when looking at enemies","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Turtle Shell","color":"gold","bold":true},{"text":" – 20% damage reduction while blocking","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Javelineer","color":"gold","bold":true},{"text":" – +2 thrown projectile damage","color":"gray"}]
+
+# Rogue-specific perk descriptions
+execute if score @s ms.class matches 2 if score @s ms.t1_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Light Feet","color":"gold","bold":true},{"text":" – +20% speed while crouching","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barrel Roll","color":"gold","bold":true},{"text":" – teleport 3 blocks forward on landing while crouched","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t1_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Pickpocket","color":"gold","bold":true},{"text":" – 10% bonus XP on hostile kills & permanent Luck I","color":"gray"}]

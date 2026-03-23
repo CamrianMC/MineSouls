@@ -67,6 +67,10 @@ scoreboard objectives add ms.tan_dmg dummy
 scoreboard objectives add ms.iw_blocked minecraft.custom:minecraft.damage_blocked_by_shield
 scoreboard objectives add ms.iw_prev dummy
 
+# Rogue Tier 1 perk scoreboards
+scoreboard objectives add ms.br_fall dummy
+scoreboard objectives add ms.br_prev dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10

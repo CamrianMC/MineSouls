@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "hostile_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "ms.class": 2,
+              "ms.t1_perk": 3
+            }
+          }
+        ],
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "#minesouls:hostile"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:perk/rogue/t1/pickpocket_kill"
+  }
+}
