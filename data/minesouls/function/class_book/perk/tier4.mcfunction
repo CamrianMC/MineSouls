@@ -28,3 +28,8 @@ scoreboard players set @s ms.class_tier 4
 
 # Notify the player
 tellraw @s [{"text":"Tier 4 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]
+
+# Warrior-specific perk descriptions
+execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Adrenaline Rush","color":"gold","bold":true},{"text":" – +40% speed, haste, and melee damage when ≤ 50% HP","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barbaric Training","color":"gold","bold":true},{"text":" – +20% melee damage when off hand is empty","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Calloused Veteran","color":"gold","bold":true},{"text":" – +4 armor rating at all times, stacks with all armor","color":"gray"}]
