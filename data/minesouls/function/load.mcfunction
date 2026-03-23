@@ -61,6 +61,12 @@ scoreboard objectives add ms.parry_blocked minecraft.custom:minecraft.damage_blo
 scoreboard objectives add ms.parry_prev dummy
 scoreboard objectives add ms.stun_timer dummy
 
+# Warrior Tier 5 perk scoreboards
+scoreboard objectives add ms.tan_prev dummy
+scoreboard objectives add ms.tan_dmg dummy
+scoreboard objectives add ms.iw_blocked minecraft.custom:minecraft.damage_blocked_by_shield
+scoreboard objectives add ms.iw_prev dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10

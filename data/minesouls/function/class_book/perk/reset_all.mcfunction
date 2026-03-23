@@ -39,6 +39,11 @@ execute if entity @s[tag=ms_adrenaline_active] run attribute @s minecraft:generi
 execute if entity @s[tag=ms_barbaric_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:barbaric_training
 execute if entity @s[tag=ms_calloused_active] run attribute @s minecraft:generic.armor modifier remove minesouls:calloused_veteran
 
+# Clear Warrior T5 perk state
+scoreboard players set @s ms.tan_prev 0
+scoreboard players set @s ms.tan_dmg 0
+scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
+
 # Remove perk-related tags
 tag @s remove ms_parry_blocking
 tag @s remove ms_adrenaline_active
@@ -50,6 +55,7 @@ effect clear @s minecraft:speed
 effect clear @s minecraft:resistance
 effect clear @s minecraft:regeneration
 effect clear @s minecraft:haste
+effect clear @s minecraft:fire_resistance
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}

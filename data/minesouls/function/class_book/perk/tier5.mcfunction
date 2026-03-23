@@ -28,3 +28,14 @@ scoreboard players set @s ms.class_tier 5
 
 # Notify the player
 tellraw @s [{"text":"Tier 5 Perk ","color":"green"},{"score":{"name":"@s","objective":"ms.cb_perk"}},{"text":" selected!","color":"green"}]
+
+# Warrior-specific perk descriptions
+execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Avernus","color":"gold","bold":true},{"text":" – Negates fire damage; being on fire slowly regenerates HP","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Tough as Nails","color":"gold","bold":true},{"text":" – Cannot take more than 5 damage in one hit","color":"gray"}]
+execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Impenetrable Wall","color":"gold","bold":true},{"text":" – Shields have infinite durability; shield blocks damage and knock back nearby enemies","color":"gray"}]
+
+# Initialize Tough as Nails health tracker to current health
+execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 2 run scoreboard players operation @s ms.tan_prev = @s ms.health
+
+# Initialize Impenetrable Wall block tracker to current stat
+execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 3 run scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
