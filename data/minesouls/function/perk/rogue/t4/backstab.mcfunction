@@ -3,6 +3,9 @@
 # Uses a tick-based attribute modifier: +900% melee damage (add_multiplied_base 9.0)
 # when sneaking and positioned behind the nearest hostile in melee range.
 
+# Clean up behind-check state from previous tick
+tag @s remove ms_not_behind
+
 # If not sneaking, remove modifier and stop
 execute unless predicate minesouls:is_sneaking if entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:backstab
 execute unless predicate minesouls:is_sneaking run tag @s remove ms_backstab_active
@@ -27,11 +30,10 @@ tag @e[tag=ms_backstab_check] remove ms_backstab_check
 tag @s remove ms_backstab_player
 
 # If player is in front (not behind), remove modifier and stop
+# (ms_not_behind is cleaned up at the start of the next tick)
 execute if entity @s[tag=ms_not_behind] if entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:backstab
 execute if entity @s[tag=ms_not_behind] run tag @s remove ms_backstab_active
-execute if entity @s[tag=ms_not_behind] run tag @s remove ms_not_behind
 execute if entity @s[tag=ms_not_behind] run return 0
-tag @s remove ms_not_behind
 
 # Player is behind the target: apply +900% melee damage modifier (10x total)
 execute unless entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier add minesouls:backstab 9.0 add_multiplied_base

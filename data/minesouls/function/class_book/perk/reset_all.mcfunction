@@ -68,6 +68,7 @@ tag @s remove ms_pickpocket_active
 tag @s remove ms_dodge_sneaking
 tag @s remove ms_backstab_active
 tag @s remove ms_nightfall_active
+tag @s remove ms_not_behind
 
 # Clear any lingering perk effects
 effect clear @s minecraft:speed
