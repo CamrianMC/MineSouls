@@ -82,6 +82,9 @@ scoreboard objectives add ms.sp_max dummy
 scoreboard objectives add ms.bleed_timer dummy
 scoreboard objectives add ms.bleed_tick dummy
 
+# Rogue Tier 4 perk scoreboards (Mark of Sacrifice)
+scoreboard objectives add ms.mark_timer dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10
