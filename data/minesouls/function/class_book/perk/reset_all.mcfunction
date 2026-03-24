@@ -59,6 +59,11 @@ scoreboard players set @s ms.sp_max 0
 execute if entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:backstab
 execute if entity @s[tag=ms_nightfall_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:nightfall
 
+# Clear Rogue T5 perk state
+scoreboard players set @s ms.cd_cd 0
+scoreboard players set @s ms.shinobi_prev 0
+scoreboard players set @s ms.ita_disable 0
+
 # Remove perk-related tags
 tag @s remove ms_parry_blocking
 tag @s remove ms_adrenaline_active
@@ -69,6 +74,7 @@ tag @s remove ms_dodge_sneaking
 tag @s remove ms_backstab_active
 tag @s remove ms_nightfall_active
 tag @s remove ms_not_behind
+tag @s remove ms_ita_active
 
 # Clear any lingering perk effects
 effect clear @s minecraft:speed
@@ -79,6 +85,7 @@ effect clear @s minecraft:fire_resistance
 effect clear @s minecraft:luck
 effect clear @s minecraft:jump_boost
 effect clear @s minecraft:night_vision
+effect clear @s minecraft:invisibility
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}

@@ -39,3 +39,11 @@ execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 2 run scor
 
 # Initialize Impenetrable Wall block tracker to current stat
 execute if score @s ms.class matches 1 if score @s ms.t5_perk matches 3 run scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
+
+# Rogue-specific perk descriptions
+execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Cheat Death","color":"gold","bold":true},{"text":" – Fatal damage leaves you at 1 HP. 2 minute cooldown.","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Shinobi","color":"gold","bold":true},{"text":" – Negates fall damage","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Into Thin Air","color":"gold","bold":true},{"text":" – Invisible while crouching; attacks disable for 10 seconds","color":"gray"}]
+
+# Initialize Shinobi health tracker to current health
+execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 2 run scoreboard players operation @s ms.shinobi_prev = @s ms.health

@@ -55,6 +55,9 @@ execute as @a[scores={ms.class=2,ms.t2_perk=2..3}] at @s run function minesouls:
 # Rogue Tier 4 perks: Backstab, Nightfall (per-player tick)
 execute as @a[scores={ms.class=2,ms.t4_perk=2..3}] at @s run function minesouls:perk/rogue/t4/tick
 
+# Rogue Tier 5 perks: Cheat Death, Shinobi, Into Thin Air (per-player tick)
+execute as @a[scores={ms.class=2,ms.t5_perk=1..3}] at @s run function minesouls:perk/rogue/t5/tick
+
 # Mark of Sacrifice: tick timers on marked entities (Rogue T4 Perk 1)
 execute as @e[tag=ms_mark_sacrifice] run function minesouls:perk/rogue/t4/mark_tick
 
