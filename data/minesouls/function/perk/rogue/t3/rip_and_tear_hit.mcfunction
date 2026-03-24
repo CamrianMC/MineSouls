@@ -7,10 +7,12 @@ advancement revoke @s only minesouls:perk/rogue/t3/rip_and_tear
 # Verify a hostile target is within melee range
 execute unless entity @e[type=#minesouls:hostile,distance=..4,limit=1] run return 0
 
-# Tag as bleeding and set/refresh bleed timer (100 ticks = 5 seconds)
-tag @e[type=#minesouls:hostile,distance=..4,sort=nearest,limit=1] add ms_bleeding
-scoreboard players set @e[type=#minesouls:hostile,distance=..4,sort=nearest,limit=1,tag=ms_bleeding] ms.bleed_timer 100
-scoreboard players set @e[type=#minesouls:hostile,distance=..4,sort=nearest,limit=1,tag=ms_bleeding] ms.bleed_tick 0
+# Tag the target, apply bleed, and set/refresh timer (100 ticks = 5 seconds)
+tag @e[type=#minesouls:hostile,distance=..4,sort=nearest,limit=1] add ms_rip_target
+execute as @e[tag=ms_rip_target,limit=1] run tag @s add ms_bleeding
+execute as @e[tag=ms_rip_target,limit=1] run scoreboard players set @s ms.bleed_timer 100
+execute as @e[tag=ms_rip_target,limit=1] run scoreboard players set @s ms.bleed_tick 0
+tag @e[tag=ms_rip_target] remove ms_rip_target
 
 # Visual and audio feedback
 playsound minecraft:entity.player.attack.sweep player @s ~ ~ ~ 1 0.8
