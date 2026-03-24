@@ -49,6 +49,9 @@ execute as @a[scores={ms.class=1,ms.t5_perk=1..3}] at @s run function minesouls:
 # Rogue Tier 1 perks: Light Feet, Barrel Roll, Pickpocket (per-player tick)
 execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:perk/rogue/t1/tick
 
+# Rogue Tier 2 perks: Dodge, Serious Parkour (per-player tick)
+execute as @a[scores={ms.class=2,ms.t2_perk=2..3}] at @s run function minesouls:perk/rogue/t2/tick
+
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 

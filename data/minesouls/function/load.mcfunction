@@ -71,6 +71,13 @@ scoreboard objectives add ms.iw_prev dummy
 scoreboard objectives add ms.br_fall dummy
 scoreboard objectives add ms.br_prev dummy
 
+# Rogue Tier 2 perk scoreboards
+scoreboard objectives add ms.ls_temp dummy
+scoreboard objectives add ms.dodge_cd dummy
+scoreboard objectives add ms.dodge_timer dummy
+scoreboard objectives add ms.sp_fall dummy
+scoreboard objectives add ms.sp_max dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10

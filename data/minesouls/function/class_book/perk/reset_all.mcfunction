@@ -48,12 +48,20 @@ scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
 scoreboard players set @s ms.br_fall 0
 scoreboard players set @s ms.br_prev 0
 
+# Clear Rogue T2 perk state
+scoreboard players set @s ms.ls_temp 0
+scoreboard players set @s ms.dodge_cd 0
+scoreboard players set @s ms.dodge_timer 0
+scoreboard players set @s ms.sp_fall 0
+scoreboard players set @s ms.sp_max 0
+
 # Remove perk-related tags
 tag @s remove ms_parry_blocking
 tag @s remove ms_adrenaline_active
 tag @s remove ms_barbaric_active
 tag @s remove ms_calloused_active
 tag @s remove ms_pickpocket_active
+tag @s remove ms_dodge_sneaking
 
 # Clear any lingering perk effects
 effect clear @s minecraft:speed
@@ -62,6 +70,7 @@ effect clear @s minecraft:regeneration
 effect clear @s minecraft:haste
 effect clear @s minecraft:fire_resistance
 effect clear @s minecraft:luck
+effect clear @s minecraft:jump_boost
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}
