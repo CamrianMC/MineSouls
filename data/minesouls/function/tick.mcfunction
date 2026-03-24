@@ -52,6 +52,9 @@ execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:
 # Rogue Tier 2 perks: Dodge, Serious Parkour (per-player tick)
 execute as @a[scores={ms.class=2,ms.t2_perk=2..3}] at @s run function minesouls:perk/rogue/t2/tick
 
+# Bleed system: tick bleed damage on bleeding entities (Rogue T3 Perk 3)
+execute as @e[tag=ms_bleeding] run function minesouls:perk/rogue/t3/bleed_tick
+
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 

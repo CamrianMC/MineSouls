@@ -78,6 +78,10 @@ scoreboard objectives add ms.dodge_timer dummy
 scoreboard objectives add ms.sp_fall dummy
 scoreboard objectives add ms.sp_max dummy
 
+# Rogue Tier 3 perk scoreboards (Rip and Tear bleed system)
+scoreboard objectives add ms.bleed_timer dummy
+scoreboard objectives add ms.bleed_tick dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #10 ms.const 10
