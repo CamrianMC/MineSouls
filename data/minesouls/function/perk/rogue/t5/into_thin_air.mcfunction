@@ -22,6 +22,6 @@ execute if score @s ms.ita_disable matches 1.. run return 0
 effect give @s minecraft:invisibility 2 0 true
 tag @s add ms_ita_active
 
-# Set follow_range to 0 on all hostile mobs within 10 blocks (modifier add silently fails if already present)
+# Reduce follow_range to 0 on all hostile mobs within 10 blocks via -1.0 multiplier (modifier add silently fails if already present)
 execute as @e[type=#minesouls:hostile,distance=..10] run attribute @s minecraft:generic.follow_range modifier add minesouls:into_thin_air -1.0 add_multiplied_base
 execute as @e[type=#minesouls:hostile,distance=..10] run tag @s add ms_ita_blinded
