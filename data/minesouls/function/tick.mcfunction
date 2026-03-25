@@ -43,6 +43,30 @@ execute as @a[scores={ms.class=1,ms.t3_perk=1..3}] at @s run function minesouls:
 # Warrior Tier 4 perks: Adrenaline Rush, Barbaric Training, Calloused Veteran (per-player tick)
 execute as @a[scores={ms.class=1,ms.t4_perk=1..3}] at @s run function minesouls:perk/warrior/t4/tick
 
+# Warrior Tier 5 perks: Avernus, Tough as Nails, Impenetrable Wall (per-player tick)
+execute as @a[scores={ms.class=1,ms.t5_perk=1..3}] at @s run function minesouls:perk/warrior/t5/tick
+
+# Rogue Tier 1 perks: Light Feet, Barrel Roll, Pickpocket (per-player tick)
+execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:perk/rogue/t1/tick
+
+# Rogue Tier 2 perks: Dodge, Serious Parkour (per-player tick)
+execute as @a[scores={ms.class=2,ms.t2_perk=2..3}] at @s run function minesouls:perk/rogue/t2/tick
+
+# Rogue Tier 4 perks: Backstab, Nightfall (per-player tick)
+execute as @a[scores={ms.class=2,ms.t4_perk=2..3}] at @s run function minesouls:perk/rogue/t4/tick
+
+# Rogue Tier 5 perks: Cheat Death, Shinobi, Into Thin Air (per-player tick)
+execute as @a[scores={ms.class=2,ms.t5_perk=1..3}] at @s run function minesouls:perk/rogue/t5/tick
+
+# Into Thin Air: cleanup blinded mobs that wandered out of range
+execute as @e[tag=ms_ita_blinded] at @s run function minesouls:perk/rogue/t5/into_thin_air_cleanup
+
+# Mark of Sacrifice: tick timers on marked entities (Rogue T4 Perk 1)
+execute as @e[tag=ms_mark_sacrifice] run function minesouls:perk/rogue/t4/mark_tick
+
+# Bleed system: tick bleed damage on bleeding entities (Rogue T3 Perk 3)
+execute as @e[tag=ms_bleeding] run function minesouls:perk/rogue/t3/bleed_tick
+
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 

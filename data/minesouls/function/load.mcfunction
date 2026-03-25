@@ -61,8 +61,37 @@ scoreboard objectives add ms.parry_blocked minecraft.custom:minecraft.damage_blo
 scoreboard objectives add ms.parry_prev dummy
 scoreboard objectives add ms.stun_timer dummy
 
+# Warrior Tier 5 perk scoreboards
+scoreboard objectives add ms.tan_prev dummy
+scoreboard objectives add ms.tan_dmg dummy
+scoreboard objectives add ms.iw_blocked minecraft.custom:minecraft.damage_blocked_by_shield
+scoreboard objectives add ms.iw_prev dummy
+
+# Rogue Tier 1 perk scoreboards
+scoreboard objectives add ms.br_fall dummy
+scoreboard objectives add ms.br_prev dummy
+
+# Rogue Tier 2 perk scoreboards
+scoreboard objectives add ms.ls_temp dummy
+scoreboard objectives add ms.dodge_cd dummy
+scoreboard objectives add ms.dodge_timer dummy
+scoreboard objectives add ms.sp_fall dummy
+scoreboard objectives add ms.sp_max dummy
+
+# Rogue Tier 3 perk scoreboards (Rip and Tear bleed system)
+scoreboard objectives add ms.bleed_timer dummy
+scoreboard objectives add ms.bleed_tick dummy
+
+# Rogue Tier 4 perk scoreboards (Mark of Sacrifice)
+scoreboard objectives add ms.mark_timer dummy
+
+# Rogue Tier 5 perk scoreboards
+scoreboard objectives add ms.cd_cd dummy
+scoreboard objectives add ms.ita_disable dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
+scoreboard players set #1 ms.const 1
 scoreboard players set #10 ms.const 10
 scoreboard players set #100 ms.const 100
 

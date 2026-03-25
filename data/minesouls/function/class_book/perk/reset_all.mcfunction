@@ -39,17 +39,56 @@ execute if entity @s[tag=ms_adrenaline_active] run attribute @s minecraft:generi
 execute if entity @s[tag=ms_barbaric_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:barbaric_training
 execute if entity @s[tag=ms_calloused_active] run attribute @s minecraft:generic.armor modifier remove minesouls:calloused_veteran
 
+# Clear Warrior T5 perk state
+scoreboard players set @s ms.tan_prev 0
+scoreboard players set @s ms.tan_dmg 0
+scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
+
+# Clear Rogue T1 perk state
+scoreboard players set @s ms.br_fall 0
+scoreboard players set @s ms.br_prev 0
+
+# Clear Rogue T2 perk state
+scoreboard players set @s ms.ls_temp 0
+scoreboard players set @s ms.dodge_cd 0
+scoreboard players set @s ms.dodge_timer 0
+scoreboard players set @s ms.sp_fall 0
+scoreboard players set @s ms.sp_max 0
+
+# Clear Rogue T4 perk state (remove attribute modifiers)
+execute if entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:backstab
+execute if entity @s[tag=ms_nightfall_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:nightfall
+
+# Clear Rogue T5 perk state
+scoreboard players set @s ms.cd_cd 0
+scoreboard players set @s ms.ita_disable 0
+
+# Restore follow_range on any mobs blinded by Into Thin Air
+execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run attribute @s minecraft:generic.follow_range modifier remove minesouls:into_thin_air
+execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run tag @s remove ms_ita_blinded
+
 # Remove perk-related tags
 tag @s remove ms_parry_blocking
 tag @s remove ms_adrenaline_active
 tag @s remove ms_barbaric_active
 tag @s remove ms_calloused_active
+tag @s remove ms_pickpocket_active
+tag @s remove ms_dodge_sneaking
+tag @s remove ms_backstab_active
+tag @s remove ms_nightfall_active
+tag @s remove ms_not_behind
+tag @s remove ms_ita_active
 
 # Clear any lingering perk effects
 effect clear @s minecraft:speed
 effect clear @s minecraft:resistance
 effect clear @s minecraft:regeneration
 effect clear @s minecraft:haste
+effect clear @s minecraft:fire_resistance
+effect clear @s minecraft:luck
+effect clear @s minecraft:jump_boost
+effect clear @s minecraft:night_vision
+effect clear @s minecraft:invisibility
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}
