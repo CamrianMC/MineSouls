@@ -61,8 +61,11 @@ execute if entity @s[tag=ms_nightfall_active] run attribute @s minecraft:generic
 
 # Clear Rogue T5 perk state
 scoreboard players set @s ms.cd_cd 0
-scoreboard players set @s ms.shinobi_prev 0
 scoreboard players set @s ms.ita_disable 0
+
+# Restore follow_range on any mobs blinded by Into Thin Air
+execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run attribute @s minecraft:generic.follow_range modifier remove minesouls:into_thin_air
+execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run tag @s remove ms_ita_blinded
 
 # Remove perk-related tags
 tag @s remove ms_parry_blocking

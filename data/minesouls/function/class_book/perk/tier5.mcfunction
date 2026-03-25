@@ -45,5 +45,4 @@ execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 1 run tell
 execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Shinobi","color":"gold","bold":true},{"text":" – Negates fall damage","color":"gray"}]
 execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Into Thin Air","color":"gold","bold":true},{"text":" – Invisible while crouching; attacks disable for 10 seconds","color":"gray"}]
 
-# Initialize Shinobi health tracker to current health
-execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 2 run scoreboard players operation @s ms.shinobi_prev = @s ms.health
+

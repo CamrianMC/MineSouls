@@ -87,7 +87,6 @@ scoreboard objectives add ms.mark_timer dummy
 
 # Rogue Tier 5 perk scoreboards
 scoreboard objectives add ms.cd_cd dummy
-scoreboard objectives add ms.shinobi_prev dummy
 scoreboard objectives add ms.ita_disable dummy
 
 # Constants for scoreboard math (used by class book perk selection)
