@@ -35,9 +35,9 @@ scoreboard players set @s ms.parry_timer 0
 scoreboard players set @s ms.parry_prev 0
 
 # Clear Warrior T4 perk state (remove attribute modifiers)
-execute if entity @s[tag=ms_adrenaline_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:adrenaline_rush
-execute if entity @s[tag=ms_barbaric_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:barbaric_training
-execute if entity @s[tag=ms_calloused_active] run attribute @s minecraft:generic.armor modifier remove minesouls:calloused_veteran
+execute if entity @s[tag=ms_adrenaline_active] run attribute @s minecraft:attack_damage modifier remove minesouls:adrenaline_rush
+execute if entity @s[tag=ms_barbaric_active] run attribute @s minecraft:attack_damage modifier remove minesouls:barbaric_training
+execute if entity @s[tag=ms_calloused_active] run attribute @s minecraft:armor modifier remove minesouls:calloused_veteran
 
 # Clear Warrior T5 perk state
 scoreboard players set @s ms.tan_prev 0
@@ -56,15 +56,15 @@ scoreboard players set @s ms.sp_fall 0
 scoreboard players set @s ms.sp_max 0
 
 # Clear Rogue T4 perk state (remove attribute modifiers)
-execute if entity @s[tag=ms_backstab_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:backstab
-execute if entity @s[tag=ms_nightfall_active] run attribute @s minecraft:generic.attack_damage modifier remove minesouls:nightfall
+execute if entity @s[tag=ms_backstab_active] run attribute @s minecraft:attack_damage modifier remove minesouls:backstab
+execute if entity @s[tag=ms_nightfall_active] run attribute @s minecraft:attack_damage modifier remove minesouls:nightfall
 
 # Clear Rogue T5 perk state
 scoreboard players set @s ms.cd_cd 0
 scoreboard players set @s ms.ita_disable 0
 
 # Restore follow_range on any mobs blinded by Into Thin Air
-execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run attribute @s minecraft:generic.follow_range modifier remove minesouls:into_thin_air
+execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run attribute @s minecraft:follow_range modifier remove minesouls:into_thin_air
 execute at @s as @e[type=#minesouls:hostile,tag=ms_ita_blinded,distance=..10] run tag @s remove ms_ita_blinded
 
 # Remove perk-related tags

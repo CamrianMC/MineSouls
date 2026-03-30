@@ -64,8 +64,10 @@ scoreboard objectives add ms.stun_timer dummy
 # Warrior Tier 5 perk scoreboards
 scoreboard objectives add ms.tan_prev dummy
 scoreboard objectives add ms.tan_dmg dummy
+scoreboard objectives add ms.tan_hit dummy
 scoreboard objectives add ms.iw_blocked minecraft.custom:minecraft.damage_blocked_by_shield
 scoreboard objectives add ms.iw_prev dummy
+data merge storage minesouls:offhand_backup {}
 
 # Rogue Tier 1 perk scoreboards
 scoreboard objectives add ms.br_fall dummy
