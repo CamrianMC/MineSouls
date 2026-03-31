@@ -1,7 +1,7 @@
 # Tough as Nails – Damage Cap
 # Fired by the entity_hurt_player advancement when the player takes damage.
-# Damage has already been applied by this point, so we can read the real
-# post-damage health and restore the excess if it exceeded the 5-HP cap.
+# Death_protection on the offhand prevents fatal hits from killing the player
+# before this function can heal back the excess beyond the 5-HP cap.
 
 # Revoke advancement so it can re-trigger on the next hit
 advancement revoke @s only minesouls:perk/warrior/t5/tough_as_nails
@@ -11,20 +11,31 @@ scoreboard players operation @s ms.tan_dmg = @s ms.tan_prev
 execute store result score @s ms.tan_prev run data get entity @s Health 1
 scoreboard players operation @s ms.tan_dmg -= @s ms.tan_prev
 
-# If damage is 5 or less, no cap needed — tan_prev already holds current health
+# Restore consumed offhand item before early-return checks
+# (death_protection may have consumed the item even when damage ≤ 5)
+execute unless items entity @s weapon.offhand * if entity @s[tag=ms_tan_protected] run function minesouls:perk/warrior/t5/tan_restore_item
+
+# Debug output
 tellraw @s [{"text":"Damage took: ","color":"green"},{"score":{"name":"@s","objective":"ms.tan_dmg"},"color":"red"}]
+
+# If damage is 5 or less, no cap needed
 execute if score @s ms.tan_dmg matches ..5 run return 0
 
-data modify storage minesouls:offhand_backup Item set from entity @s Inventory[{Slot:-106b}]
-item replace entity @s weapon.offhand with minecraft:cobblestone[minecraft:death_protection={}]
-
-# Damage > 5: restore the excess beyond the 5-point cap
-# new_health = current_health + (damage − 5)
+# Damage > 5: heal back the excess beyond the 5-point cap
 scoreboard players remove @s ms.tan_dmg 5
-##scoreboard players operation @s ms.tan_prev += @s ms.tan_dmg
-##execute if score @s ms.tan_prev matches ..0 run scoreboard players set @s ms.tan_prev 1
 
-# Write the capped health back to the entity
-attribute @s minecraft:max_health base set 10
-effect give @p minecraft:regeneration 10 255 true
-attribute @s minecraft:max_health base set 20
+# Binary decomposition healing: instant_health (8/4/2 HP) + regeneration (1 HP)
+# Bit 3 (8 HP): instant_health amplifier 2
+execute if score @s ms.tan_dmg matches 8.. run effect give @s minecraft:instant_health 1 2 true
+execute if score @s ms.tan_dmg matches 8.. run scoreboard players remove @s ms.tan_dmg 8
+
+# Bit 2 (4 HP): instant_health amplifier 1
+execute if score @s ms.tan_dmg matches 4.. run effect give @s minecraft:instant_health 1 1 true
+execute if score @s ms.tan_dmg matches 4.. run scoreboard players remove @s ms.tan_dmg 4
+
+# Bit 1 (2 HP): instant_health amplifier 0
+execute if score @s ms.tan_dmg matches 2.. run effect give @s minecraft:instant_health 1 0 true
+execute if score @s ms.tan_dmg matches 2.. run scoreboard players remove @s ms.tan_dmg 2
+
+# Bit 0 (1 HP): regeneration III (heals 1 HP after ~0.8s)
+execute if score @s ms.tan_dmg matches 1.. run effect give @s minecraft:regeneration 1 2 true

@@ -39,7 +39,9 @@ execute if entity @s[tag=ms_adrenaline_active] run attribute @s minecraft:attack
 execute if entity @s[tag=ms_barbaric_active] run attribute @s minecraft:attack_damage modifier remove minesouls:barbaric_training
 execute if entity @s[tag=ms_calloused_active] run attribute @s minecraft:armor modifier remove minesouls:calloused_veteran
 
-# Clear Warrior T5 perk state
+# Clear Warrior T5 perk state (Tough as Nails death_protection cleanup)
+execute at @s run function minesouls:perk/warrior/t5/tan_unprotect
+clear @s minecraft:knowledge_book[minecraft:custom_data~{ms_tan:1b}]
 scoreboard players set @s ms.tan_prev 0
 scoreboard players set @s ms.tan_dmg 0
 scoreboard players operation @s ms.iw_prev = @s ms.iw_blocked
@@ -78,6 +80,7 @@ tag @s remove ms_backstab_active
 tag @s remove ms_nightfall_active
 tag @s remove ms_not_behind
 tag @s remove ms_ita_active
+tag @s remove ms_tan_protected
 
 # Clear any lingering perk effects
 effect clear @s minecraft:speed
