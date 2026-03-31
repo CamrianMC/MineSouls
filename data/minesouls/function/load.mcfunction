@@ -94,6 +94,7 @@ scoreboard objectives add ms.ita_disable dummy
 # Ranger Tier 1 perk scoreboards (Focused position tracking)
 scoreboard objectives add ms.focus_temp dummy
 scoreboard objectives add ms.focus_x dummy
+scoreboard objectives add ms.focus_y dummy
 scoreboard objectives add ms.focus_z dummy
 scoreboard objectives add ms.focus_timer dummy
 

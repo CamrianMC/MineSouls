@@ -9,6 +9,10 @@ scoreboard players operation @s ms.focus_temp = @s ms.focus_x
 execute store result score @s ms.focus_x run data get entity @s Pos[0] 100
 execute unless score @s ms.focus_temp = @s ms.focus_x run tag @s add ms_focus_moved
 
+scoreboard players operation @s ms.focus_temp = @s ms.focus_y
+execute store result score @s ms.focus_y run data get entity @s Pos[1] 100
+execute unless score @s ms.focus_temp = @s ms.focus_y run tag @s add ms_focus_moved
+
 scoreboard players operation @s ms.focus_temp = @s ms.focus_z
 execute store result score @s ms.focus_z run data get entity @s Pos[2] 100
 execute unless score @s ms.focus_temp = @s ms.focus_z run tag @s add ms_focus_moved
