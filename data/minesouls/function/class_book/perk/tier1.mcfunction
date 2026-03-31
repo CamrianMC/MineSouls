@@ -26,6 +26,11 @@ execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 1 run tell
 execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Turtle Shell","color":"gold","bold":true},{"text":" – 20% damage reduction while blocking","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t1_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Javelineer","color":"gold","bold":true},{"text":" – +2 thrown projectile damage","color":"gray"}]
 
+# Ranger-specific perk descriptions
+execute if score @s ms.class matches 3 if score @s ms.t1_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Focused","color":"gold","bold":true},{"text":" – standing still for 3s boosts next shot damage by 20%","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Hit and Run","color":"gold","bold":true},{"text":" – firing an arrow grants +20% speed for 8 seconds","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t1_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Eagle's Nest","color":"gold","bold":true},{"text":" – slowly wallclimb, consumes hunger while climbing","color":"gray"}]
+
 # Rogue-specific perk descriptions
 execute if score @s ms.class matches 2 if score @s ms.t1_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Light Feet","color":"gold","bold":true},{"text":" – +20% speed while crouching","color":"gray"}]
 execute if score @s ms.class matches 2 if score @s ms.t1_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barrel Roll","color":"gold","bold":true},{"text":" – teleport 3 blocks forward on landing while crouched","color":"gray"}]
