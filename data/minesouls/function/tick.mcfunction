@@ -52,6 +52,12 @@ execute as @a[scores={ms.class=3,ms.t1_perk=1..3}] at @s run function minesouls:
 # Ranger Tier 3 perk: Ricochet arrow tracking (global tick)
 function minesouls:perk/ranger/t3/ricochet_tick
 
+# Ranger Tier 4 perks: Survival Instincts, Disengage (per-player tick)
+execute as @a[scores={ms.class=3,ms.t4_perk=1..3}] at @s run function minesouls:perk/ranger/t4/tick
+
+# Survival Instincts: cleanup glowing on mobs that wandered out of range
+execute as @e[tag=ms_si_glowing] at @s run function minesouls:perk/ranger/t4/survival_instincts_cleanup
+
 # Rogue Tier 1 perks: Light Feet, Barrel Roll, Pickpocket (per-player tick)
 execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:perk/rogue/t1/tick
 

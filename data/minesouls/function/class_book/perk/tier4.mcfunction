@@ -34,6 +34,11 @@ execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 1 run tell
 execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barbaric Training","color":"gold","bold":true},{"text":" – +20% melee damage when off hand is empty","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t4_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Calloused Veteran","color":"gold","bold":true},{"text":" – +4 armor rating at all times, stacks with all armor","color":"gray"}]
 
+# Ranger-specific perk descriptions
+execute if score @s ms.class matches 3 if score @s ms.t4_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Survival Instincts","color":"dark_aqua","bold":true},{"text":" – Nearby hostiles glow while crouching; stand still 5s for bonfire distance","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t4_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Hawkeye","color":"dark_aqua","bold":true},{"text":" – Receive 1 arrow on successful ranged attack","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t4_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Disengage","color":"dark_aqua","bold":true},{"text":" – Crouch while falling to jump backwards, cancelling momentum (costs 2 hunger)","color":"gray"}]
+
 # Rogue-specific perk descriptions
 execute if score @s ms.class matches 2 if score @s ms.t4_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Mark of Sacrifice","color":"dark_green","bold":true},{"text":" – Critical hits mark target for +2 damage from all sources for 5s","color":"gray"}]
 execute if score @s ms.class matches 2 if score @s ms.t4_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Backstab","color":"dark_green","bold":true},{"text":" – Attacks from behind while crouching do 10x damage","color":"gray"}]
