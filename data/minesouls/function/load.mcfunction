@@ -98,6 +98,9 @@ scoreboard objectives add ms.focus_y dummy
 scoreboard objectives add ms.focus_z dummy
 scoreboard objectives add ms.focus_timer dummy
 
+# Ranger Tier 3 perk scoreboards (arrow direction math)
+scoreboard objectives add ms.arrow_temp dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #1 ms.const 1

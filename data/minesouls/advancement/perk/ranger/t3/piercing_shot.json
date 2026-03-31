@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "projectile_hit": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "ms.class": 3,
+              "ms.t3_perk": 2
+            }
+          }
+        ],
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:perk/ranger/t3/piercing_shot_hit"
+  }
+}

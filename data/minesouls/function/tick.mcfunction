@@ -49,6 +49,9 @@ execute as @a[scores={ms.class=1,ms.t5_perk=1..3}] at @s run function minesouls:
 # Ranger Tier 1 perks: Focused, Eagle's Nest (per-player tick)
 execute as @a[scores={ms.class=3,ms.t1_perk=1..3}] at @s run function minesouls:perk/ranger/t1/tick
 
+# Ranger Tier 3 perk: Ricochet arrow tracking (global tick)
+function minesouls:perk/ranger/t3/ricochet_tick
+
 # Rogue Tier 1 perks: Light Feet, Barrel Roll, Pickpocket (per-player tick)
 execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:perk/rogue/t1/tick
 
