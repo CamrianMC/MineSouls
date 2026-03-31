@@ -31,8 +31,9 @@ scoreboard players operation #ps_hy ms.arrow_temp -= #ps_py ms.arrow_temp
 scoreboard players operation #ps_hz ms.arrow_temp -= #ps_pz ms.arrow_temp
 
 # Spawn new arrow 1.5 blocks past the target (away from the player)
-# "facing entity @s eyes" from the target looks TOWARD the player;
-# ^ ^ ^-1.5 is 1.5 blocks in the OPPOSITE direction (continuing flight path)
+# At the target's position, "facing entity @s eyes" rotates toward the player
+# (@s is still the player in this context); ^ ^ ^-1.5 goes the opposite way,
+# i.e. 1.5 blocks continuing the arrow's original flight path.
 execute at @e[tag=ms_pierce_target,limit=1] facing entity @s eyes run summon minecraft:arrow ^ ^ ^-1.5 {Tags:["ms_pierce_new","ms_rico_fired"],pickup:0}
 
 # Set Motion on the new arrow: direction * 0.0002 = ~2.0 blocks/tick speed
