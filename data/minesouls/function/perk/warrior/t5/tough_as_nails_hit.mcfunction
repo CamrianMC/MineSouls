@@ -38,6 +38,14 @@ execute if score @s ms.tan_dmg matches 4.. run effect give @s minecraft:instant_
 execute if score @s ms.tan_dmg matches 4.. run scoreboard players remove @s ms.tan_dmg 4
 
 # Bit 0 (1 HP): regeneration III (heals 1 HP after ~0.8s)
-execute if score @s ms.tan_dmg matches 1.. run effect give @s minecraft:regeneration 1 3 true
-scoreboard players operation @s ms.tan_leftovers = @s ms.tan_dmg
-scoreboard players operation @s ms.tan_leftovers *= #10 ms.tan_leftovers
+execute if score @s ms.tan_dmg matches 3 run effect give @s minecraft:instant_health 1 0 true
+execute if score @s ms.tan_dmg matches 3 run damage @s 1 minecraft:out_of_world
+execute if score @s ms.tan_dmg matches 3 run scoreboard players remove @s ms.tan_dmg 3
+
+execute if score @s ms.tan_dmg matches 2 run effect give @s minecraft:instant_health 1 0 true
+execute if score @s ms.tan_dmg matches 2 run damage @s 2 minecraft:out_of_world
+execute if score @s ms.tan_dmg matches 2 run scoreboard players remove @s ms.tan_dmg 2
+
+execute if score @s ms.tan_dmg matches 1 run effect give @s minecraft:instant_health 1 0 true
+execute if score @s ms.tan_dmg matches 1 run damage @s 3 minecraft:out_of_world
+execute if score @s ms.tan_dmg matches 1 run scoreboard players remove @s ms.tan_dmg 1
