@@ -14,3 +14,4 @@ execute if score @s ms.tan_prev matches 6.. run function minesouls:perk/warrior/
 
 # At or below 5hp: remove death_protection (cap cannot save you anyway)
 execute if score @s ms.tan_prev matches ..5 run function minesouls:perk/warrior/t5/tan_unprotect
+

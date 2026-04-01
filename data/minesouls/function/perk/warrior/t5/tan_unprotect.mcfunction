@@ -16,11 +16,11 @@ execute if items entity @s weapon.offhand minecraft:totem_of_undying run return 
 execute unless items entity @s weapon.offhand * run tag @s remove ms_tan_protected
 execute unless items entity @s weapon.offhand * run return 0
 
-# Real item with our death_protection: strip via armor stand intermediary
-summon armor_stand ~ ~ ~ {Invisible:1b,NoGravity:1b,Marker:1b,Tags:["ms_tan_temp"]}
-item replace entity @e[tag=ms_tan_temp,limit=1] weapon.mainhand from entity @s weapon.offhand
-data remove entity @e[tag=ms_tan_temp,limit=1] HandItems[0].components."minecraft:death_protection"
-data remove entity @e[tag=ms_tan_temp,limit=1] HandItems[0].components."minecraft:custom_data".ms_tan_dp
-item replace entity @s weapon.offhand from entity @e[tag=ms_tan_temp,limit=1] weapon.mainhand
-kill @e[tag=ms_tan_temp]
+# Real item with our death_protection: strip via barrel intermediary
+setblock ~ 319 ~ minecraft:barrel
+item replace block ~ 319 ~ container.0 from entity @s weapon.offhand
+data remove block ~ 319 ~ Items[0].components."minecraft:death_protection"
+data remove block ~ 319 ~ Items[0].components."minecraft:custom_data".ms_tan_dp
+item replace entity @s weapon.offhand from block ~ 319 ~ container.0
+setblock ~ 319 ~ minecraft:air
 tag @s remove ms_tan_protected

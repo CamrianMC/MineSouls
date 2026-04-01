@@ -5,4 +5,4 @@
 advancement revoke @s only minesouls:perk/rogue/t1/pickpocket
 
 # Grant bonus XP
-experience add @s 1 points
+experience add @s 5 points

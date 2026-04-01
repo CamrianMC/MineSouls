@@ -25,17 +25,19 @@ execute if score @s ms.tan_dmg matches ..5 run return 0
 scoreboard players remove @s ms.tan_dmg 5
 
 # Binary decomposition healing: instant_health (8/4/2 HP) + regeneration (1 HP)
-# Bit 3 (8 HP): instant_health amplifier 2
-execute if score @s ms.tan_dmg matches 8.. run effect give @s minecraft:instant_health 1 2 true
+# Bit 3 (16 HP): instant_health amplifier 2
+execute if score @s ms.tan_dmg matches 16.. run effect give @s minecraft:instant_health 1 2 true
+execute if score @s ms.tan_dmg matches 16.. run scoreboard players remove @s ms.tan_dmg 16
+
+# Bit 2 (8 HP): instant_health amplifier 1
+execute if score @s ms.tan_dmg matches 8.. run effect give @s minecraft:instant_health 1 1 true
 execute if score @s ms.tan_dmg matches 8.. run scoreboard players remove @s ms.tan_dmg 8
 
-# Bit 2 (4 HP): instant_health amplifier 1
-execute if score @s ms.tan_dmg matches 4.. run effect give @s minecraft:instant_health 1 1 true
+# Bit 1 (4 HP): instant_health amplifier 0
+execute if score @s ms.tan_dmg matches 4.. run effect give @s minecraft:instant_health 1 0 true
 execute if score @s ms.tan_dmg matches 4.. run scoreboard players remove @s ms.tan_dmg 4
 
-# Bit 1 (2 HP): instant_health amplifier 0
-execute if score @s ms.tan_dmg matches 2.. run effect give @s minecraft:instant_health 1 0 true
-execute if score @s ms.tan_dmg matches 2.. run scoreboard players remove @s ms.tan_dmg 2
-
 # Bit 0 (1 HP): regeneration III (heals 1 HP after ~0.8s)
-execute if score @s ms.tan_dmg matches 1.. run effect give @s minecraft:regeneration 1 2 true
+execute if score @s ms.tan_dmg matches 1.. run effect give @s minecraft:regeneration 1 3 true
+scoreboard players operation @s ms.tan_leftovers = @s ms.tan_dmg
+scoreboard players operation @s ms.tan_leftovers *= #10 ms.tan_leftovers
