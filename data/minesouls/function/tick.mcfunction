@@ -91,6 +91,18 @@ execute as @e[tag=ms_mark_sacrifice] run function minesouls:perk/rogue/t4/mark_t
 # Bleed system: tick bleed damage on bleeding entities (Rogue T3 Perk 3)
 execute as @e[tag=ms_bleeding] run function minesouls:perk/rogue/t3/bleed_tick
 
+# Mage Tier 1 perks: Snowball, Goyim, Band-aid (per-player tick)
+execute as @a[scores={ms.class=4,ms.t1_perk=1..3}] at @s run function minesouls:perk/mage/t1/tick
+
+# Mage Tier 1: snowball hit detection (global tick)
+function minesouls:perk/mage/t1/snowball_tick
+
+# Mage Tier 1: goyim villager mob attraction (per-entity tick)
+execute as @e[type=minecraft:villager,tag=ms_goyim] at @s run function minesouls:perk/mage/t1/goyim_tick
+
+# Reset spell use counter for all players (must come after mage tick)
+scoreboard players set @a ms.use_spell 0
+
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 

@@ -95,3 +95,13 @@ effect clear @s minecraft:invisibility
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}
+
+# Clear Mage perk state (mana, goyim, spellbooks)
+scoreboard players set @s ms.mana 0
+scoreboard players set @s ms.mana_max 0
+scoreboard players set @s ms.goyim_active 0
+scoreboard players set @s ms.goyim_timer 0
+scoreboard players set @s ms.use_spell 0
+execute at @s run kill @e[type=minecraft:villager,tag=ms_goyim,distance=..200]
+kill @e[type=marker,tag=ms_sb_rider]
+clear @s minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{minesouls:{}}]

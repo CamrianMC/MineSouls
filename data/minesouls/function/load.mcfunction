@@ -124,6 +124,14 @@ scoreboard objectives add ms.se_steps dummy
 scoreboard objectives add ms.bm_count dummy
 scoreboard objectives add ms.bm_temp dummy
 
+# Mage perk scoreboards
+scoreboard objectives add ms.mana dummy
+scoreboard objectives add ms.mana_max dummy
+scoreboard objectives add ms.use_spell minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add ms.goyim_timer dummy
+scoreboard objectives add ms.goyim_active dummy
+scoreboard objectives add ms.spell_temp dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1
