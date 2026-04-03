@@ -117,6 +117,13 @@ scoreboard objectives add ms.dis_fall dummy
 scoreboard objectives add ms.dis_prev dummy
 scoreboard objectives add ms.dis_cd dummy
 
+# Ranger Tier 5 perk scoreboards (Sniper Elite raycast steps)
+scoreboard objectives add ms.se_steps dummy
+
+# Ranger Tier 5 perk scoreboards (Beast Mastery wolf count + heal temp)
+scoreboard objectives add ms.bm_count dummy
+scoreboard objectives add ms.bm_temp dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1

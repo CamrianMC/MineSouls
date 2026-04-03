@@ -1,0 +1,13 @@
+# Doom – Ranger Tier 5 Perk 2 (global tick)
+# Detects arrows fired by T5P2 Rangers and spawns a spray of extra arrows.
+
+# --- Phase 1: Tag new arrows from Ranger T5P2 players ---
+# Exclude already-processed spray arrows and other perk arrows
+execute as @e[type=#minesouls:arrow,tag=!ms_doom_arrow,tag=!ms_doom_spray,tag=!ms_rico_fired,tag=!ms_se_arrow] at @s on origin if entity @s[scores={ms.class=3,ms.t5_perk=2}] run tag @e[type=#minesouls:arrow,tag=!ms_doom_arrow,tag=!ms_doom_spray,tag=!ms_rico_fired,tag=!ms_se_arrow,distance=..0.01,limit=1] add ms_doom_arrow
+
+# --- Phase 2: Spawn spray from the origin player's position ---
+execute as @e[type=#minesouls:arrow,tag=ms_doom_arrow] on origin at @s run function minesouls:perk/ranger/t5/doom_fire
+
+# --- Phase 3: Mark processed arrows to prevent retrigger ---
+tag @e[type=#minesouls:arrow,tag=ms_doom_arrow] add ms_doom_spray
+tag @e[type=#minesouls:arrow,tag=ms_doom_arrow] remove ms_doom_arrow

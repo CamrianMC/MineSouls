@@ -58,6 +58,18 @@ execute as @a[scores={ms.class=3,ms.t4_perk=1..3}] at @s run function minesouls:
 # Survival Instincts: cleanup glowing on mobs that wandered out of range
 execute as @e[tag=ms_si_glowing] at @s run function minesouls:perk/ranger/t4/survival_instincts_cleanup
 
+# Ranger Tier 5 perks: Sniper Elite, Doom, Beast Mastery (per-player tick)
+execute as @a[scores={ms.class=3,ms.t5_perk=1..3}] at @s run function minesouls:perk/ranger/t5/tick
+
+# Ranger Tier 5 perk: Sniper Elite hitscan arrow processing (global tick)
+function minesouls:perk/ranger/t5/sniper_elite_tick
+
+# Ranger Tier 5 perk: Doom arrow spray processing (global tick)
+function minesouls:perk/ranger/t5/doom_tick
+
+# Beast Mastery: wolf damage detection and owner healing (global tick)
+execute as @e[type=minecraft:wolf,tag=ms_bm_wolf] at @s run function minesouls:perk/ranger/t5/beast_mastery_wolf_tick
+
 # Rogue Tier 1 perks: Light Feet, Barrel Roll, Pickpocket (per-player tick)
 execute as @a[scores={ms.class=2,ms.t1_perk=1..3}] at @s run function minesouls:perk/rogue/t1/tick
 
