@@ -45,4 +45,8 @@ execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 1 run tell
 execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Shinobi","color":"gold","bold":true},{"text":" – Negates fall damage","color":"gray"}]
 execute if score @s ms.class matches 2 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Into Thin Air","color":"gold","bold":true},{"text":" – Invisible while crouching; attacks disable for 10 seconds","color":"gray"}]
 
+# Ranger-specific perk descriptions
+execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Sniper Elite","color":"gold","bold":true},{"text":" – Fired arrows are hitscan: instant travel, hit the first target in your crosshair","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Doom","color":"gold","bold":true},{"text":" – Bows and crossbows charge instantly and fire a spray of arrows","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Beast Mastery","color":"gold","bold":true},{"text":" – Your wolves have Strength II and heal you when they deal damage. Always have at least 1 wolf.","color":"gray"}]
 
