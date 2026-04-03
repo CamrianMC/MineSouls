@@ -50,4 +50,3 @@ execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 1 run tell
 execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Doom","color":"gold","bold":true},{"text":" – Bows and crossbows charge instantly and fire a spray of arrows","color":"gray"}]
 execute if score @s ms.class matches 3 if score @s ms.t5_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Beast Mastery","color":"gold","bold":true},{"text":" – Your wolves have Strength II and heal you when they deal damage. Always have at least 1 wolf.","color":"gray"}]
 
-
