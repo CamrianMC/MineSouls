@@ -8,8 +8,8 @@ execute if score @s ms.mana < @s ms.mana_max run scoreboard players add @s ms.ma
 title @s actionbar [{"text":"✦ Mana: ","color":"dark_purple"},{"score":{"name":"@s","objective":"ms.mana"},"color":"light_purple"},{"text":"/","color":"dark_purple"},{"score":{"name":"@s","objective":"ms.mana_max"},"color":"light_purple"},{"text":" ✦","color":"dark_purple"}]
 
 # Spell casting: detect right-click of warped_fungus_on_a_stick
+# (ms.use_spell is globally reset for all players at the end of tick.mcfunction)
 execute if score @s ms.use_spell matches 1.. run function minesouls:perk/mage/t1/cast
-scoreboard players set @s ms.use_spell 0
 
 # Goyim tracking (only for Perk 2 mages)
 # Decrement timer

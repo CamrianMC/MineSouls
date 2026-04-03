@@ -21,7 +21,7 @@ effect give @e[type=minecraft:villager,tag=ms_goyim_new,limit=1] minecraft:glowi
 
 # Set player state
 scoreboard players set @s ms.goyim_active 1
-scoreboard players set @s ms.goyim_timer 300
+scoreboard players set @s ms.goyim_timer 300  # 15 seconds * 20 ticks/sec = 300 ticks
 
 # Cleanup new tag
 tag @e[tag=ms_goyim_new] remove ms_goyim_new

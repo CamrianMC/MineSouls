@@ -31,7 +31,7 @@ scoreboard players operation #sb_dz ms.spell_temp -= #sb_oz ms.spell_temp
 # Summon snowball 1.5 blocks ahead with marker passenger for hit detection
 execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:snowball ~ ~ ~ {Tags:["ms_spell_snowball","ms_sb_new"],Passengers:[{id:"minecraft:marker",Tags:["ms_sb_rider"]}]}
 
-# Set Motion on the snowball (scale 0.0002 gives ~2.0 blocks/tick speed)
+# Set Motion on the snowball (scale 0.0002: direction * 10000 * 0.0002 = ~2.0 blocks/tick speed)
 execute store result entity @e[tag=ms_sb_new,limit=1] Motion[0] double 0.0002 run scoreboard players get #sb_dx ms.spell_temp
 execute store result entity @e[tag=ms_sb_new,limit=1] Motion[1] double 0.0002 run scoreboard players get #sb_dy ms.spell_temp
 execute store result entity @e[tag=ms_sb_new,limit=1] Motion[2] double 0.0002 run scoreboard players get #sb_dz ms.spell_temp

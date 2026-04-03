@@ -102,6 +102,6 @@ scoreboard players set @s ms.mana_max 0
 scoreboard players set @s ms.goyim_active 0
 scoreboard players set @s ms.goyim_timer 0
 scoreboard players set @s ms.use_spell 0
-execute at @s run kill @e[type=minecraft:villager,tag=ms_goyim,distance=..200]
+execute at @s run kill @e[type=minecraft:villager,tag=ms_goyim]
 kill @e[type=marker,tag=ms_sb_rider]
 clear @s minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{minesouls:{}}]
