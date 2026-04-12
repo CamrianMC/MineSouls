@@ -2,4 +2,4 @@
 # Negates all fall damage by keeping FallDistance at 0 every tick.
 # The game never accumulates enough fall distance to trigger damage or landing stagger.
 
-data modify entity @s FallDistance set value 0.0f
+attribute @s minecraft:fall_damage_multiplier base set 0

@@ -90,6 +90,7 @@ scoreboard objectives add ms.mark_timer dummy
 # Rogue Tier 5 perk scoreboards
 scoreboard objectives add ms.cd_cd dummy
 scoreboard objectives add ms.ita_disable dummy
+data merge storage minesouls:cd_offhand_backup {}
 
 # Ranger Tier 1 perk scoreboards (Focused position tracking)
 scoreboard objectives add ms.focus_temp dummy
