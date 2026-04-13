@@ -16,12 +16,12 @@ scoreboard players remove @s ms.mana 2000
 # Summon a wither above the player (3 blocks up to avoid collision damage)
 summon minecraft:wither ~ ~3 ~ {Tags:["ms_acheron","ms_acheron_new"],PersistenceRequired:1b,CustomName:'{"text":"Acheron","color":"dark_red"}',CustomNameVisible:1b}
 
-# Give glowing effect (21 seconds, covers the full 20s lifetime)
-effect give @e[type=minecraft:wither,tag=ms_acheron_new] minecraft:glowing 21 0 true
+# Give glowing effect (31 seconds, covers the full 30s lifetime)
+effect give @e[type=minecraft:wither,tag=ms_acheron_new] minecraft:glowing 31 0 true
 
 # Set player state
 scoreboard players set @s ms.acheron_active 1
-scoreboard players set @s ms.acheron_timer 400
+scoreboard players set @s ms.acheron_timer 600
 
 # Cleanup new tag
 tag @e[tag=ms_acheron_new] remove ms_acheron_new
