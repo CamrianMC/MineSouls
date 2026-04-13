@@ -100,6 +100,18 @@ function minesouls:perk/mage/t1/snowball_tick
 # Mage Tier 1: goyim villager mob attraction (per-entity tick)
 execute as @e[type=minecraft:villager,tag=ms_goyim] at @s run function minesouls:perk/mage/t1/goyim_tick
 
+# Mage Tier 2 perks: Fireball, Frosty, Light Barrier (per-player tick)
+execute as @a[scores={ms.class=4,ms.t2_perk=1..3}] at @s run function minesouls:perk/mage/t2/tick
+
+# Mage Tier 2: fireball hit detection (global tick)
+function minesouls:perk/mage/t2/fireball_tick
+
+# Mage Tier 2: frosty snow golem turret (per-entity tick)
+execute as @e[type=minecraft:snow_golem,tag=ms_frosty] at @s run function minesouls:perk/mage/t2/frosty_tick
+
+# Mage Tier 2: frosty snowball hit detection (global tick)
+function minesouls:perk/mage/t2/frosty_sb_tick
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 

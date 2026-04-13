@@ -133,6 +133,11 @@ scoreboard objectives add ms.goyim_timer dummy
 scoreboard objectives add ms.goyim_active dummy
 scoreboard objectives add ms.spell_temp dummy
 
+# Mage Tier 2 perk scoreboards
+scoreboard objectives add ms.frosty_timer dummy
+scoreboard objectives add ms.frosty_active dummy
+scoreboard objectives add ms.frosty_fire dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1
