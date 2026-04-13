@@ -118,6 +118,9 @@ execute as @a[scores={ms.class=4,ms.t3_perk=1..3}] at @s run function minesouls:
 # Mage Tier 4 perks: Zeus, Bodyguard, Blink (per-player tick)
 execute as @a[scores={ms.class=4,ms.t4_perk=1..3}] at @s run function minesouls:perk/mage/t4/tick
 
+# Mage Tier 5 perks: Armageddon, Acheron, Fountain of Youth (per-player tick)
+execute as @a[scores={ms.class=4,ms.t5_perk=1..3}] at @s run function minesouls:perk/mage/t5/tick
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 
