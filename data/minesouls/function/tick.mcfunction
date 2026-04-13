@@ -112,6 +112,9 @@ execute as @e[type=minecraft:snow_golem,tag=ms_frosty] at @s run function mineso
 # Mage Tier 2: frosty snowball hit detection (global tick)
 function minesouls:perk/mage/t2/frosty_sb_tick
 
+# Mage Tier 3 perks: Hurricane, Druid, Abandon Ship! (per-player tick)
+execute as @a[scores={ms.class=4,ms.t3_perk=1..3}] at @s run function minesouls:perk/mage/t3/tick
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 

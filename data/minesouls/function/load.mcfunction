@@ -138,6 +138,10 @@ scoreboard objectives add ms.frosty_timer dummy
 scoreboard objectives add ms.frosty_active dummy
 scoreboard objectives add ms.frosty_fire dummy
 
+# Mage Tier 3 perk scoreboards (Druid wolf tracking)
+scoreboard objectives add ms.druid_timer dummy
+scoreboard objectives add ms.druid_active dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1
