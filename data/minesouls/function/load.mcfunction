@@ -142,6 +142,11 @@ scoreboard objectives add ms.frosty_fire dummy
 scoreboard objectives add ms.druid_timer dummy
 scoreboard objectives add ms.druid_active dummy
 
+# Mage Tier 4 perk scoreboards (Zeus raycast + Bodyguard golem tracking)
+scoreboard objectives add ms.zeus_steps dummy
+scoreboard objectives add ms.bodyguard_timer dummy
+scoreboard objectives add ms.bodyguard_active dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1

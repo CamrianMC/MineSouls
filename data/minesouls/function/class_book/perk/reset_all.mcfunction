@@ -107,10 +107,13 @@ scoreboard players set @s ms.frosty_active 0
 scoreboard players set @s ms.frosty_timer 0
 scoreboard players set @s ms.druid_active 0
 scoreboard players set @s ms.druid_timer 0
+scoreboard players set @s ms.bodyguard_active 0
+scoreboard players set @s ms.bodyguard_timer 0
 scoreboard players set @s ms.use_spell 0
 execute at @s run kill @e[type=minecraft:villager,tag=ms_goyim]
 execute at @s run kill @e[type=minecraft:snow_golem,tag=ms_frosty]
 execute at @s run kill @e[type=minecraft:wolf,tag=ms_druid_wolf]
+execute at @s run kill @e[type=minecraft:iron_golem,tag=ms_bodyguard]
 kill @e[type=marker,tag=ms_sb_rider]
 kill @e[type=marker,tag=ms_fb_rider]
 kill @e[type=marker,tag=ms_frosty_rider]
