@@ -1,0 +1,14 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:death_protection": {
+        "death_effects": []
+      }
+    }
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{ms_cd_dp:1b}"
+  }
+]

@@ -27,3 +27,13 @@ tellraw @s [{"text":"Tier 3 Perk ","color":"green"},{"score":{"name":"@s","objec
 execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Thunder Clap","color":"gold","bold":true},{"text":" – Landing from 2+ blocks damages and knocks back nearby enemies","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Concussion","color":"gold","bold":true},{"text":" – Critical hits stun enemies for 3 seconds (10s cooldown)","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t3_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Parry","color":"gold","bold":true},{"text":" – Blocking just before a melee attack stuns the attacker for 5 seconds","color":"gray"}]
+
+# Ranger-specific perk descriptions
+execute if score @s ms.class matches 3 if score @s ms.t3_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Ricochet","color":"dark_aqua","bold":true},{"text":" – Arrows that hit walls deflect toward nearby hostile mobs","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t3_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Piercing Shot","color":"dark_aqua","bold":true},{"text":" – Arrows pass through enemies and continue flying","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t3_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Bleachscoped","color":"dark_aqua","bold":true},{"text":" – 1.5x damage on headshots","color":"gray"}]
+
+# Rogue-specific perk descriptions
+execute if score @s ms.class matches 2 if score @s ms.t3_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Kidney Shot","color":"dark_green","bold":true},{"text":" – Critical hits inflict weakness for 5 seconds","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t3_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Cheap Shot","color":"dark_green","bold":true},{"text":" – 20% increased bow/crossbow damage while crouched","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t3_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Rip and Tear","color":"dark_green","bold":true},{"text":" – Melee hits inflict bleed (1 damage per second for 5 seconds)","color":"gray"}]

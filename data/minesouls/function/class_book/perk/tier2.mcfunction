@@ -27,3 +27,13 @@ tellraw @s [{"text":"Tier 2 Perk ","color":"green"},{"score":{"name":"@s","objec
 execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Victory Rush","color":"gold","bold":true},{"text":" – Melee kills restore 4 HP (2 hearts)","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Second Wind","color":"gold","bold":true},{"text":" – Slowly restore health below 50% HP","color":"gray"}]
 execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Aura Farming","color":"gold","bold":true},{"text":" – Ranged/AoE damage reduced while threats are nearby","color":"gray"}]
+
+# Ranger-specific perk descriptions
+execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barbed Arrows","color":"dark_aqua","bold":true},{"text":" – arrows inflict bleed for 5 seconds","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Explosive Shot","color":"dark_aqua","bold":true},{"text":" – arrows trigger a small explosion on impact","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Venomous Arrows","color":"dark_aqua","bold":true},{"text":" – arrows inflict Slowness for 5 seconds","color":"gray"}]
+
+# Rogue-specific perk descriptions
+execute if score @s ms.class matches 2 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Leeching Strike","color":"dark_green","bold":true},{"text":" – Restores 1 HP on successful melee attack","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t2_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Dodge","color":"dark_green","bold":true},{"text":" – Crouching grants brief invulnerability (5s cooldown)","color":"gray"}]
+execute if score @s ms.class matches 2 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Serious Parkour","color":"dark_green","bold":true},{"text":" – Landing from height grants speed and jump boost","color":"gray"}]
