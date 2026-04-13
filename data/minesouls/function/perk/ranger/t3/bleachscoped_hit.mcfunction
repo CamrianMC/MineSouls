@@ -30,7 +30,7 @@ scoreboard players add #hs_ey ms.arrow_temp 150
 
 # If arrow Y >= head zone threshold → headshot! Apply 50% bonus damage (~3)
 execute if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run damage @e[tag=ms_hs_target,limit=1] 3 minecraft:arrow by @s
-execute if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 1 2
+execute if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 20 2
 execute if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp at @e[tag=ms_hs_target,limit=1] run particle minecraft:crit ~ ~2 ~ 0.3 0.3 0.3 0.2 15
 execute if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run tellraw @s {"text":"☠ Headshot!","color":"red","bold":true}
 

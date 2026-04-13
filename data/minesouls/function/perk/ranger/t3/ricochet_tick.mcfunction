@@ -9,5 +9,6 @@ execute as @e[type=#minesouls:arrow,tag=!ms_rico_arrow,tag=!ms_rico_fired] at @s
 # --- Phase 2: Process grounded arrows – attempt ricochet if hostile mob nearby ---
 execute as @e[type=#minesouls:arrow,tag=ms_rico_arrow,nbt={inGround:1b}] at @s run function minesouls:perk/ranger/t3/ricochet_fire
 
-# --- Phase 3: Remove tracking tag from all grounded rico arrows (processed or not) ---
+# --- Phase 3: Mark grounded rico arrows as fired so they are never processed again ---
+tag @e[type=#minesouls:arrow,tag=ms_rico_arrow,nbt={inGround:1b}] add ms_rico_fired
 tag @e[type=#minesouls:arrow,tag=ms_rico_arrow,nbt={inGround:1b}] remove ms_rico_arrow

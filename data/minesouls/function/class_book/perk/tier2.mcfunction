@@ -29,7 +29,7 @@ execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 2 run tell
 execute if score @s ms.class matches 1 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Aura Farming","color":"gold","bold":true},{"text":" – Ranged/AoE damage reduced while threats are nearby","color":"gray"}]
 
 # Ranger-specific perk descriptions
-execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Poison-Tipped Arrows","color":"dark_aqua","bold":true},{"text":" – arrows inflict Poison for 5 seconds","color":"gray"}]
+execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 1 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Barbed Arrows","color":"dark_aqua","bold":true},{"text":" – arrows inflict bleed for 5 seconds","color":"gray"}]
 execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 2 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Explosive Shot","color":"dark_aqua","bold":true},{"text":" – arrows trigger a small explosion on impact","color":"gray"}]
 execute if score @s ms.class matches 3 if score @s ms.t2_perk matches 3 run tellraw @s [{"text":"  → ","color":"gray"},{"text":"Venomous Arrows","color":"dark_aqua","bold":true},{"text":" – arrows inflict Slowness for 5 seconds","color":"gray"}]
 

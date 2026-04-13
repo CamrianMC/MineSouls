@@ -27,6 +27,6 @@
     }
   },
   "rewards": {
-    "function": "minesouls:perk/ranger/t2/poison_tipped_arrows_hit"
+    "function": "minesouls:perk/ranger/t2/barbed_arrows_hit"
   }
 }
