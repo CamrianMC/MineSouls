@@ -17,10 +17,8 @@ execute anchored eyes positioned ^ ^ ^4 run summon minecraft:marker ~ ~ ~ {Tags:
 
 # Damage and knock back all hostiles within 6 blocks of the player
 # that are ALSO within 5 blocks of the cone center marker (approximates a forward cone)
-execute as @e[type=#minesouls:hostile,distance=..6] at @s if entity @e[tag=ms_hurr_center,distance=..5] run damage @s 6 minecraft:wind_charge by @a[scores={ms.class=4,ms.t3_perk=1},sort=nearest,limit=1]
-
-# Apply knockback via brief wind charge effect on targets in the cone
-execute as @e[type=#minesouls:hostile,distance=..6] at @s if entity @e[tag=ms_hurr_center,distance=..5] run effect give @s minecraft:levitation 1 3 true
+# player_attack damage type naturally applies knockback away from the attacker
+execute as @e[type=#minesouls:hostile,distance=..6] at @s if entity @e[tag=ms_hurr_center,distance=..5] run damage @s 6 minecraft:player_attack by @a[scores={ms.class=4,ms.t3_perk=1},sort=nearest,limit=1]
 
 # Cleanup cone marker
 kill @e[tag=ms_hurr_center]
