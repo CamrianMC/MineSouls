@@ -133,6 +133,24 @@ scoreboard objectives add ms.goyim_timer dummy
 scoreboard objectives add ms.goyim_active dummy
 scoreboard objectives add ms.spell_temp dummy
 
+# Mage Tier 2 perk scoreboards
+scoreboard objectives add ms.frosty_timer dummy
+scoreboard objectives add ms.frosty_active dummy
+scoreboard objectives add ms.frosty_fire dummy
+
+# Mage Tier 3 perk scoreboards (Druid wolf tracking)
+scoreboard objectives add ms.druid_timer dummy
+scoreboard objectives add ms.druid_active dummy
+
+# Mage Tier 4 perk scoreboards (Zeus raycast + Bodyguard golem tracking)
+scoreboard objectives add ms.zeus_steps dummy
+scoreboard objectives add ms.bodyguard_timer dummy
+scoreboard objectives add ms.bodyguard_active dummy
+
+# Mage Tier 5 perk scoreboards (Acheron wither tracking)
+scoreboard objectives add ms.acheron_timer dummy
+scoreboard objectives add ms.acheron_active dummy
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1
