@@ -6,7 +6,7 @@
 tag @e[type=#minesouls:hostile,distance=..1.5,sort=nearest,limit=1] add ms_fb_target
 
 # Deal fire damage (attributed to the nearest Mage with Fireball perk for kill credit)
-damage @e[tag=ms_fb_target] 4 minecraft:on_fire by @a[scores={ms.class=4,ms.t2_perk=1},sort=nearest,limit=1]
+execute as @e[tag=ms_fb_target,limit=1] run data modify entity @s Fire set value 60
 
 # Set target on fire for 3 seconds (60 ticks)
 data modify entity @e[tag=ms_fb_target,limit=1] Fire set value 60

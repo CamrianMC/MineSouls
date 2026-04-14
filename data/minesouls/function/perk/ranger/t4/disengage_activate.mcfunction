@@ -3,7 +3,7 @@
 # Consumes 2 hunger points and starts a 20-tick (1 second) cooldown.
 
 # Cancel fall distance so landing doesn't deal damage
-data modify entity @s FallDistance set value 0.0f
+data modify entity @s fall_distance set value 0
 
 # Cancel downward velocity and launch backwards + slightly up
 # ^ ^ ^ is relative to facing: ^0 = right, ^0.4 = up, ^-1.5 = backward
