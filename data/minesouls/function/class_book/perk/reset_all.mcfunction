@@ -93,16 +93,31 @@ effect clear @s minecraft:luck
 effect clear @s minecraft:jump_boost
 effect clear @s minecraft:night_vision
 effect clear @s minecraft:invisibility
+effect clear @s minecraft:slow_falling
 
 # Notify the player
 tellraw @s {"text":"Your class and perks have been fully reset.","color":"gold"}
 
-# Clear Mage perk state (mana, goyim, spellbooks)
+# Clear Mage perk state (mana, goyim, frosty, druid, spellbooks)
 scoreboard players set @s ms.mana 0
 scoreboard players set @s ms.mana_max 0
 scoreboard players set @s ms.goyim_active 0
 scoreboard players set @s ms.goyim_timer 0
+scoreboard players set @s ms.frosty_active 0
+scoreboard players set @s ms.frosty_timer 0
+scoreboard players set @s ms.druid_active 0
+scoreboard players set @s ms.druid_timer 0
+scoreboard players set @s ms.bodyguard_active 0
+scoreboard players set @s ms.bodyguard_timer 0
+scoreboard players set @s ms.acheron_active 0
+scoreboard players set @s ms.acheron_timer 0
 scoreboard players set @s ms.use_spell 0
 execute at @s run kill @e[type=minecraft:villager,tag=ms_goyim]
+execute at @s run kill @e[type=minecraft:snow_golem,tag=ms_frosty]
+execute at @s run kill @e[type=minecraft:wolf,tag=ms_druid_wolf]
+execute at @s run kill @e[type=minecraft:iron_golem,tag=ms_bodyguard]
+execute at @s run kill @e[type=minecraft:wither,tag=ms_acheron]
 kill @e[type=marker,tag=ms_sb_rider]
+kill @e[type=marker,tag=ms_fb_rider]
+kill @e[type=marker,tag=ms_frosty_rider]
 clear @s minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{minesouls:{}}]

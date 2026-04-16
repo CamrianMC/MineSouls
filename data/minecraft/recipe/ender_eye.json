@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blaze_powder",
+    "minecraft:ender_pearl"
+  ],
+  "result": {
+    "id": "minecraft:dirt"
+  }
+}

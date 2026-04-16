@@ -108,9 +108,6 @@ scoreboard objectives add ms.si_temp dummy
 scoreboard objectives add ms.si_x dummy
 scoreboard objectives add ms.si_y dummy
 scoreboard objectives add ms.si_z dummy
-scoreboard objectives add ms.si_px dummy
-scoreboard objectives add ms.si_py dummy
-scoreboard objectives add ms.si_pz dummy
 scoreboard objectives add ms.si_dist dummy
 
 # Ranger Tier 4 perk scoreboards (Disengage fall tracking + cooldown)
@@ -132,6 +129,24 @@ scoreboard objectives add ms.use_spell minecraft.used:minecraft.warped_fungus_on
 scoreboard objectives add ms.goyim_timer dummy
 scoreboard objectives add ms.goyim_active dummy
 scoreboard objectives add ms.spell_temp dummy
+
+# Mage Tier 2 perk scoreboards
+scoreboard objectives add ms.frosty_timer dummy
+scoreboard objectives add ms.frosty_active dummy
+scoreboard objectives add ms.frosty_fire dummy
+
+# Mage Tier 3 perk scoreboards (Druid wolf tracking)
+scoreboard objectives add ms.druid_timer dummy
+scoreboard objectives add ms.druid_active dummy
+
+# Mage Tier 4 perk scoreboards (Zeus raycast + Bodyguard golem tracking)
+scoreboard objectives add ms.zeus_steps dummy
+scoreboard objectives add ms.bodyguard_timer dummy
+scoreboard objectives add ms.bodyguard_active dummy
+
+# Mage Tier 5 perk scoreboards (Acheron wither tracking)
+scoreboard objectives add ms.acheron_timer dummy
+scoreboard objectives add ms.acheron_active dummy
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
