@@ -108,9 +108,6 @@ scoreboard objectives add ms.si_temp dummy
 scoreboard objectives add ms.si_x dummy
 scoreboard objectives add ms.si_y dummy
 scoreboard objectives add ms.si_z dummy
-scoreboard objectives add ms.si_px dummy
-scoreboard objectives add ms.si_py dummy
-scoreboard objectives add ms.si_pz dummy
 scoreboard objectives add ms.si_dist dummy
 
 # Ranger Tier 4 perk scoreboards (Disengage fall tracking + cooldown)
