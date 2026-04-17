@@ -12,3 +12,6 @@ playsound minecraft:entity.firework_rocket.blast player @s ~ ~ ~ 1 2
 
 # Begin recursive raycast
 execute positioned ^ ^ ^0.5 run function minesouls:perk/ranger/t5/sniper_elite_raycast
+
+# Cleanup: remove pierced tags from any entities hit during this raycast (Piercing Shot)
+tag @e[tag=ms_se_pierced] remove ms_se_pierced

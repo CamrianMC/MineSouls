@@ -5,6 +5,11 @@
 # --- Phase 1: Tag new arrows from Ranger T5P1 players ---
 execute as @e[type=#minesouls:arrow,tag=!ms_se_arrow,tag=!ms_rico_fired,tag=!ms_doom_spray] at @s on origin if entity @s[scores={ms.class=3,ms.t5_perk=1}] run tag @e[type=#minesouls:arrow,tag=!ms_se_arrow,tag=!ms_rico_fired,tag=!ms_doom_spray,distance=..0.01,limit=1] add ms_se_arrow
 
+# --- Phase 1.5: Save weapon data from arrow for enchantment bonuses ---
+# The arrow entity stores the weapon (bow/crossbow) that fired it; copy it
+# to storage so sniper_elite_hit can read Power, Flame, Punch enchantments.
+execute as @e[type=#minesouls:arrow,tag=ms_se_arrow,limit=1] run data modify storage minesouls:se_bow Weapon set from entity @s weapon
+
 # --- Phase 2: Tag the shooting player ---
 execute as @e[type=#minesouls:arrow,tag=ms_se_arrow] on origin run tag @s add ms_se_shooter
 
