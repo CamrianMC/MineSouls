@@ -32,12 +32,11 @@ scoreboard players set #se_flame ms.arrow_temp 0
 execute store result score #se_flame ms.arrow_temp run data get storage minesouls:se_bow Weapon.components."minecraft:enchantments".levels."minecraft:flame"
 execute if score #se_flame ms.arrow_temp matches 1.. run data merge entity @e[tag=ms_se_target,limit=1] {Fire:100s}
 
-# Punch: apply extra knockback to the target via wind charge explosion at their feet
-# Punch I = 1 wind charge, Punch II = 2 wind charges of knockback
+# Punch: apply extra knockback to the target (1 bonus damage per level with knockback)
 scoreboard players set #se_punch ms.arrow_temp 0
 execute store result score #se_punch ms.arrow_temp run data get storage minesouls:se_bow Weapon.components."minecraft:enchantments".levels."minecraft:punch"
-execute if score #se_punch ms.arrow_temp matches 1.. at @e[tag=ms_se_target,limit=1] run damage @e[tag=ms_se_target,limit=1] 0 minecraft:explosion by @s
-execute if score #se_punch ms.arrow_temp matches 2.. at @e[tag=ms_se_target,limit=1] run damage @e[tag=ms_se_target,limit=1] 0 minecraft:explosion by @s
+execute if score #se_punch ms.arrow_temp matches 1.. run damage @e[tag=ms_se_target,limit=1] 1 minecraft:arrow by @s
+execute if score #se_punch ms.arrow_temp matches 2.. run damage @e[tag=ms_se_target,limit=1] 1 minecraft:arrow by @s
 
 # ──────────────────────────────────────────────────────
 # PERK SYNERGIES
