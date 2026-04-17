@@ -20,13 +20,13 @@ damage @e[tag=ms_doom_target,limit=1] 24 minecraft:arrow by @s
 # ENCHANTMENT BONUSES  (read from stored weapon data)
 # ──────────────────────────────────────────────────────
 # Power: 25% × (level + 1) bonus per arrow, summed over 4 spray arrows
-#   Lv1 +12, Lv2 +20, Lv3 +24, Lv4 +32, Lv5+ +36
+#   Lv1 +12, Lv2 +18, Lv3 +24, Lv4 +30, Lv5+ +36
 scoreboard players set #doom_power ms.arrow_temp 0
 execute store result score #doom_power ms.arrow_temp run data get storage minesouls:doom_bow Weapon.components."minecraft:enchantments".levels."minecraft:power"
 execute if score #doom_power ms.arrow_temp matches 1 run damage @e[tag=ms_doom_target,limit=1] 12 minecraft:arrow by @s
-execute if score #doom_power ms.arrow_temp matches 2 run damage @e[tag=ms_doom_target,limit=1] 20 minecraft:arrow by @s
+execute if score #doom_power ms.arrow_temp matches 2 run damage @e[tag=ms_doom_target,limit=1] 18 minecraft:arrow by @s
 execute if score #doom_power ms.arrow_temp matches 3 run damage @e[tag=ms_doom_target,limit=1] 24 minecraft:arrow by @s
-execute if score #doom_power ms.arrow_temp matches 4 run damage @e[tag=ms_doom_target,limit=1] 32 minecraft:arrow by @s
+execute if score #doom_power ms.arrow_temp matches 4 run damage @e[tag=ms_doom_target,limit=1] 30 minecraft:arrow by @s
 execute if score #doom_power ms.arrow_temp matches 5.. run damage @e[tag=ms_doom_target,limit=1] 36 minecraft:arrow by @s
 
 # Flame: set target on fire (100 ticks = 5 seconds)
@@ -74,6 +74,7 @@ execute if score @s ms.t3_perk matches 2 run function minesouls:perk/ranger/t5/d
 execute if score @s ms.t3_perk matches 3 run summon minecraft:marker ~ ~ ~ {Tags:["ms_doom_hs_pos"]}
 execute if score @s ms.t3_perk matches 3 store result score #hs_ay ms.arrow_temp run data get entity @e[tag=ms_doom_hs_pos,limit=1] Pos[1] 100
 execute if score @s ms.t3_perk matches 3 store result score #hs_ey ms.arrow_temp run data get entity @e[tag=ms_doom_target,limit=1] Pos[1] 100
+# Head zone threshold: feet Y + 1.5 blocks (150 at scale ×100)
 execute if score @s ms.t3_perk matches 3 run scoreboard players add #hs_ey ms.arrow_temp 150
 execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run damage @e[tag=ms_doom_target,limit=1] 3 minecraft:arrow by @s
 execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 20 2
