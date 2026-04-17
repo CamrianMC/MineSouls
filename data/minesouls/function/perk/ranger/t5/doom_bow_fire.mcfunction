@@ -49,6 +49,12 @@ execute store result entity @e[tag=ms_doom_bow_new,limit=1] Motion[2] double 0.0
 # Set arrow owner to this player so doom_tick spray detection works via 'on origin'
 data modify entity @e[tag=ms_doom_bow_new,limit=1] Owner set from entity @s UUID
 
+# Copy bow item to the arrow's weapon field so enchantments (Power, Flame, Punch) apply on hit
+# Strip the container Slot field to produce a clean item stack for the weapon field
+data modify storage minesouls:doom_bow Weapon set from storage minesouls:doom_bow Item
+data remove storage minesouls:doom_bow Weapon.Slot
+data modify entity @e[tag=ms_doom_bow_new,limit=1] weapon set from storage minesouls:doom_bow Weapon
+
 # Cleanup markers and temp tag
 kill @e[tag=ms_doom_bow_origin]
 kill @e[tag=ms_doom_bow_dir]
