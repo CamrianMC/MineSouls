@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "bow_drawn": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:bow"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:perk/ranger/t5/doom_bow_fire"
+  }
+}
