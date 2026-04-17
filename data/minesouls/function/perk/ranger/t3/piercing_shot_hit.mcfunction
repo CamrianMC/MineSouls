@@ -5,8 +5,11 @@
 # Revoke advancement so it can trigger again on the next hit
 advancement revoke @s only minesouls:perk/ranger/t3/piercing_shot
 
-# Tag the hit entity
+#tellraw @s {"text":"Piercing Shot!","color":"green","bold":true}
+
+# Tag the hit entity (HurtTime:10s for hurt, DeathTime for freshly killed)
 tag @e[type=!minecraft:player,nbt={HurtTime:10s},sort=nearest,distance=..64,limit=1] add ms_pierce_target
+execute unless entity @e[tag=ms_pierce_target,limit=1] run tag @e[type=!minecraft:player,nbt={DeathTime:1s},sort=nearest,distance=..64,limit=1] add ms_pierce_target
 
 # Bail out if no target found
 execute unless entity @e[tag=ms_pierce_target,limit=1] run return 0
@@ -31,10 +34,11 @@ scoreboard players operation #ps_hy ms.arrow_temp -= #ps_py ms.arrow_temp
 scoreboard players operation #ps_hz ms.arrow_temp -= #ps_pz ms.arrow_temp
 
 # Spawn new arrow 1.5 blocks past the target (away from the player)
-# At the target's position, "facing entity @s eyes" rotates toward the player
-# (@s is still the player in this context); ^ ^ ^-1.5 goes the opposite way,
-# i.e. 1.5 blocks continuing the arrow's original flight path.
-execute at @e[tag=ms_pierce_target,limit=1] facing entity @s eyes run summon minecraft:arrow ^ ^ ^-1.5 {Tags:["ms_pierce_new","ms_rico_fired"],pickup:0}
+# Start from the target's centre mass (~1 block above feet) so the pitch
+# toward the player's eyes stays nearly flat and the arrow doesn't end up
+# underground.  ^ ^ ^-1.5 goes opposite to the facing direction, i.e.
+# 1.5 blocks continuing the arrow's original flight path.
+execute at @e[tag=ms_pierce_target,limit=1] positioned ~ ~1 ~ facing entity @s eyes run summon minecraft:arrow ^ ^ ^-0.5 {Tags:["ms_pierce_new","ms_rico_fired"],pickup:0}
 
 # Set Motion on the new arrow: direction * 0.0002 = ~2.0 blocks/tick speed
 execute store result entity @e[tag=ms_pierce_new,limit=1] Motion[0] double 0.0002 run scoreboard players get #ps_hx ms.arrow_temp
