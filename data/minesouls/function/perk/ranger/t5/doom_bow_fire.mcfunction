@@ -12,13 +12,13 @@ execute unless score @s ms.t5_perk matches 2 run return 0
 
 # --- Determine which hand holds the bow ---
 execute if items entity @s weapon.mainhand minecraft:bow run tag @s add ms_doom_bow_main
-execute unless tag @s ms_doom_bow_main if items entity @s weapon.offhand minecraft:bow run tag @s add ms_doom_bow_off
-execute unless tag @s ms_doom_bow_main unless tag @s ms_doom_bow_off run return 0
+execute unless entity @s[tag=ms_doom_bow_main] if items entity @s weapon.offhand minecraft:bow run tag @s add ms_doom_bow_off
+execute unless entity @s[tag=ms_doom_bow_main] unless entity @s[tag=ms_doom_bow_off] run return 0
 
 # --- Save the bow to storage via barrel at y=319 ---
 setblock ~ 319 ~ minecraft:barrel
-execute if tag @s ms_doom_bow_main run item replace block ~ 319 ~ container.0 from entity @s weapon.mainhand
-execute if tag @s ms_doom_bow_off run item replace block ~ 319 ~ container.0 from entity @s weapon.offhand
+execute if entity @s[tag=ms_doom_bow_main] run item replace block ~ 319 ~ container.0 from entity @s weapon.mainhand
+execute if entity @s[tag=ms_doom_bow_off] run item replace block ~ 319 ~ container.0 from entity @s weapon.offhand
 data modify storage minesouls:doom_bow Item set from block ~ 319 ~ Items[0]
 setblock ~ 319 ~ minecraft:air
 
@@ -57,8 +57,8 @@ tag @e[tag=ms_doom_bow_new] remove ms_doom_bow_new
 # --- Restore the bow to cancel the draw ---
 setblock ~ 319 ~ minecraft:barrel
 data modify block ~ 319 ~ Items append from storage minesouls:doom_bow Item
-execute if tag @s ms_doom_bow_main run item replace entity @s weapon.mainhand from block ~ 319 ~ container.0
-execute if tag @s ms_doom_bow_off run item replace entity @s weapon.offhand from block ~ 319 ~ container.0
+execute if entity @s[tag=ms_doom_bow_main] run item replace entity @s weapon.mainhand from block ~ 319 ~ container.0
+execute if entity @s[tag=ms_doom_bow_off] run item replace entity @s weapon.offhand from block ~ 319 ~ container.0
 setblock ~ 319 ~ minecraft:air
 
 # Cleanup hand tags
