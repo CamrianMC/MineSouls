@@ -121,6 +121,9 @@ scoreboard objectives add ms.se_steps dummy
 # Ranger Tier 5 perk scoreboards (Doom close-range raycast steps)
 scoreboard objectives add ms.doom_steps dummy
 
+# Ranger Tier 5 perk storage (Doom instant bow fire – preserves bow item data)
+data merge storage minesouls:doom_bow {}
+
 # Ranger Tier 5 perk scoreboards (Beast Mastery wolf count + heal temp)
 scoreboard objectives add ms.bm_count dummy
 scoreboard objectives add ms.bm_temp dummy
