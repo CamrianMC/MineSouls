@@ -8,6 +8,14 @@ execute as @e[type=#minesouls:arrow,tag=!ms_doom_arrow,tag=!ms_doom_spray,tag=!m
 # --- Phase 2: Spawn spray from the origin player's position ---
 execute as @e[type=#minesouls:arrow,tag=ms_doom_arrow] on origin at @s run function minesouls:perk/ranger/t5/doom_fire
 
+# --- Phase 2.5: Close-range bonus damage ---
+# MC Java ignores damage from simultaneous arrow hits, so if a mob is within
+# 5 blocks of the shooter's line of sight, deal the damage the 4 spray arrows
+# would have inflicted (4 × 6 = 24).
+execute as @e[type=#minesouls:arrow,tag=ms_doom_arrow] on origin run tag @s add ms_doom_shooter
+execute as @a[tag=ms_doom_shooter] at @s anchored eyes run function minesouls:perk/ranger/t5/doom_close_fire
+tag @a[tag=ms_doom_shooter] remove ms_doom_shooter
+
 # --- Phase 3: Mark processed arrows to prevent retrigger ---
 tag @e[type=#minesouls:arrow,tag=ms_doom_arrow] add ms_doom_spray
 tag @e[type=#minesouls:arrow,tag=ms_doom_arrow] remove ms_doom_arrow
