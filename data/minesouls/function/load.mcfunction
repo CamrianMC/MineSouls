@@ -118,6 +118,9 @@ scoreboard objectives add ms.dis_cd dummy
 # Ranger Tier 5 perk scoreboards (Sniper Elite raycast steps)
 scoreboard objectives add ms.se_steps dummy
 
+# Ranger Tier 5 perk storage (Sniper Elite – preserves bow/crossbow item data for enchantments)
+data merge storage minesouls:se_bow {}
+
 # Ranger Tier 5 perk scoreboards (Doom close-range raycast steps)
 scoreboard objectives add ms.doom_steps dummy
 
