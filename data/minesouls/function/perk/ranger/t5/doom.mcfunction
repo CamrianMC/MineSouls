@@ -7,3 +7,6 @@ execute if items entity @s weapon.mainhand minecraft:crossbow run item modify en
 
 # Apply Quick Charge 5 to crossbow in off hand
 execute if items entity @s weapon.offhand minecraft:crossbow run item modify entity @s weapon.offhand minesouls:doom_quick_charge
+
+# Tick down bow fire cooldown (semi-auto)
+execute if score @s ms.doom_cd matches 1.. run scoreboard players remove @s ms.doom_cd 1

@@ -18,4 +18,4 @@ tag @e[tag=ms_bm_new_wolf] remove ms_bm_new_wolf
 
 # Feedback
 playsound minecraft:entity.wolf.growl player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"A loyal wolf joins your side!","color":"dark_aqua"}]
+#tellraw @s [{"text":"A loyal wolf joins your side!","color":"dark_aqua"}]

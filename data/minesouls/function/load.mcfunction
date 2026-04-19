@@ -124,6 +124,9 @@ data merge storage minesouls:se_bow {}
 # Ranger Tier 5 perk scoreboards (Doom close-range raycast steps)
 scoreboard objectives add ms.doom_steps dummy
 
+# Ranger Tier 5 perk scoreboards (Doom bow fire cooldown)
+scoreboard objectives add ms.doom_cd dummy
+
 # Ranger Tier 5 perk storage (Doom instant bow fire – preserves bow item data)
 data merge storage minesouls:doom_bow {}
 

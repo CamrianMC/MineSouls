@@ -17,7 +17,7 @@ execute as @e[type=#minesouls:arrow,tag=ms_se_arrow] on origin run tag @s add ms
 kill @e[type=#minesouls:arrow,tag=ms_se_arrow]
 
 # --- Phase 4: Raycast from each tagged shooter's eyes ---
-execute as @a[tag=ms_se_shooter] at @s anchored eyes run function minesouls:perk/ranger/t5/sniper_elite_fire
+execute as @a[tag=ms_se_shooter] at @s anchored eyes positioned ^ ^ ^ run function minesouls:perk/ranger/t5/sniper_elite_fire
 
 # --- Phase 5: Cleanup ---
 tag @a[tag=ms_se_shooter] remove ms_se_shooter

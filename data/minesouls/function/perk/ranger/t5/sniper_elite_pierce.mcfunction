@@ -4,7 +4,7 @@
 # then the raycast continues through it to hit additional targets.
 
 # Tag the nearest hittable entity and mark as pierced so it won't be hit again
-tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,tag=!ms_se_pierced,distance=..0.7,sort=nearest,limit=1] add ms_se_target
+tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,tag=!ms_se_pierced,distance=..2,sort=nearest,limit=1] add ms_se_target
 
 # Bail if no target
 execute unless entity @e[tag=ms_se_target,limit=1] run return 0

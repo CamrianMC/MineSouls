@@ -10,6 +10,9 @@ advancement revoke @s only minesouls:perk/ranger/t5/doom_bow_draw
 execute unless score @s ms.class matches 3 run return 0
 execute unless score @s ms.t5_perk matches 2 run return 0
 
+# Semi-auto cooldown: bail if still on cooldown
+execute if score @s ms.doom_cd matches 1.. run return 0
+
 # --- Determine which hand holds the bow ---
 execute if items entity @s weapon.mainhand minecraft:bow run tag @s add ms_doom_bow_main
 execute unless entity @s[tag=ms_doom_bow_main] if items entity @s weapon.offhand minecraft:bow run tag @s add ms_doom_bow_off
@@ -24,7 +27,7 @@ setblock ~ 319 ~ minecraft:air
 
 # --- Summon a fully-charged arrow using the marker direction trick ---
 # Origin marker at eye position
-execute anchored eyes run summon minecraft:marker ~ ~ ~ {Tags:["ms_doom_bow_origin"]}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:marker ~ ~ ~ {Tags:["ms_doom_bow_origin"]}
 execute store result score #dbow_ox ms.arrow_temp run data get entity @e[tag=ms_doom_bow_origin,limit=1] Pos[0] 10000
 execute store result score #dbow_oy ms.arrow_temp run data get entity @e[tag=ms_doom_bow_origin,limit=1] Pos[1] 10000
 execute store result score #dbow_oz ms.arrow_temp run data get entity @e[tag=ms_doom_bow_origin,limit=1] Pos[2] 10000
@@ -41,7 +44,7 @@ scoreboard players operation #dbow_dy ms.arrow_temp -= #dbow_oy ms.arrow_temp
 scoreboard players operation #dbow_dz ms.arrow_temp -= #dbow_oz ms.arrow_temp
 
 # Summon arrow at eye position (speed 3.0 = fully-charged bow, no pickup)
-execute anchored eyes run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_bow_new"],pickup:0}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_bow_new"],pickup:0}
 execute store result entity @e[tag=ms_doom_bow_new,limit=1] Motion[0] double 0.0003 run scoreboard players get #dbow_dx ms.arrow_temp
 execute store result entity @e[tag=ms_doom_bow_new,limit=1] Motion[1] double 0.0003 run scoreboard players get #dbow_dy ms.arrow_temp
 execute store result entity @e[tag=ms_doom_bow_new,limit=1] Motion[2] double 0.0003 run scoreboard players get #dbow_dz ms.arrow_temp
@@ -74,3 +77,6 @@ tag @s remove ms_doom_bow_off
 # --- Feedback ---
 playsound minecraft:entity.arrow.shoot player @s ~ ~ ~ 1 1.5
 particle minecraft:flame ~ ~1.5 ~ 0.3 0.3 0.3 0.05 5
+
+# Set semi-auto cooldown (20 ticks = 1 second)
+scoreboard players set @s ms.doom_cd 10

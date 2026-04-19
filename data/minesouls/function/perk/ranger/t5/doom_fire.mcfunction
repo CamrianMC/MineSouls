@@ -5,7 +5,7 @@
 # (for enchantment application on hit) copied from the main doom arrow.
 
 # --- Store eye position via origin marker ---
-execute anchored eyes run summon minecraft:marker ~ ~ ~ {Tags:["ms_doom_origin"]}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:marker ~ ~ ~ {Tags:["ms_doom_origin"]}
 execute store result score #doom_ox ms.arrow_temp run data get entity @e[tag=ms_doom_origin,limit=1] Pos[0] 10000
 execute store result score #doom_oy ms.arrow_temp run data get entity @e[tag=ms_doom_origin,limit=1] Pos[1] 10000
 execute store result score #doom_oz ms.arrow_temp run data get entity @e[tag=ms_doom_origin,limit=1] Pos[2] 10000
@@ -18,7 +18,7 @@ execute store result score #doom_dz ms.arrow_temp run data get entity @e[tag=ms_
 scoreboard players operation #doom_dx ms.arrow_temp -= #doom_ox ms.arrow_temp
 scoreboard players operation #doom_dy ms.arrow_temp -= #doom_oy ms.arrow_temp
 scoreboard players operation #doom_dz ms.arrow_temp -= #doom_oz ms.arrow_temp
-execute anchored eyes run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[0] double 0.0002 run scoreboard players get #doom_dx ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[1] double 0.0002 run scoreboard players get #doom_dy ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[2] double 0.0002 run scoreboard players get #doom_dz ms.arrow_temp
@@ -35,7 +35,7 @@ execute store result score #doom_dz ms.arrow_temp run data get entity @e[tag=ms_
 scoreboard players operation #doom_dx ms.arrow_temp -= #doom_ox ms.arrow_temp
 scoreboard players operation #doom_dy ms.arrow_temp -= #doom_oy ms.arrow_temp
 scoreboard players operation #doom_dz ms.arrow_temp -= #doom_oz ms.arrow_temp
-execute anchored eyes run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[0] double 0.0002 run scoreboard players get #doom_dx ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[1] double 0.0002 run scoreboard players get #doom_dy ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[2] double 0.0002 run scoreboard players get #doom_dz ms.arrow_temp
@@ -52,7 +52,7 @@ execute store result score #doom_dz ms.arrow_temp run data get entity @e[tag=ms_
 scoreboard players operation #doom_dx ms.arrow_temp -= #doom_ox ms.arrow_temp
 scoreboard players operation #doom_dy ms.arrow_temp -= #doom_oy ms.arrow_temp
 scoreboard players operation #doom_dz ms.arrow_temp -= #doom_oz ms.arrow_temp
-execute anchored eyes run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[0] double 0.0002 run scoreboard players get #doom_dx ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[1] double 0.0002 run scoreboard players get #doom_dy ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[2] double 0.0002 run scoreboard players get #doom_dz ms.arrow_temp
@@ -69,7 +69,7 @@ execute store result score #doom_dz ms.arrow_temp run data get entity @e[tag=ms_
 scoreboard players operation #doom_dx ms.arrow_temp -= #doom_ox ms.arrow_temp
 scoreboard players operation #doom_dy ms.arrow_temp -= #doom_oy ms.arrow_temp
 scoreboard players operation #doom_dz ms.arrow_temp -= #doom_oz ms.arrow_temp
-execute anchored eyes run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:arrow ~ ~ ~ {Tags:["ms_doom_n","ms_doom_spray"],pickup:0}
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[0] double 0.0002 run scoreboard players get #doom_dx ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[1] double 0.0002 run scoreboard players get #doom_dy ms.arrow_temp
 execute store result entity @e[tag=ms_doom_n,limit=1] Motion[2] double 0.0002 run scoreboard players get #doom_dz ms.arrow_temp
