@@ -6,7 +6,7 @@
 # Bonus = 4 extra arrows × 6 damage each = 24 base damage.
 
 # Tag the nearest hittable entity
-tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,distance=..0.7,sort=nearest,limit=1] add ms_doom_target
+tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,distance=..3,sort=nearest,limit=1] add ms_doom_target
 
 # Bail if no target (safety check)
 execute unless entity @e[tag=ms_doom_target,limit=1] run return 0

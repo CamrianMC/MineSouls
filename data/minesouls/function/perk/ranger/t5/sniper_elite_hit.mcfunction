@@ -4,7 +4,7 @@
 # bonuses from the bow/crossbow and triggers other Ranger perk effects.
 
 # Tag the nearest hittable entity
-tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,distance=..2,sort=nearest,limit=1] add ms_se_target
+tag @e[type=!minecraft:player,type=!minecraft:item,type=!minecraft:experience_orb,type=!minecraft:marker,type=!#minesouls:arrow,type=!minecraft:area_effect_cloud,type=!minecraft:text_display,type=!minecraft:block_display,type=!minecraft:item_display,type=!minecraft:armor_stand,distance=..3,sort=nearest,limit=1] add ms_se_target
 
 # Bail if no target (shouldn't happen but safety check)
 execute unless entity @e[tag=ms_se_target,limit=1] run return 0

@@ -133,6 +133,9 @@ data merge storage minesouls:doom_bow {}
 # Ranger Tier 5 perk scoreboards (Beast Mastery wolf count + heal temp)
 scoreboard objectives add ms.bm_count dummy
 scoreboard objectives add ms.bm_temp dummy
+scoreboard objectives add ms.bm_pdmg minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add ms.bm_pprev dummy
+scoreboard objectives add ms.bm_mcd dummy
 
 # Mage perk scoreboards
 scoreboard objectives add ms.mana dummy
@@ -170,6 +173,9 @@ scoreboard players set #100 ms.const 100
 # Reset all players' class and perk selections
 scoreboard objectives add ms.classperk_reset trigger
 scoreboard objectives add ms.class_wipe trigger
+
+# Show build info trigger
+scoreboard objectives add ms.class_info trigger
 
 # Shield detection
 #scoreboard objectives add shieldBlock minecraft.custom:minecraft.damage_blocked_by_shield

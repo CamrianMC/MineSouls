@@ -79,4 +79,4 @@ playsound minecraft:entity.arrow.shoot player @s ~ ~ ~ 1 1.5
 particle minecraft:flame ~ ~1.5 ~ 0.3 0.3 0.3 0.05 5
 
 # Set semi-auto cooldown (20 ticks = 1 second)
-scoreboard players set @s ms.doom_cd 10
+scoreboard players set @s ms.doom_cd 5

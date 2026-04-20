@@ -67,6 +67,12 @@ function minesouls:perk/ranger/t5/sniper_elite_tick
 # Ranger Tier 5 perk: Doom arrow spray processing (global tick)
 function minesouls:perk/ranger/t5/doom_tick
 
+# Beast Mastery: if owner dealt damage this tick, set melee cooldown to 3 ticks
+execute as @a[scores={ms.class=3,ms.t5_perk=3}] unless score @s ms.bm_pdmg = @s ms.bm_pprev run scoreboard players set @s ms.bm_mcd 3
+execute as @a[scores={ms.class=3,ms.t5_perk=3}] run scoreboard players operation @s ms.bm_pprev = @s ms.bm_pdmg
+# Beast Mastery: decrement melee cooldown
+execute as @a[scores={ms.class=3,ms.t5_perk=3,ms.bm_mcd=1..}] run scoreboard players remove @s ms.bm_mcd 1
+
 # Beast Mastery: wolf damage detection and owner healing (global tick)
 execute as @e[type=minecraft:wolf,tag=ms_bm_wolf] at @s run function minesouls:perk/ranger/t5/beast_mastery_wolf_tick
 
