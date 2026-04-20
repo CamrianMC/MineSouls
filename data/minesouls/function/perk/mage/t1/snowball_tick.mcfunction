@@ -2,6 +2,13 @@
 # Detects when a snowball despawns (hit something) by checking for orphaned
 # rider markers that lost their vehicle.
 
+# Step 0: Sync each rider marker's position to its snowball vehicle.
+# The marker's Pos only updates during entity ticking (positionRider), but this
+# function runs in the function phase (before entity ticking). Without this sync
+# the marker lags ~1 tick behind the snowball, putting it ~2 blocks from the
+# actual impact point — too far for the damage selector to reach the target.
+execute as @e[type=marker,tag=ms_sb_rider] on vehicle at @s run tp @s ~ ~ ~
+
 # Step 1: Mark all rider markers for hit checking
 tag @e[type=marker,tag=ms_sb_rider] add ms_sb_check
 

@@ -12,7 +12,7 @@ scoreboard players remove @s ms.mana 20
 # --- Compute look direction via marker direction trick ---
 
 # Store eye position via origin marker
-execute anchored eyes run summon minecraft:marker ~ ~ ~ {Tags:["ms_sb_origin"]}
+execute anchored eyes positioned ^ ^ ^0 run summon minecraft:marker ~ ~ ~ {Tags:["ms_sb_origin"]}
 execute store result score #sb_ox ms.spell_temp run data get entity @e[tag=ms_sb_origin,limit=1] Pos[0] 10000
 execute store result score #sb_oy ms.spell_temp run data get entity @e[tag=ms_sb_origin,limit=1] Pos[1] 10000
 execute store result score #sb_oz ms.spell_temp run data get entity @e[tag=ms_sb_origin,limit=1] Pos[2] 10000
@@ -29,7 +29,7 @@ scoreboard players operation #sb_dy ms.spell_temp -= #sb_oy ms.spell_temp
 scoreboard players operation #sb_dz ms.spell_temp -= #sb_oz ms.spell_temp
 
 # Summon snowball 1.5 blocks ahead with marker passenger for hit detection
-execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:snowball ~ ~ ~ {Tags:["ms_spell_snowball","ms_sb_new"],Passengers:[{id:"minecraft:marker",Tags:["ms_sb_rider"]}]}
+execute anchored eyes positioned ^ ^ ^ run summon minecraft:snowball ~ ~ ~ {Tags:["ms_spell_snowball","ms_sb_new"],Passengers:[{id:"minecraft:marker",Tags:["ms_sb_rider"]}]}
 
 # Set Motion on the snowball (scale 0.0002: direction * 10000 * 0.0002 = ~2.0 blocks/tick speed)
 execute store result entity @e[tag=ms_sb_new,limit=1] Motion[0] double 0.0002 run scoreboard players get #sb_dx ms.spell_temp

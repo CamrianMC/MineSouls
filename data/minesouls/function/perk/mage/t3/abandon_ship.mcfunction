@@ -10,7 +10,7 @@ execute unless score @s ms.mana matches 300.. run return 0
 scoreboard players remove @s ms.mana 300
 
 # Apply Jump Boost V (amplifier 4) for 15 seconds – massive jump height
-effect give @s minecraft:jump_boost 15 4
+effect give @s minecraft:jump_boost 15 9
 
 # Apply Slow Falling for 15 seconds – safe landing
 effect give @s minecraft:slow_falling 15 0

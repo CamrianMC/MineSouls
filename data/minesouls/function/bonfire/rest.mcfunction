@@ -54,3 +54,6 @@ function minesouls:flask_of_wondrous_physik/give
 
 # Give the player a Class Book (silently refused if already held)
 function minesouls:class_book/give
+
+# Mage: restore any missing spellbooks for unlocked perks
+execute if score @s ms.class matches 4 run function minesouls:bonfire/restore_spellbooks
