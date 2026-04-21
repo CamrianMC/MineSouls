@@ -1,6 +1,9 @@
 # Mage Tier 5 perk tick – runs once per tick for every Mage with a T5 perk.
 # Handles additional mana regeneration, mana display, spell casting, and acheron wither tracking.
 
+# Make sure Acheron wither doesn't target friendly mobs
+team join friendly @e[type=!#minesouls:hostile]
+
 # Additional mana regen: +1 per tick on top of T1/T2/T3/T4's +1 each (total = 100 per second), capped at max
 execute if score @s ms.mana < @s ms.mana_max run scoreboard players add @s ms.mana 1
 
