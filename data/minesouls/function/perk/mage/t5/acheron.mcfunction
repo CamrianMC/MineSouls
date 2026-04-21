@@ -14,7 +14,8 @@ execute if score @s ms.acheron_active matches 1 run return 0
 scoreboard players remove @s ms.mana 2000
 
 # Summon a wither above the player (3 blocks up to avoid collision damage)
-summon minecraft:wither ~ ~3 ~ {Tags:["ms_acheron","ms_acheron_new"],PersistenceRequired:1b,CustomName:'{"text":"Acheron","color":"dark_red"}',CustomNameVisible:1b}
+summon minecraft:wither ~ ~3 ~ {Tags:["ms_acheron","ms_acheron_new"],PersistenceRequired:1b,CustomName:{"text":"Acheron","color":"dark_red"},CustomNameVisible:1b}
+team join friendly @e[type=minecraft:wither,tag=ms_acheron_new]
 
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:wither,tag=ms_acheron_new] minecraft:glowing 31 0 true
@@ -28,5 +29,5 @@ tag @e[tag=ms_acheron_new] remove ms_acheron_new
 
 # Feedback
 playsound minecraft:entity.wither.spawn player @a[distance=..64] ~ ~ ~ 1 1
-tellraw @s [{"text":"Acheron rises!","color":"dark_red","bold":true}]
+#tellraw @s [{"text":"Acheron rises!","color":"dark_red","bold":true}]
 particle minecraft:soul_fire_flame ~ ~3 ~ 1.0 0.5 1.0 0.1 30
