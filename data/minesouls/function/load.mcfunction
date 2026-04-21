@@ -163,7 +163,6 @@ scoreboard objectives add ms.bodyguard_active dummy
 scoreboard objectives add ms.acheron_timer dummy
 scoreboard objectives add ms.acheron_active dummy
 team add friendly
-team join friendly @a
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
