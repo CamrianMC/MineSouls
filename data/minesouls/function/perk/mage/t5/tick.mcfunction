@@ -14,6 +14,9 @@ title @s actionbar [{"text":"✦ Mana: ","color":"dark_purple"},{"score":{"name"
 # (ms.use_spell is globally reset for all players at the end of tick.mcfunction)
 execute if score @s ms.use_spell matches 1.. run function minesouls:perk/mage/t5/cast
 
+# Acheron wither custom behavior: fire skulls at hostiles + leash back to summoner
+execute if score @s ms.t5_perk matches 2 if score @s ms.acheron_active matches 1 run function minesouls:perk/mage/t5/acheron_wither_tick
+
 # Acheron tracking (only for Perk 2 mages)
 # Decrement timer
 execute if score @s ms.t5_perk matches 2 if score @s ms.acheron_timer matches 1.. run scoreboard players remove @s ms.acheron_timer 1
