@@ -12,4 +12,4 @@ execute if score @s ms.acheron_fire matches 10.. if entity @e[type=#minesouls:ho
 execute if score @s ms.acheron_fire matches 10.. run scoreboard players set @s ms.acheron_fire 0
 
 # --- Leash: smoothly move toward summoner if farther than 50 blocks ---
-execute if entity @a[tag=ms_acheron_anchor,distance=50..] facing entity @a[tag=ms_acheron_anchor,sort=nearest,limit=1] eyes run tp @s ^ ^ ^5
+execute if entity @a[tag=ms_acheron_anchor,distance=50..,limit=1] facing entity @a[tag=ms_acheron_anchor,sort=nearest,limit=1] eyes run tp @s ^ ^ ^5
