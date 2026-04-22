@@ -24,6 +24,9 @@ effect give @e[type=minecraft:wither,tag=ms_acheron_new] minecraft:glowing 31 0 
 scoreboard players set @s ms.acheron_active 1
 scoreboard players set @s ms.acheron_timer 600
 
+# Initialize fire rate timer on the wither
+scoreboard players set @e[type=minecraft:wither,tag=ms_acheron_new,limit=1] ms.acheron_fire 0
+
 # Cleanup new tag
 tag @e[tag=ms_acheron_new] remove ms_acheron_new
 
