@@ -118,9 +118,24 @@ scoreboard objectives add ms.dis_cd dummy
 # Ranger Tier 5 perk scoreboards (Sniper Elite raycast steps)
 scoreboard objectives add ms.se_steps dummy
 
+# Ranger Tier 5 perk storage (Sniper Elite – preserves bow/crossbow item data for enchantments)
+data merge storage minesouls:se_bow {}
+
+# Ranger Tier 5 perk scoreboards (Doom close-range raycast steps)
+scoreboard objectives add ms.doom_steps dummy
+
+# Ranger Tier 5 perk scoreboards (Doom bow fire cooldown)
+scoreboard objectives add ms.doom_cd dummy
+
+# Ranger Tier 5 perk storage (Doom instant bow fire – preserves bow item data)
+data merge storage minesouls:doom_bow {}
+
 # Ranger Tier 5 perk scoreboards (Beast Mastery wolf count + heal temp)
 scoreboard objectives add ms.bm_count dummy
 scoreboard objectives add ms.bm_temp dummy
+scoreboard objectives add ms.bm_pdmg minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add ms.bm_pprev dummy
+scoreboard objectives add ms.bm_mcd dummy
 
 # Mage perk scoreboards
 scoreboard objectives add ms.mana dummy
@@ -147,6 +162,8 @@ scoreboard objectives add ms.bodyguard_active dummy
 # Mage Tier 5 perk scoreboards (Acheron wither tracking)
 scoreboard objectives add ms.acheron_timer dummy
 scoreboard objectives add ms.acheron_active dummy
+scoreboard objectives add ms.acheron_fire dummy
+team add friendly
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
@@ -158,6 +175,9 @@ scoreboard players set #100 ms.const 100
 # Reset all players' class and perk selections
 scoreboard objectives add ms.classperk_reset trigger
 scoreboard objectives add ms.class_wipe trigger
+
+# Show build info trigger
+scoreboard objectives add ms.class_info trigger
 
 # Shield detection
 #scoreboard objectives add shieldBlock minecraft.custom:minecraft.damage_blocked_by_shield

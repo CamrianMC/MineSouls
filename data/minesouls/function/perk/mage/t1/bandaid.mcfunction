@@ -14,4 +14,4 @@ effect give @s minecraft:regeneration 8 0
 # Feedback
 playsound minecraft:block.enchantment_table.use player @s ~ ~ ~ 1 1
 particle minecraft:heart ~ ~2 ~ 0.3 0.3 0.3 0 3
-tellraw @s [{"text":"Band-aid applied!","color":"green"}]
+#tellraw @s [{"text":"Band-aid applied!","color":"green"}]

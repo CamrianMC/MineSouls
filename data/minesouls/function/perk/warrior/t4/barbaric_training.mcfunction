@@ -7,5 +7,5 @@ execute if items entity @s weapon.offhand * run tag @s remove ms_barbaric_active
 execute if items entity @s weapon.offhand * run return 0
 
 # Offhand is empty: apply damage boost
-execute unless entity @s[tag=ms_barbaric_active] run attribute @s minecraft:attack_damage modifier add minesouls:barbaric_training 0.2 add_multiplied_base
+execute unless entity @s[tag=ms_barbaric_active] run attribute @s minecraft:attack_damage modifier add minesouls:barbaric_training 0.4 add_multiplied_base
 tag @s add ms_barbaric_active

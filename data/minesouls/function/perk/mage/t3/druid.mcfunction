@@ -14,10 +14,10 @@ execute if score @s ms.druid_active matches 1 run return 0
 scoreboard players remove @s ms.mana 300
 
 # Summon 4 wolves around the player
-summon minecraft:wolf ~1 ~ ~ {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:'{"text":"Druid Wolf","color":"green"}',CustomNameVisible:1b}
-summon minecraft:wolf ~-1 ~ ~ {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:'{"text":"Druid Wolf","color":"green"}',CustomNameVisible:1b}
-summon minecraft:wolf ~ ~ ~1 {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:'{"text":"Druid Wolf","color":"green"}',CustomNameVisible:1b}
-summon minecraft:wolf ~ ~ ~-1 {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:'{"text":"Druid Wolf","color":"green"}',CustomNameVisible:1b}
+summon minecraft:wolf ~1 ~ ~ {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:{"text":"Druid Wolf","color":"green"},CustomNameVisible:1b}
+summon minecraft:wolf ~-1 ~ ~ {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:{"text":"Druid Wolf","color":"green"},CustomNameVisible:1b}
+summon minecraft:wolf ~ ~ ~1 {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:{"text":"Druid Wolf","color":"green"},CustomNameVisible:1b}
+summon minecraft:wolf ~ ~ ~-1 {Tags:["ms_druid_wolf","ms_druid_new"],PersistenceRequired:1b,CustomName:{"text":"Druid Wolf","color":"green"},CustomNameVisible:1b}
 
 # Tame wolves to this player by copying UUID to Owner field
 execute as @e[type=minecraft:wolf,tag=ms_druid_new] run data modify entity @s Owner set from entity @a[scores={ms.class=4,ms.t3_perk=2},sort=nearest,limit=1] UUID
@@ -39,6 +39,6 @@ scoreboard players set @s ms.druid_timer 600
 tag @e[tag=ms_druid_new] remove ms_druid_new
 
 # Feedback
-playsound minecraft:entity.wolf.howl player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"The pack answers your call!","color":"green"}]
+playsound minecraft:entity.wolf_big.pant player @s ~ ~ ~ 1 1
+# tellraw @s [{"text":"The pack answers your call!","color":"green"}]
 particle minecraft:happy_villager ~ ~1 ~ 0.5 0.5 0.5 0.1 15

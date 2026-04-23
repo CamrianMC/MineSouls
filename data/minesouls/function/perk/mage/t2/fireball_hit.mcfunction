@@ -3,10 +3,11 @@
 # Deals 4 fire damage and ignites the nearest hostile mob within 1.5 blocks.
 
 # Tag the nearest hostile for targeting
-tag @e[type=#minesouls:hostile,distance=..1.5,sort=nearest,limit=1] add ms_fb_target
+tag @e[type=#minesouls:hostile,distance=..3,sort=nearest,limit=1] add ms_fb_target
 
 # Deal fire damage (attributed to the nearest Mage with Fireball perk for kill credit)
 execute as @e[tag=ms_fb_target,limit=1] run data modify entity @s Fire set value 60
+execute as @e[tag=ms_fb_target,limit=1] run damage @s 4 minecraft:lava by @a[scores={ms.class=4,ms.t2_perk=3},sort=nearest,limit=1]
 
 # Set target on fire for 3 seconds (60 ticks)
 data modify entity @e[tag=ms_fb_target,limit=1] Fire set value 60

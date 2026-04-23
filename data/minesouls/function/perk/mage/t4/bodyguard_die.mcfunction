@@ -6,4 +6,5 @@ particle minecraft:smoke ~ ~1 ~ 0.5 0.5 0.5 0.05 15
 playsound minecraft:entity.iron_golem.death player @a[distance=..16] ~ ~ ~ 1 1
 
 # Kill self
+tp @s ~ ~-200 ~
 kill @s

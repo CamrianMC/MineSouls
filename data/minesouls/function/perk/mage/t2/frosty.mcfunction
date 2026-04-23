@@ -8,16 +8,17 @@ execute unless score @s ms.mana matches 200.. run tellraw @s {"text":"Not enough
 execute unless score @s ms.mana matches 200.. run return 0
 
 # Check for existing frosty (limit 1)
-execute if score @s ms.frosty_active matches 1 run tellraw @s {"text":"Your Frosty is still active!","color":"red"}
+# execute if score @s ms.frosty_active matches 1 run tellraw @s {"text":"Your Frosty is still active!","color":"red"}
 execute if score @s ms.frosty_active matches 1 run return 0
 
 # Consume mana
 scoreboard players remove @s ms.mana 200
 
 # Summon snow golem at player position (NoAI turret, extra HP to survive warm biomes)
-summon minecraft:snow_golem ~ ~ ~ {Tags:["ms_frosty","ms_frosty_new"],NoAI:1b,PersistenceRequired:1b,Attributes:[{Name:"minecraft:max_health",Base:40.0}],CustomName:'{"text":"Frosty","color":"aqua"}',CustomNameVisible:1b}
+summon minecraft:snow_golem ^ ^1 ^1 {Tags:["ms_frosty","ms_frosty_new"],Invulnerable:1b,PersistenceRequired:1b,CustomName:{"text":"Nwah","color":"aqua"},CustomNameVisible:1b}
 
-# Heal to full (max_health attribute doesn't auto-set current HP)
+# Set max health to 40 and heal to full
+attribute @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] minecraft:max_health base set 40
 effect give @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] minecraft:instant_health 1 4 true
 
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
@@ -35,5 +36,5 @@ tag @e[tag=ms_frosty_new] remove ms_frosty_new
 
 # Feedback
 playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"Frosty summoned!","color":"aqua"}]
+# tellraw @s [{"text":"Frosty summoned!","color":"aqua"}]
 particle minecraft:snowflake ~ ~1 ~ 0.3 0.5 0.3 0.1 20

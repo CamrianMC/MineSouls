@@ -20,4 +20,4 @@ particle minecraft:reverse_portal ~ ~1 ~ 0.3 0.5 0.3 0.05 20
 
 # Feedback
 playsound minecraft:entity.enderman.teleport player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"Blink!","color":"light_purple"}]
+# tellraw @s [{"text":"Blink!","color":"light_purple"}]

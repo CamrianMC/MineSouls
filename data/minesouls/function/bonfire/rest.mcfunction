@@ -16,6 +16,7 @@ advancement revoke @s only minesouls:bonfire/resting
 # Regeneration X (amplifier 9) for 1 second (20 ticks); hide particles
 effect clear @s
 effect give @s minecraft:regeneration 1 9 true
+effect give @s minecraft:saturation 1 9 true
 
 # Skip remaining effects while the cooldown is still ticking down
 execute if score @s ms.bonfire_rest matches 1.. run return 1
@@ -53,3 +54,6 @@ function minesouls:flask_of_wondrous_physik/give
 
 # Give the player a Class Book (silently refused if already held)
 function minesouls:class_book/give
+
+# Mage: restore any missing spellbooks for unlocked perks
+execute if score @s ms.class matches 4 run function minesouls:bonfire/restore_spellbooks

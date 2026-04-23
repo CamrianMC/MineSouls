@@ -16,5 +16,6 @@ execute if score @s ms.bm_count matches 0 run function minesouls:perk/ranger/t5/
 # "at @s" positions at the wolf, "on owner" checks ownership, then targets the wolf by proximity
 # Strength II (amplifier 1) for 2 seconds, refreshed every tick, hidden particles
 execute as @e[type=minecraft:wolf,tag=ms_bm_wolf,distance=..50] at @s on owner if entity @s[tag=ms_bm_check] run effect give @e[type=minecraft:wolf,distance=..0.1,limit=1] minecraft:strength 2 1 true
+execute as @e[type=minecraft:wolf,tag=ms_bm_wolf,distance=..50] at @s on owner if entity @s[tag=ms_bm_check] run effect give @e[type=minecraft:wolf,distance=..0.1,limit=1] minecraft:resistance 2 1 true
 
 tag @s remove ms_bm_check

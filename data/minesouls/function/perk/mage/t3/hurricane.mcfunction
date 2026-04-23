@@ -30,4 +30,4 @@ execute anchored eyes positioned ^ ^ ^3 run particle minecraft:cloud ~ ~ ~ 1.5 0
 execute anchored eyes positioned ^ ^ ^3 run particle minecraft:sweep_attack ~ ~ ~ 1.5 0.5 1.5 0.1 10
 
 # Feedback
-tellraw @s [{"text":"Hurricane!","color":"green"}]
+# tellraw @s [{"text":"Hurricane!","color":"green"}]

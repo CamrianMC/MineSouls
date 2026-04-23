@@ -15,4 +15,4 @@ effect give @s minecraft:resistance 15 0
 # Feedback
 playsound minecraft:block.enchantment_table.use player @s ~ ~ ~ 1 1
 particle minecraft:enchant ~ ~1 ~ 0.5 0.5 0.5 0.5 20
-tellraw @s [{"text":"Light Barrier activated!","color":"yellow"}]
+# tellraw @s [{"text":"Light Barrier activated!","color":"yellow"}]

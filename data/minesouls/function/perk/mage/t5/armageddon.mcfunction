@@ -29,4 +29,4 @@ particle minecraft:smoke ~ ~1 ~ 8 3 8 0.1 80
 particle minecraft:lava ~ ~1 ~ 5 1 5 0 30
 
 # Feedback
-tellraw @s [{"text":"ARMAGEDDON!","color":"dark_red","bold":true}]
+# tellraw @s [{"text":"ARMAGEDDON!","color":"dark_red","bold":true}]

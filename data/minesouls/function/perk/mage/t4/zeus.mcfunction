@@ -19,4 +19,4 @@ execute anchored eyes positioned ^ ^ ^0 run function minesouls:perk/mage/t4/zeus
 
 # Feedback
 playsound minecraft:item.trident.thunder player @a[distance=..64] ~ ~ ~ 1 1
-tellraw @s [{"text":"Zeus!","color":"yellow"}]
+#tellraw @s [{"text":"Zeus!","color":"yellow"}]

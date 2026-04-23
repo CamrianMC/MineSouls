@@ -1,6 +1,7 @@
 # Mage Tier 5 perk tick – runs once per tick for every Mage with a T5 perk.
 # Handles additional mana regeneration, mana display, spell casting, and acheron wither tracking.
 
+
 # Additional mana regen: +1 per tick on top of T1/T2/T3/T4's +1 each (total = 100 per second), capped at max
 execute if score @s ms.mana < @s ms.mana_max run scoreboard players add @s ms.mana 1
 
@@ -10,6 +11,9 @@ title @s actionbar [{"text":"✦ Mana: ","color":"dark_purple"},{"score":{"name"
 # Spell casting: detect right-click of warped_fungus_on_a_stick
 # (ms.use_spell is globally reset for all players at the end of tick.mcfunction)
 execute if score @s ms.use_spell matches 1.. run function minesouls:perk/mage/t5/cast
+
+# Acheron wither custom behavior: fire skulls at hostiles + leash back to summoner
+execute if score @s ms.t5_perk matches 2 if score @s ms.acheron_active matches 1 run function minesouls:perk/mage/t5/acheron_wither_tick
 
 # Acheron tracking (only for Perk 2 mages)
 # Decrement timer

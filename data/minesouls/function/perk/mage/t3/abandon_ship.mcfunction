@@ -10,7 +10,7 @@ execute unless score @s ms.mana matches 300.. run return 0
 scoreboard players remove @s ms.mana 300
 
 # Apply Jump Boost V (amplifier 4) for 15 seconds – massive jump height
-effect give @s minecraft:jump_boost 15 4
+effect give @s minecraft:jump_boost 15 9
 
 # Apply Slow Falling for 15 seconds – safe landing
 effect give @s minecraft:slow_falling 15 0
@@ -18,4 +18,4 @@ effect give @s minecraft:slow_falling 15 0
 # Feedback
 playsound minecraft:entity.firework_rocket.launch player @s ~ ~ ~ 1 1
 particle minecraft:cloud ~ ~ ~ 0.5 0.1 0.5 0.1 20
-tellraw @s [{"text":"Abandon Ship!","color":"aqua"}]
+# tellraw @s [{"text":"Abandon Ship!","color":"aqua"}]

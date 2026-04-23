@@ -5,10 +5,14 @@
 scoreboard players set @s ms.se_steps 0
 
 # Visual: muzzle flash at eyes
-particle minecraft:flash ~ ~ ~ 0 0 0 0 1
+particle minecraft:sonic_boom ^ ^ ^0.5 0 0 0 0 1
 
 # Audio: sharp shot sound
 playsound minecraft:entity.firework_rocket.blast player @s ~ ~ ~ 1 2
 
 # Begin recursive raycast
 execute positioned ^ ^ ^0.5 run function minesouls:perk/ranger/t5/sniper_elite_raycast
+
+# Cleanup: remove pierced/target tags from any entities hit during this raycast
+tag @e[tag=ms_se_pierced] remove ms_se_pierced
+tag @e[tag=ms_se_target] remove ms_se_target
