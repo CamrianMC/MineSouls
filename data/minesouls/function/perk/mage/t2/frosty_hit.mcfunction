@@ -3,7 +3,7 @@
 # Deals 1 damage to the nearest hostile entity within 1.5 blocks.
 
 # Find and damage the nearest hostile (attributed to nearest Mage with Frosty perk)
-damage @e[type=#minesouls:hostile,distance=..3,sort=nearest,limit=1] 2 minecraft:freeze by @a[scores={ms.class=4,ms.t2_perk=2},sort=nearest,limit=1]
+damage @e[type=#minesouls:hostile,distance=..3,sort=nearest,limit=1] 2 minecraft:freeze
 
 # Impact effects
 particle minecraft:item_snowball ~ ~ ~ 0.2 0.2 0.2 0.1 8

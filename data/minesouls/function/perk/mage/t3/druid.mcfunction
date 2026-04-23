@@ -39,6 +39,6 @@ scoreboard players set @s ms.druid_timer 600
 tag @e[tag=ms_druid_new] remove ms_druid_new
 
 # Feedback
-playsound minecraft:entity.wolf.howl player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"The pack answers your call!","color":"green"}]
+playsound minecraft:entity.wolf_big.pant player @s ~ ~ ~ 1 1
+# tellraw @s [{"text":"The pack answers your call!","color":"green"}]
 particle minecraft:happy_villager ~ ~1 ~ 0.5 0.5 0.5 0.1 15

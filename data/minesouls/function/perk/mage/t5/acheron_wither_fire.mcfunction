@@ -11,7 +11,7 @@ execute store result score #aw_oy ms.spell_temp run data get entity @e[tag=ms_aw
 execute store result score #aw_oz ms.spell_temp run data get entity @e[tag=ms_aw_origin,limit=1] Pos[2] 10000
 
 # Direction marker 1 block toward nearest hostile within 50 blocks
-execute positioned ~ ~1.5 ~ facing entity @e[type=#minesouls:hostile,distance=..50,sort=nearest,limit=1] eyes positioned ^ ^ ^1 run summon minecraft:marker ~ ~ ~ {Tags:["ms_aw_dir"]}
+execute positioned ~ ~1.5 ~ facing entity @e[type=#minesouls:hostile,distance=..50,sort=nearest,limit=1,tag=!ms_acheron] eyes positioned ^ ^ ^1 run summon minecraft:marker ~ ~ ~ {Tags:["ms_aw_dir"]}
 execute store result score #aw_dx ms.spell_temp run data get entity @e[tag=ms_aw_dir,limit=1] Pos[0] 10000
 execute store result score #aw_dy ms.spell_temp run data get entity @e[tag=ms_aw_dir,limit=1] Pos[1] 10000
 execute store result score #aw_dz ms.spell_temp run data get entity @e[tag=ms_aw_dir,limit=1] Pos[2] 10000

@@ -18,4 +18,4 @@ effect give @s minecraft:slow_falling 15 0
 # Feedback
 playsound minecraft:entity.firework_rocket.launch player @s ~ ~ ~ 1 1
 particle minecraft:cloud ~ ~ ~ 0.5 0.1 0.5 0.1 20
-tellraw @s [{"text":"Abandon Ship!","color":"aqua"}]
+# tellraw @s [{"text":"Abandon Ship!","color":"aqua"}]

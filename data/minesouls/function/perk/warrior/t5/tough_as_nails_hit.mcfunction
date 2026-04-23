@@ -16,7 +16,7 @@ scoreboard players operation @s ms.tan_dmg -= @s ms.tan_prev
 execute unless items entity @s weapon.offhand * if entity @s[tag=ms_tan_protected] run function minesouls:perk/warrior/t5/tan_restore_item
 
 # Debug output
-tellraw @s [{"text":"Damage took: ","color":"green"},{"score":{"name":"@s","objective":"ms.tan_dmg"},"color":"red"}]
+# tellraw @s [{"text":"Damage took: ","color":"green"},{"score":{"name":"@s","objective":"ms.tan_dmg"},"color":"red"}]
 
 # If damage is 5 or less, no cap needed
 execute if score @s ms.tan_dmg matches ..5 run return 0

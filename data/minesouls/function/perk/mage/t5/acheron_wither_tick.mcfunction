@@ -2,6 +2,9 @@
 # Runs as the mage player who owns the wither, at the player's position.
 # Tags this player temporarily as the wither's anchor for leash and fire targeting.
 
+# Make sure Acheron wither doesn't target friendly mobs
+team join friendly @e[type=!#minesouls:hostile]
+
 # Tag self as anchor so the wither can navigate back toward us
 tag @s add ms_acheron_anchor
 

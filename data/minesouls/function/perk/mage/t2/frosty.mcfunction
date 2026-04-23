@@ -36,5 +36,5 @@ tag @e[tag=ms_frosty_new] remove ms_frosty_new
 
 # Feedback
 playsound minecraft:entity.evoker.cast_spell player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"Frosty summoned!","color":"aqua"}]
+# tellraw @s [{"text":"Frosty summoned!","color":"aqua"}]
 particle minecraft:snowflake ~ ~1 ~ 0.3 0.5 0.3 0.1 20

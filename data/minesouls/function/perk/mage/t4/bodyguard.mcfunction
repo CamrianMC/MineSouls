@@ -14,8 +14,8 @@ execute if score @s ms.bodyguard_active matches 1 run return 0
 scoreboard players remove @s ms.mana 800
 
 # Summon 2 iron golems flanking the player
-summon minecraft:iron_golem ~2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:'{"text":"Bodyguard","color":"gold"}',CustomNameVisible:1b}
-summon minecraft:iron_golem ~-2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:'{"text":"Bodyguard","color":"gold"}',CustomNameVisible:1b}
+summon minecraft:iron_golem ~2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b}
+summon minecraft:iron_golem ~-2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b}
 
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:iron_golem,tag=ms_bodyguard_new] minecraft:glowing 31 0 true
@@ -29,5 +29,5 @@ tag @e[tag=ms_bodyguard_new] remove ms_bodyguard_new
 
 # Feedback
 playsound minecraft:entity.iron_golem.repair player @s ~ ~ ~ 1 1
-tellraw @s [{"text":"Bodyguards summoned!","color":"gold"}]
+# tellraw @s [{"text":"Bodyguards summoned!","color":"gold"}]
 particle minecraft:happy_villager ~ ~1 ~ 1.0 0.5 1.0 0.1 20
