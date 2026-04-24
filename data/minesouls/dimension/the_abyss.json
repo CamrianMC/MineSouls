@@ -12,7 +12,7 @@
       ],
       "features": false,
       "lakes": false,
-      "structure_overrides": ["minesouls:bonfire_abyss"]
+      "structure_overrides": ["minesouls:bonfire_abyss", "minesouls:new_londo_ruins"]
     }
   }
 }

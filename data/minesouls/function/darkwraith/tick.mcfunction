@@ -6,8 +6,7 @@
 # Check HurtTime=10 (current-tick damage) and HurtTime=9 (entity-tick order offset),
 # matching the same pattern used by the Beast Mastery wolf heal.
 execute if entity @a[distance=..3,nbt={HurtTime:10s}] run function minesouls:darkwraith/lifesteal
-execute unless entity @a[distance=..3,nbt={HurtTime:10s}] \
-    if entity @a[distance=..3,nbt={HurtTime:9s}] run function minesouls:darkwraith/lifesteal
+execute unless entity @a[distance=..3,nbt={HurtTime:10s}] if entity @a[distance=..3,nbt={HurtTime:9s}] run function minesouls:darkwraith/lifesteal
 
 # --- Low-light strength bonus ---
 # Strength I (hidden particles) while ambient light level ≤ 4.
