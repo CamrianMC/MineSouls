@@ -10,3 +10,4 @@ execute store result storage minesouls:bonfire tp.z int 1 run scoreboard players
 execute if score @s ms.bonfire_dim matches 0 in minecraft:overworld run function minesouls:bonfire/teleport_macro with storage minesouls:bonfire tp
 execute if score @s ms.bonfire_dim matches 1 in minecraft:the_nether run function minesouls:bonfire/teleport_macro with storage minesouls:bonfire tp
 execute if score @s ms.bonfire_dim matches 2 in minecraft:the_end run function minesouls:bonfire/teleport_macro with storage minesouls:bonfire tp
+execute if score @s ms.bonfire_dim matches 3 in minesouls:the_abyss run function minesouls:bonfire/teleport_macro with storage minesouls:bonfire tp

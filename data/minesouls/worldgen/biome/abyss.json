@@ -1,0 +1,44 @@
+{
+  "temperature": 0.0,
+  "downfall": 0.0,
+  "has_precipitation": false,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 854808,
+    "water_color": 1704000,
+    "water_fog_color": 655392,
+    "grass_color": 1842216,
+    "foliage_color": 1579044,
+    "grass_color_modifier": "none",
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.00118093
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "spawners": {
+    "monster": [
+      {"type": "minecraft:enderman",       "weight": 10, "minCount": 1, "maxCount": 2},
+      {"type": "minecraft:phantom",        "weight": 5,  "minCount": 1, "maxCount": 2},
+      {"type": "minecraft:wither_skeleton","weight": 8,  "minCount": 1, "maxCount": 3},
+      {"type": "minecraft:vex",            "weight": 5,  "minCount": 1, "maxCount": 3}
+    ],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "underground_water_creature": [],
+    "axolotls": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [[], [], [], [], [], [], [], [], [], [], []]
+}
