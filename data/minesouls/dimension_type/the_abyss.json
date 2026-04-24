@@ -15,6 +15,5 @@
   "infiniburn": "#minecraft:infiniburn_end",
   "effects": "minecraft:the_end",
   "min_y": 0,
-  "height": 256,
-  "piglin_safe": false
+  "height": 256
 }
