@@ -189,4 +189,7 @@ scoreboard objectives add ms.class_info trigger
 # Prevent parry (Warrior T3) spam
 scoreboard objectives add ms.parry_cd dummy
 
+# Darkwraith mob scoreboards
+scoreboard objectives add ms.dw_temp dummy
+
 

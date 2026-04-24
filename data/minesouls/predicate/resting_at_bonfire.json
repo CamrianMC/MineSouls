@@ -73,6 +73,12 @@
               }
             }
           ]
+        },
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minesouls:the_abyss"
+          }
         }
       ]
     }

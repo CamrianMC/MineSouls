@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "minesouls:bonfire_abyss",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 36,
+    "separation": 24,
+    "salt": 694232002
+  }
+}

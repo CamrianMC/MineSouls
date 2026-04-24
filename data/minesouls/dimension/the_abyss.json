@@ -1,0 +1,18 @@
+{
+  "type": "minesouls:the_abyss",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minesouls:abyss",
+      "layers": [
+        {"block": "minecraft:bedrock",   "height": 1},
+        {"block": "minecraft:deepslate", "height": 58},
+        {"block": "minecraft:blackstone","height": 5},
+        {"block": "minecraft:obsidian",  "height": 1}
+      ],
+      "features": false,
+      "lakes": false,
+      "structure_overrides": ["minesouls:bonfire_abyss", "minesouls:new_londo_ruins"]
+    }
+  }
+}
