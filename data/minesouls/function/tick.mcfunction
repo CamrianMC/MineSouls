@@ -133,6 +133,12 @@ scoreboard players set @a ms.use_spell 0
 # Abyss dimension: per-player atmospheric effects (ash + void-mote particles)
 execute as @a[predicate=minesouls:in_abyss] at @s run function minesouls:abyss/tick
 
+# Darkwraith mob: convert untagged wither_skeletons in the Abyss into Darkwraiths
+execute as @e[type=minecraft:wither_skeleton,tag=!ms_darkwraith,predicate=minesouls:in_abyss] at @s run function minesouls:darkwraith/init
+
+# Darkwraith mob: per-entity behaviour (life steal + darkness buff)
+execute as @e[tag=ms_darkwraith] at @s run function minesouls:darkwraith/tick
+
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 
