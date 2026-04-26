@@ -5,7 +5,7 @@
   "ore_veins_enabled": false,
   "legacy_random_source": false,
   "default_block": {
-    "Name": "minecraft:deepslate"
+    "Name": "minecraft:blackstone"
   },
   "default_fluid": {
     "Name": "minecraft:water",
@@ -28,7 +28,8 @@
     "erosion": 0.0,
     "depth": 0.0,
     "ridges": 0.0,
-    "initial_density_without_jaggedness": 0.0,
+    "vein_ridged": 0.0,
+    "preliminary_surface_level": 0.0,
     "final_density": {
       "type": "minecraft:blend_density",
       "argument": {
@@ -67,8 +68,7 @@
           }
         }
       }
-    },
-    "vein_ridginess": 0.0,
+    },    
     "vein_gap": 0.0,
     "vein_toggle": 0.0
   },
@@ -99,7 +99,7 @@
         },
         "then_run": {
           "type": "minecraft:block",
-          "result_state": { "Name": "minecraft:cobbled_deepslate" }
+          "result_state": { "Name": "minecraft:blackstone" }
         }
       },
       {
@@ -113,16 +113,14 @@
         },
         "then_run": {
           "type": "minecraft:block",
-          "result_state": { "Name": "minecraft:cobbled_deepslate" }
+          "result_state": { "Name": "minecraft:blackstone" }
         }
       },
       {
         "type": "minecraft:block",
-        "result_state": { "Name": "minecraft:deepslate" }
+        "result_state": { "Name": "minecraft:blackstone" }
       }
     ]
   },
-  "spawn_target": [],
-  "min_y": 0,
-  "height": 256
+  "spawn_target": []
 }

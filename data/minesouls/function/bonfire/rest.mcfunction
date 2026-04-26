@@ -38,10 +38,13 @@ execute store result score @s ms.bonfire_x run data get entity @s Pos[0] 1
 execute store result score @s ms.bonfire_y run data get entity @s Pos[1] 1
 execute store result score @s ms.bonfire_z run data get entity @s Pos[2] 1
 
-# Store the player's current dimension: 0 = overworld, 1 = nether, 2 = end
+# Store the player's current dimension: 0 = overworld, 1 = nether, 2 = end, 3 = abyss
+# Abyss is detected by elimination: not overworld, nether, or end.
 execute if predicate minesouls:in_overworld run scoreboard players set @s ms.bonfire_dim 0
 execute if predicate minesouls:in_nether run scoreboard players set @s ms.bonfire_dim 1
 execute if predicate minesouls:in_end run scoreboard players set @s ms.bonfire_dim 2
+execute unless predicate minesouls:in_overworld unless predicate minesouls:in_nether unless predicate minesouls:in_end run scoreboard players set @s ms.bonfire_dim 3
+
 
 # Set cooldown to 200 ticks (10 seconds) to prevent message and effect spam
 scoreboard players set @s ms.bonfire_rest 200

@@ -6,7 +6,6 @@
       "type": "minecraft:fixed",
       "biome": "minesouls:abyss"
     },
-    "settings": "minesouls:the_abyss",
-    "structure_overrides": ["minesouls:bonfire_abyss", "minesouls:new_londo_ruins"]
+    "settings": "minesouls:the_abyss"
   }
 }

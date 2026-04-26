@@ -192,4 +192,5 @@ scoreboard objectives add ms.parry_cd dummy
 # Darkwraith mob scoreboards
 scoreboard objectives add ms.dw_temp dummy
 
-
+# Abyss init scoreboard
+scoreboard objectives add ms.abyss_init dummy
