@@ -14,3 +14,6 @@ effect give @s minecraft:darkness 5 0 true
 execute if score @s ms.abyss_init matches 1 run fill ~-1 ~ ~-1 ~1 ~2 ~1 minecraft:air replace
 execute if score @s ms.abyss_init matches 1 run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:blackstone replace
 execute if score @s ms.abyss_init matches 1 if block ~ ~-1 ~ minecraft:blackstone run scoreboard players set @s ms.abyss_init 0
+
+# Silence Wardens
+execute as @e[type=minecraft:warden,distance=..50] run data merge entity @s {Silent:1b}
