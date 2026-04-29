@@ -16,4 +16,4 @@ execute if score @s ms.abyss_init matches 1 run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minec
 execute if score @s ms.abyss_init matches 1 if block ~ ~-1 ~ minecraft:blackstone run scoreboard players set @s ms.abyss_init 0
 
 # Silence Wardens
-execute as @e[type=minecraft:warden,distance=..50] run data merge entity @s {Silent:1b}
+execute as @e[type=minecraft:warden,distance=..100] run data merge entity @s {Silent:1b}
