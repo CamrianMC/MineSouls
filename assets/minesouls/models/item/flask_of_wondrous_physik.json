@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:item/potion"
+    "layer0": "minesouls:item/flask_of_wondrous_physik"
   }
 }
