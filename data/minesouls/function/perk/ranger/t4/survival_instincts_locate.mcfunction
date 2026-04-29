@@ -20,10 +20,13 @@ execute if predicate minesouls:in_nether store result score @s ms.si_dist run lo
 # --- End: locate surface bonfires ---
 execute if predicate minesouls:in_end store result score @s ms.si_dist run locate structure minesouls:bonfire
 
+# --- Abyss: locate abyssal bonfires ---
+execute if predicate minesouls:in_abyss store result score @s ms.si_dist run locate structure minesouls:bonfire_abyss
+
 # If no bonfire was found (distance is 0)
 execute if score @s ms.si_dist matches 0 run tellraw @s [{"text":"You sense no bonfire nearby...","color":"dark_aqua","italic":true}]
 execute if score @s ms.si_dist matches 0 run return 0
 
 # Report approximate distance to the player
 tellraw @s [{"text":"You sense a bonfire is approximately ","color":"dark_aqua","italic":true},{"score":{"name":"@s","objective":"ms.si_dist"},"color":"gold","bold":true},{"text":" blocks away.","color":"dark_aqua","italic":true}]
-playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 0.8 1.2
+playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 10 1.2

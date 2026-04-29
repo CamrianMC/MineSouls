@@ -61,6 +61,9 @@ scoreboard objectives add ms.parry_blocked minecraft.custom:minecraft.damage_blo
 scoreboard objectives add ms.parry_prev dummy
 scoreboard objectives add ms.stun_timer dummy
 
+# Warrior Tier 4 perk scoreboards (Calloused Veteran)
+scoreboard objectives add ms.armor_rating armor
+
 # Warrior Tier 5 perk scoreboards
 scoreboard objectives add ms.tan_prev dummy
 scoreboard objectives add ms.tan_dmg dummy
