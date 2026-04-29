@@ -1,8 +1,9 @@
 {
   "pack": {
-    "description": "MineSouls Datapack for Minecraft 26.1+",
-    "pack_format": 101,
-    "min_format": 101,
-    "max_format": 101
+    "pack_format": 81,
+    "description": "Minesouls 1.26.1",
+    "supported_formats": [81, 900],
+    "min_format": 81,
+    "max_format": 900
   }
 }
