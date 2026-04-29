@@ -1,6 +1,10 @@
 # Mage Tier 1 perk tick – runs once per tick for every Mage with a T1 perk.
 # Handles mana regeneration, mana display, spell casting, and goyim tracking.
 
+# Clean up transformed Goyim
+execute as @e[type=minecraft:zombie_villager,name="Goyim"] run kill @s
+execute as @e[type=minecraft:witch,name="Goyim"] run kill @s
+
 # Mana regen: +1 per tick (= 20 per second), capped at max
 execute if score @s ms.mana < @s ms.mana_max run scoreboard players add @s ms.mana 1
 

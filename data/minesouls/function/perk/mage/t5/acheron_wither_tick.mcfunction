@@ -13,3 +13,7 @@ execute as @e[tag=ms_acheron,sort=nearest,limit=1] at @s run function minesouls:
 
 # Remove anchor tag
 tag @s remove ms_acheron_anchor
+
+# --- Lure vex: guide wither AI toward nearest hostile it wouldn't normally target ---
+execute unless entity @e[tag=ms_acheron_vex] at @e[type=#minesouls:hostile,distance=..50,sort=nearest,limit=1,tag=!ms_acheron] run summon minecraft:vex ~ ~ ~ {Tags:["ms_acheron_vex"],Silent:1b,NoAI:1b}
+execute if entity @e[tag=ms_acheron_vex] at @e[type=#minesouls:hostile,distance=..50,sort=nearest,limit=1,tag=!ms_acheron] run tp @e[tag=ms_acheron_vex,limit=1] ~ ~ ~

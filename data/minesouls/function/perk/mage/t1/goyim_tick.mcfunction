@@ -16,3 +16,4 @@ execute as @e[type=#minesouls:undead,distance=..20] run effect give @s minecraft
 
 # Cleanup target tag
 tag @s remove ms_goyim_target
+
