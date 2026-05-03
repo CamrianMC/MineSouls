@@ -4,10 +4,7 @@
   "spawn_overrides": {
     "monster": {
       "bounding_box": "piece",
-      "spawns": [
-        {"type": "minecraft:wither_skeleton", "weight": 20, "minCount": 1, "maxCount": 2},
-        {"type": "minecraft:vex",             "weight": 3,  "minCount": 1, "maxCount": 2}
-      ]
+      "spawns": []
     }
   },
   "start_pool": "minesouls:new_londo_ruins",

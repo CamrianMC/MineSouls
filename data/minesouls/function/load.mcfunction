@@ -141,6 +141,7 @@ scoreboard objectives add ms.bm_pprev dummy
 scoreboard objectives add ms.bm_mcd dummy
 
 # Mage perk scoreboards
+scoreboard objectives add ms.lifetime dummy
 scoreboard objectives add ms.mana dummy
 scoreboard objectives add ms.mana_max dummy
 scoreboard objectives add ms.use_spell minecraft.used:minecraft.warped_fungus_on_a_stick

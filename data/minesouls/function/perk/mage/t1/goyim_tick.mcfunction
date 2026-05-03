@@ -17,3 +17,10 @@ execute as @e[type=#minesouls:undead,distance=..20] run effect give @s minecraft
 # Cleanup target tag
 tag @s remove ms_goyim_target
 
+# Entity-side lifetime: decrement and self-destruct when the timer reaches 0
+# (ensures expiry even if the owner player is dead or out of the loaded area)
+scoreboard players remove @s ms.lifetime 1
+execute if score @s ms.lifetime matches ..0 run function minesouls:perk/mage/t1/goyim_die
+execute if score @s ms.lifetime matches ..0 run scoreboard players set @a[scores={ms.goyim_active=1}] ms.goyim_active 0
+execute if score @s ms.lifetime matches ..0 run scoreboard players set @a[scores={ms.goyim_active=1}] ms.goyim_timer 0
+
