@@ -49,30 +49,17 @@
           }
         },
         {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_end"
-              }
-            },
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:location_check",
-                "predicate": {
-                  "dimension": "minecraft:the_end",
-                  "position": {
-                    "y": {
-                      "min": 73,
-                      "max": 77
-                    }
-                  }
-                }
-              }
-            }
-          ]
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:the_end"
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minesouls:the_abyss",
+            "position": { "y": { "min": 30 , "max": 210 } }
+          }
         }
       ]
     }

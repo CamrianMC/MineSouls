@@ -121,14 +121,30 @@ function minesouls:perk/mage/t2/frosty_sb_tick
 # Mage Tier 3 perks: Hurricane, Druid, Abandon Ship! (per-player tick)
 execute as @a[scores={ms.class=4,ms.t3_perk=1..3}] at @s run function minesouls:perk/mage/t3/tick
 
+# Mage Tier 3: druid wolf entity tick (per-entity, runs even if owner is absent)
+execute as @e[type=minecraft:wolf,tag=ms_druid_wolf] at @s run function minesouls:perk/mage/t3/druid_wolf_tick
+
 # Mage Tier 4 perks: Zeus, Bodyguard, Blink (per-player tick)
 execute as @a[scores={ms.class=4,ms.t4_perk=1..3}] at @s run function minesouls:perk/mage/t4/tick
+
+# Mage Tier 4: bodyguard entity tick (per-entity, runs even if owner is absent)
+execute as @e[type=minecraft:iron_golem,tag=ms_bodyguard] at @s run function minesouls:perk/mage/t4/bodyguard_entity_tick
 
 # Mage Tier 5 perks: Armageddon, Acheron, Fountain of Youth (per-player tick)
 execute as @a[scores={ms.class=4,ms.t5_perk=1..3}] at @s run function minesouls:perk/mage/t5/tick
 
+# Mage Tier 5: acheron wither entity tick (per-entity, runs even if owner is absent)
+execute as @e[type=minecraft:wither,tag=ms_acheron] at @s run function minesouls:perk/mage/t5/acheron_entity_tick
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
+
+# Check for players falling into the void to teleport them over to the abyss dimension instead of letting them die
+execute as @a[predicate=minesouls:falling_in_void] run effect give @s minecraft:slow_falling 1 0 true
+execute as @a[predicate=minesouls:falling_in_void] at @s run function minesouls:abyss/travel_to_abyss
+
+# Abyss dimension: per-player atmospheric effects (ash + void-mote particles)
+execute as @a[predicate=minesouls:in_abyss] at @s run function minesouls:abyss/tick
 
 # Stun system: decrement stun timers on affected entities
 execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick

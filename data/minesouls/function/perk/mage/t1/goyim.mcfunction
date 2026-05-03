@@ -19,6 +19,9 @@ summon minecraft:villager ^ ^1 ^1 {Tags:["ms_goyim","ms_goyim_new"],VillagerData
 # Give goyim glowing effect (16 seconds, covers the full 15s lifetime)
 effect give @e[type=minecraft:villager,tag=ms_goyim_new,limit=1] minecraft:glowing 16 0 true
 
+# Stamp entity-side lifetime timer so the summon expires even if the owner is absent
+scoreboard players set @e[type=minecraft:villager,tag=ms_goyim_new,limit=1] ms.lifetime 300
+
 # Set player state
 scoreboard players set @s ms.goyim_active 1
 scoreboard players set @s ms.goyim_timer 300

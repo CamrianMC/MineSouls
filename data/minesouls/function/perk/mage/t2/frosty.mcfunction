@@ -24,6 +24,9 @@ effect give @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] minecraft:in
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] minecraft:glowing 31 0 true
 
+# Stamp entity-side lifetime timer so the summon expires even if the owner is absent
+scoreboard players set @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] ms.lifetime 600
+
 # Initialize fire rate timer on the golem
 scoreboard players set @e[type=minecraft:snow_golem,tag=ms_frosty_new,limit=1] ms.frosty_fire 0
 

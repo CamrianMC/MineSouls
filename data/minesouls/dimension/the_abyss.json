@@ -1,0 +1,11 @@
+{
+  "type": "minesouls:the_abyss",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minesouls:abyss"
+    },
+    "settings": "minesouls:the_abyss"
+  }
+}

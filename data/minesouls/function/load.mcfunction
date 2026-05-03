@@ -61,6 +61,9 @@ scoreboard objectives add ms.parry_blocked minecraft.custom:minecraft.damage_blo
 scoreboard objectives add ms.parry_prev dummy
 scoreboard objectives add ms.stun_timer dummy
 
+# Warrior Tier 4 perk scoreboards (Calloused Veteran)
+scoreboard objectives add ms.armor_rating armor
+
 # Warrior Tier 5 perk scoreboards
 scoreboard objectives add ms.tan_prev dummy
 scoreboard objectives add ms.tan_dmg dummy
@@ -138,6 +141,7 @@ scoreboard objectives add ms.bm_pprev dummy
 scoreboard objectives add ms.bm_mcd dummy
 
 # Mage perk scoreboards
+scoreboard objectives add ms.lifetime dummy
 scoreboard objectives add ms.mana dummy
 scoreboard objectives add ms.mana_max dummy
 scoreboard objectives add ms.use_spell minecraft.used:minecraft.warped_fungus_on_a_stick
@@ -189,4 +193,8 @@ scoreboard objectives add ms.class_info trigger
 # Prevent parry (Warrior T3) spam
 scoreboard objectives add ms.parry_cd dummy
 
+# Darkwraith mob scoreboards
+scoreboard objectives add ms.dw_temp dummy
 
+# Abyss init scoreboard
+scoreboard objectives add ms.abyss_init dummy

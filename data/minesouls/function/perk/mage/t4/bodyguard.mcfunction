@@ -20,6 +20,9 @@ summon minecraft:iron_golem ~-2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],Pe
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:iron_golem,tag=ms_bodyguard_new] minecraft:glowing 31 0 true
 
+# Stamp entity-side lifetime timer so the summon expires even if the owner is absent
+scoreboard players set @e[type=minecraft:iron_golem,tag=ms_bodyguard_new] ms.lifetime 600
+
 # Set player state
 scoreboard players set @s ms.bodyguard_active 1
 scoreboard players set @s ms.bodyguard_timer 600

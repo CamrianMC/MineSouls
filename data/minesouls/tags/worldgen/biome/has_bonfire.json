@@ -1,6 +1,7 @@
 {
   "values": [
     "#minecraft:is_overworld",
-    "#minecraft:is_end"
+    "#minecraft:is_end",
+    "minesouls:abyss"
   ]
 }

@@ -20,6 +20,9 @@ team join friendly @e[type=minecraft:wither,tag=ms_acheron_new]
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:wither,tag=ms_acheron_new] minecraft:glowing 31 0 true
 
+# Stamp entity-side lifetime timer so the summon expires even if the owner is absent
+scoreboard players set @e[type=minecraft:wither,tag=ms_acheron_new,limit=1] ms.lifetime 600
+
 # Set player state
 scoreboard players set @s ms.acheron_active 1
 scoreboard players set @s ms.acheron_timer 600

@@ -31,6 +31,9 @@ execute as @e[type=minecraft:wolf,tag=ms_druid_new] run data modify entity @s Co
 # Give wolves glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:wolf,tag=ms_druid_new] minecraft:glowing 31 0 true
 
+# Stamp entity-side lifetime timer so the summon expires even if the owner is absent
+scoreboard players set @e[type=minecraft:wolf,tag=ms_druid_new] ms.lifetime 600
+
 # Set player state
 scoreboard players set @s ms.druid_active 1
 scoreboard players set @s ms.druid_timer 600
