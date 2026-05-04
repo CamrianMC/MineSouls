@@ -136,6 +136,12 @@ execute as @a[scores={ms.class=4,ms.t5_perk=1..3}] at @s run function minesouls:
 # Mage Tier 5: acheron wither entity tick (per-entity, runs even if owner is absent)
 execute as @e[type=minecraft:wither,tag=ms_acheron] at @s run function minesouls:perk/mage/t5/acheron_entity_tick
 
+# Manus boss: dark magic wave projectile effects and hit detection (global tick)
+function minesouls:manus/wave_tick
+
+# Manus boss: per-entity behaviour (attacks, phases, despawn)
+execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 

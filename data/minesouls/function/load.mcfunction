@@ -201,3 +201,10 @@ scoreboard objectives add ms.dw_temp dummy
 
 # Abyss init scoreboard
 scoreboard objectives add ms.abyss_init dummy
+
+# Manus boss scoreboards
+scoreboard objectives add ms.manus_phase dummy
+scoreboard objectives add ms.manus_skull_timer dummy
+scoreboard objectives add ms.manus_wave_timer dummy
+scoreboard objectives add ms.manus_dw_timer dummy
+scoreboard objectives add ms.manus_temp dummy
