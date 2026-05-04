@@ -32,7 +32,8 @@
   },
   "spawners": {
     "monster": [
-      {"type": "minecraft:warden",       "weight": 1, "minCount": 0, "maxCount": 1}
+      {"type": "minecraft:warden",       "weight": 1, "minCount": 1, "maxCount": 1},
+      {"type": "minecraft:bat",          "weight": 5, "minCount": 1, "maxCount": 3}
     ],
     "creature": [],
     "ambient": [],
@@ -42,10 +43,7 @@
     "axolotls": [],
     "misc": []
   },
-  "spawn_costs": {"minecraft:warden": {
-    "energy_budget": 0.5,
-    "charge": 0.5
-  }},
+  "spawn_costs": {},
   "carvers": [],
   "features": [[], [], [], [], [], [], [], [], [], [], []]
 }

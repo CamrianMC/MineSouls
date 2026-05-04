@@ -5,8 +5,8 @@
 # --- Fire timer: increment and fire every 10 ticks ---
 scoreboard players add @s ms.acheron_fire 1
 
-# Fire a wither skull at the nearest hostile within 50 blocks
-execute if score @s ms.acheron_fire matches 10.. if entity @e[type=#minesouls:hostile,distance=..50,limit=1] run function minesouls:perk/mage/t5/acheron_wither_fire
+# Fire a wither skull at the nearest hostile within 10 blocks
+execute if score @s ms.acheron_fire matches 10.. if entity @e[type=#minesouls:hostile,distance=..10,limit=1] run function minesouls:perk/mage/t5/acheron_wither_fire
 
 # Reset timer when it reaches 10 (even if no target, to prevent accumulation)
 execute if score @s ms.acheron_fire matches 10.. run scoreboard players set @s ms.acheron_fire 0

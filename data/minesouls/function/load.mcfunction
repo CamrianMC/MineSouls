@@ -167,6 +167,9 @@ scoreboard objectives add ms.bodyguard_active dummy
 scoreboard objectives add ms.acheron_timer dummy
 scoreboard objectives add ms.acheron_active dummy
 scoreboard objectives add ms.acheron_fire dummy
+
+# Darkwraith mob scoreboards
+scoreboard objectives add ms.dw_hp dummy
 team add friendly
 
 # Constants for scoreboard math (used by class book perk selection)
