@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "used_lens": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{new_londo_lens:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:new_londo_lens/on_use"
+  }
+}
