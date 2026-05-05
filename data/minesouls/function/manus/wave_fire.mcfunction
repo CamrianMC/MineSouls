@@ -7,8 +7,9 @@ scoreboard players set @s ms.manus_wave_timer 60
 # Tag one random player within 50 blocks as the wave target
 tag @a[distance=..50,sort=random,limit=1] add ms_manus_wave_target
 
-# Aim at the tagged player and fire
-execute facing entity @a[tag=ms_manus_wave_target,limit=1] eyes run function minesouls:manus/wave_fire_aimed
+# Aim at the tagged player and fire.
+# anchored eyes shifts the origin to Manus' eye level before the angle is computed.
+execute anchored eyes facing entity @a[tag=ms_manus_wave_target,limit=1] eyes run function minesouls:manus/wave_fire_aimed
 
 # Remove the temporary target tag
 tag @a[tag=ms_manus_wave_target] remove ms_manus_wave_target

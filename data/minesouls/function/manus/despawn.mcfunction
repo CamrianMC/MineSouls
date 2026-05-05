@@ -3,11 +3,7 @@
 # wardens have PersistenceRequired:1b set and would not naturally despawn after a teleport.
 # Runs as Manus at Manus.
 
-# Announce the retreat to any players in the Abyss
-tellraw @a {"text":"The darkness recedes...","color":"dark_purple"}
+# Remove the boss health bar before Manus leaves
+bossbar remove minesouls:manus
 
-# Death audio at Manus' last known position
-playsound minecraft:entity.warden.death hostile @a ~ ~ ~ 1 0.7
-
-# Remove Manus
-kill @s
+tp @s ~ ~-300 ~

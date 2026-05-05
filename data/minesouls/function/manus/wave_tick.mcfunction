@@ -6,8 +6,14 @@
 
 # --- Step 1: Dark particle trail from live wave riders ---
 # The marker passenger travels with the fireball, so its position IS the fireball position.
-execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:dragon_breath ~ ~ ~ 0.6 0.6 0.6 0.01 20 normal
-execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:squid_ink ~ ~ ~ 0.35 0.35 0.35 0.02 8 normal
+# Large outer dragon-breath cloud – purple, unmistakable at range
+execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:dragon_breath ~ ~ ~ 1.0 1.0 1.0 0.01 60 normal
+# Void core – dense black ink at the centre
+execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:squid_ink ~ ~ ~ 0.3 0.3 0.3 0.02 20 normal
+# Soul-fire wisps threading outward – eerie blue glow
+execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:soul_fire_flame ~ ~ ~ 0.6 0.6 0.6 0.03 15 normal
+# Reverse-portal shards – deep purple sparkles visible at distance
+execute as @e[type=minecraft:marker,tag=ms_manus_wave_rider] at @s run particle minecraft:reverse_portal ~ ~ ~ 0.7 0.7 0.7 0.05 20 normal
 
 # --- Step 2: Orphan-rider hit detection (same pattern as mage fireball perk) ---
 

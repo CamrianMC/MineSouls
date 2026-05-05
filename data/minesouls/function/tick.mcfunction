@@ -142,6 +142,9 @@ function minesouls:manus/wave_tick
 # Manus boss: per-entity behaviour (attacks, phases, despawn)
 execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
 
+# Manus boss: clean up the health bar if Manus was killed rather than despawned
+execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 

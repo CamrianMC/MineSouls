@@ -8,7 +8,7 @@ scoreboard players set @s ms.manus_phase 2
 attribute @s minecraft:movement_speed base set 0.45
 
 # Announce the enrage to all players in the Abyss
-tellraw @a [{"text":"Manus ","color":"dark_purple","bold":true},{"text":"ENRAGES","color":"dark_red","bold":true},{"text":"!","color":"dark_purple","bold":true}]
+#tellraw @a [{"text":"Manus ","color":"dark_purple","bold":true},{"text":"ENRAGES","color":"dark_red","bold":true},{"text":"!","color":"dark_purple","bold":true}]
 
 # Dramatic phase-transition audio and visual
 playsound minecraft:entity.warden.roar hostile @a[distance=..128] ~ ~ ~ 1 0.7
