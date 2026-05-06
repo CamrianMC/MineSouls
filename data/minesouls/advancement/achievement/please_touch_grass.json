@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:grass_block" },
+    "title": { "text": "Please touch grass" },
+    "description": { "text": "Find a bonfire over 10,000,000 blocks from spawn" },
+    "frame": "challenge",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

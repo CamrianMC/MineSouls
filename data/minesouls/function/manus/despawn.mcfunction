@@ -6,4 +6,8 @@
 # Remove the boss health bar before Manus leaves
 bossbar remove minesouls:manus
 
+# Clear the alive flag BEFORE teleporting away so the death-detection logic in
+# tick.mcfunction knows this entity disappearance was a despawn, not a kill.
+scoreboard players set #global ms.manus_alive 0
+
 tp @s ~ ~-300 ~
