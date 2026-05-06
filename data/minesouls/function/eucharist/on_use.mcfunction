@@ -1,5 +1,5 @@
 # Reward function for minesouls:eucharist/consumed advancement.
-# Runs as the player who just consumed an Eucharist.
+# Runs as the player who just consumed a Eucharist.
 #
 # If the player carries any sin (ms.sin >= 1), they are killed instantly
 # as divine punishment.  Otherwise they receive full healing, max saturation,
