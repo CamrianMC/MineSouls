@@ -8,7 +8,8 @@ summon minecraft:warden ~ ~1 ~ {Silent:1b,PersistenceRequired:1b,CustomNameVisib
 # Initialise per-entity scoreboard counters on the fresh Manus
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_phase 1
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_skull_timer 10
-scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_wave_timer 60
+scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_skull_pattern 0
+scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_lightning_timer 60
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_dw_timer 0
 
 # Cleanup temporary spawn tag

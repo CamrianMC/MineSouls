@@ -14,8 +14,8 @@ summon minecraft:skeleton ~5 ~ ~ {Silent:1b,CustomNameVisible:0b,DeathLootTable:
 # West (−X)
 summon minecraft:skeleton ~-5 ~ ~ {Silent:1b,CustomNameVisible:0b,DeathLootTable:"minecraft:empty",CanPickUpLoot:0b,Health:50f,Tags:["ms_darkwraith"],CustomName:{"color":"dark_red","text":"Darkwraith"},equipment:{feet:{id:"minecraft:leather_boots",count:1,components:{"minecraft:dyed_color":1908001,"minecraft:trim":{material:"minecraft:iron",pattern:"minecraft:rib"}}},legs:{id:"minecraft:leather_leggings",count:1,components:{"minecraft:dyed_color":1908001,"minecraft:trim":{material:"minecraft:iron",pattern:"minecraft:rib"}}},chest:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":1908001,"minecraft:trim":{material:"minecraft:iron",pattern:"minecraft:rib"}}},head:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":1908001,"minecraft:trim":{material:"minecraft:iron",pattern:"minecraft:rib"}}},mainhand:{id:"minecraft:netherite_sword",count:1,components:{"minecraft:enchantments":{"sharpness":5}}}},drop_chances:{feet:0.000,legs:0.000,chest:0.000,head:0.000,mainhand:0.000},attributes:[{id:"minecraft:follow_range",base:16},{id:"minecraft:max_health",base:30}]}
 
-# Reset Darkwraith re-summon timer to 400 ticks (20 seconds)
-scoreboard players set @s ms.manus_dw_timer 400
+# Reset Darkwraith re-summon timer to 200 ticks (10 seconds)
+scoreboard players set @s ms.manus_dw_timer 200
 
 # Audio and visual feedback for the summon
 playsound minecraft:entity.wither.spawn hostile @a[distance=..64] ~ ~ ~ 0.8 1.2

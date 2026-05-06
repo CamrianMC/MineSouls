@@ -205,6 +205,8 @@ scoreboard objectives add ms.abyss_init dummy
 # Manus boss scoreboards
 scoreboard objectives add ms.manus_phase dummy
 scoreboard objectives add ms.manus_skull_timer dummy
-scoreboard objectives add ms.manus_wave_timer dummy
+scoreboard objectives add ms.manus_skull_pattern dummy
+scoreboard objectives add ms.manus_lightning_timer dummy
+scoreboard objectives add ms.manus_lw_timer dummy
 scoreboard objectives add ms.manus_dw_timer dummy
 scoreboard objectives add ms.manus_temp dummy

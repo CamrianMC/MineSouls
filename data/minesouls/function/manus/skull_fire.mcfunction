@@ -1,16 +1,23 @@
-# Skull Fire – reset timer, tag a random nearby player, then delegate to skull_fire_aimed.
+# Skull Fire – fires 4 wither skulls simultaneously in alternating direction patterns.
+# Alternates between cardinal (0/90/180/270°) and diagonal (45/135/225/315°) salvos.
 # Runs as Manus at Manus.
 
-# Reset the skull cooldown
-scoreboard players set @s ms.manus_skull_timer 10
+# Reset the skull cooldown (30 ticks = 1.5 s between salvos)
+scoreboard players set @s ms.manus_skull_timer 30
 
-# Tag one random player within 50 blocks as the skull target
-tag @a[distance=..50,sort=random,limit=1] add ms_manus_target
+# Snapshot current pattern into a temp fake-player, then advance for next salvo
+scoreboard players operation #sk_pat ms.manus_temp = @s ms.manus_skull_pattern
+scoreboard players add @s ms.manus_skull_pattern 1
+execute if score @s ms.manus_skull_pattern matches 2.. run scoreboard players set @s ms.manus_skull_pattern 0
 
-# Aim at the tagged player and fire.
-# anchored eyes shifts the origin to Manus' eye level before the angle is computed,
-# preventing the strong upward bias that occurs when facing from Manus' feet.
-execute anchored eyes facing entity @a[tag=ms_manus_target,limit=1] eyes run function minesouls:manus/skull_fire_aimed
+# --- Pattern A: cardinal directions (south=0, west=90, north=180, east=270) ---
+execute if score #sk_pat ms.manus_temp matches 0 anchored eyes rotated 0 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 0 anchored eyes rotated 90 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 0 anchored eyes rotated 180 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 0 anchored eyes rotated 270 0 run function minesouls:manus/skull_fire_aimed
 
-# Remove the temporary target tag
-tag @a[tag=ms_manus_target] remove ms_manus_target
+# --- Pattern B: diagonal directions (SW=45, NW=135, NE=225, SE=315) ---
+execute if score #sk_pat ms.manus_temp matches 1 anchored eyes rotated 45 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 1 anchored eyes rotated 135 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 1 anchored eyes rotated 225 0 run function minesouls:manus/skull_fire_aimed
+execute if score #sk_pat ms.manus_temp matches 1 anchored eyes rotated 315 0 run function minesouls:manus/skull_fire_aimed

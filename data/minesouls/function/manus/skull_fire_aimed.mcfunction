@@ -24,10 +24,10 @@ scoreboard players operation #sk_dz ms.manus_temp -= #sk_oz ms.manus_temp
 # Summon the wither skull 1.5 blocks ahead of Manus' eyes to clear his hitbox
 execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:wither_skull ~ ~ ~ {Tags:["ms_manus_skull_new"],Charged:0b}
 
-# Set Motion: scale 0.0002 × 10000-unit direction = ~2.0 blocks/tick initial speed
-execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[0] double 0.0002 run scoreboard players get #sk_dx ms.manus_temp
-execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[1] double 0.0002 run scoreboard players get #sk_dy ms.manus_temp
-execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[2] double 0.0002 run scoreboard players get #sk_dz ms.manus_temp
+# Set Motion: scale 0.0001 × 10000-unit direction = ~1.0 blocks/tick initial speed (slower, more dodgeable)
+execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[0] double 0.0001 run scoreboard players get #sk_dx ms.manus_temp
+execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[1] double 0.0001 run scoreboard players get #sk_dy ms.manus_temp
+execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[2] double 0.0001 run scoreboard players get #sk_dz ms.manus_temp
 
 # Set Owner to Manus' UUID so the skull does not collide with its own shooter
 data modify entity @e[tag=ms_manus_skull_new,limit=1] Owner set from entity @s UUID

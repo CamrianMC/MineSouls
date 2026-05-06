@@ -35,16 +35,16 @@ execute if score @s ms.manus_phase matches 1 run function minesouls:manus/phase2
 
 # Decrement attack-fire timers
 scoreboard players remove @s ms.manus_skull_timer 1
-scoreboard players remove @s ms.manus_wave_timer 1
+scoreboard players remove @s ms.manus_lightning_timer 1
 
 # Decrement the Darkwraith re-summon timer in Phase 2
 execute if score @s ms.manus_phase matches 2 run scoreboard players remove @s ms.manus_dw_timer 1
 
-# Fire a wither skull at a random nearby player every 10 ticks
+# Fire a wither skull in 4 directions every 30 ticks (alternates cardinal/diagonal)
 execute if score @s ms.manus_skull_timer matches ..0 run function minesouls:manus/skull_fire
 
-# Fire the slow dark-magic wave at a random nearby player every 60 ticks (3 seconds)
-execute if score @s ms.manus_wave_timer matches ..0 run function minesouls:manus/wave_fire
+# Strike random positions near Manus with lightning every 60 ticks (3 seconds)
+execute if score @s ms.manus_lightning_timer matches ..0 run function minesouls:manus/lightning_fire
 
 # Re-summon 4 Darkwraiths every 20 seconds (400 ticks) while in Phase 2
 execute if score @s ms.manus_phase matches 2 if score @s ms.manus_dw_timer matches ..0 run function minesouls:manus/summon_darkwraiths
