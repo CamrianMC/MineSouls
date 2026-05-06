@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:campfire" },
+    "title": { "text": "MineSouls" },
+    "description": { "text": "Embark on your journey as an Undead" },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/soul_sand.png"
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

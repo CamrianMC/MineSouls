@@ -34,3 +34,6 @@ scoreboard players set @s ms.initialized 1
 scoreboard players set @s ms.physik_type 0
 
 execute as @a[name="Camrian"] run place structure minesouls:bonfire ~3 ~ ~
+
+# Grant "Big mistake" achievement on first login
+advancement grant @s only minesouls:achievement/big_mistake
