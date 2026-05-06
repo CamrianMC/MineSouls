@@ -211,6 +211,9 @@ scoreboard objectives add ms.manus_lw_timer dummy
 scoreboard objectives add ms.manus_dw_timer dummy
 scoreboard objectives add ms.manus_temp dummy
 
+# Sin counter: tracks player sin for use by items like the Eucharist
+scoreboard objectives add ms.sin dummy
+
 # Achievement scoreboards
 # Tracks villager trades per player (for "Kissing the wall" achievement)
 scoreboard objectives add ms.trade_count dummy

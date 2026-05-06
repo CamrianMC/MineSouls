@@ -151,6 +151,9 @@ execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 
+# Yamaka: apply Hero of the Village to any player wearing the Yamaka helmet
+function minesouls:yamaka/tick
+
 # Check for players falling into the void to teleport them over to the abyss dimension instead of letting them die
 execute as @a[predicate=minesouls:falling_in_void] run effect give @s minecraft:slow_falling 1 0 true
 execute as @a[predicate=minesouls:falling_in_void] at @s run function minesouls:abyss/travel_to_abyss

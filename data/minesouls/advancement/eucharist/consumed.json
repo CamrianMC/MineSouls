@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consumed_eucharist": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{eucharist:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:eucharist/on_use"
+  }
+}
