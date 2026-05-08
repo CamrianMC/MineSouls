@@ -12,5 +12,8 @@
     "dummy": {
       "trigger": "minecraft:impossible"
     }
+  },
+  "rewards": {
+    "function": "minesouls:achievement/explorer_reward"
   }
 }

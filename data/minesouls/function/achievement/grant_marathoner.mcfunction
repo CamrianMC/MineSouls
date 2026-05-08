@@ -8,3 +8,4 @@
 scoreboard players add #marathoner ms.first_reward 1
 execute if score #marathoner ms.first_reward matches 1 run give @s minecraft:ender_eye 1
 advancement grant @s only minesouls:achievement/marathoner
+tag @s add ms.ach.marathoner

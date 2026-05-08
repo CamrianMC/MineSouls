@@ -148,6 +148,11 @@ execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
 # Manus boss: grant "Hero of Oolacile" to all players when Manus is killed (not despawned)
 execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
 
+# Knight Artorias boss: per-entity behaviour (attacks, phases)
+execute as @e[type=vindicator,tag=ms_artorias,nbt=!{AbsorptionAmount:0f}] at @s run function minesouls:artorias/main/tick
+# Knight Artorias boss: music check (per-player)
+execute as @a run function minesouls:artorias/main/music_check
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
 

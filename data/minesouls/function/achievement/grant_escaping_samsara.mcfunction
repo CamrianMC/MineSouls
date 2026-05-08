@@ -8,3 +8,4 @@
 scoreboard players add #samsara ms.first_reward 1
 execute if score #samsara ms.first_reward matches 1 run give @s minecraft:ender_eye 5
 advancement grant @s only minesouls:achievement/escaping_samsara
+tag @s add ms.ach.escaping_samsara

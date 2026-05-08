@@ -9,3 +9,4 @@ scoreboard players add #grass ms.first_reward 1
 execute if score #grass ms.first_reward matches 1 run give @s minecraft:ender_eye 20
 execute if score #grass ms.first_reward matches 1 run give @s minecraft:enchanted_golden_apple 64
 advancement grant @s only minesouls:achievement/please_touch_grass
+tag @s add ms.ach.please_touch_grass

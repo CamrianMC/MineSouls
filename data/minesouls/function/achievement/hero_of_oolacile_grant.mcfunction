@@ -7,3 +7,4 @@ scoreboard players set #global ms.manus_alive 0
 
 # Announce and grant to every online player
 advancement grant @a only minesouls:achievement/hero_of_oolacile
+tag @a add ms.ach.hero_of_oolacile

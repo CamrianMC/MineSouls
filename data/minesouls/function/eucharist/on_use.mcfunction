@@ -9,8 +9,8 @@
 advancement revoke @s only minesouls:eucharist/consumed
 
 # ── SINFUL path: instant death ──────────────────────────────────────────────
-execute if score @s ms.sin matches 1.. run tellraw @s {"text":"Your sin has been judged.","color":"dark_red","bold":true}
 execute if score @s ms.sin matches 1.. run kill @s
+execute if score @s ms.sin matches 1.. run summon minecraft:lightning_bolt ~ ~ ~
 
 # ── PURE path: divine blessing ───────────────────────────────────────────────
 # Instant Health X (amplifier 9) heals 100 HP – far more than any default
