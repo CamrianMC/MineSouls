@@ -23,3 +23,7 @@ function minesouls:bonfire/teleport_home
 
 # Reset Darksign state so the next activation starts fresh
 scoreboard players set @s ms.darksign_clicks 0
+
+# Grant "Ass-Clenching Escape" if the player started the Darksign with less than 5 HP
+execute if score @s ms.darksign_low_hp matches 1 run advancement grant @s only minesouls:achievement/ass_clenching_escape
+scoreboard players set @s ms.darksign_low_hp 0

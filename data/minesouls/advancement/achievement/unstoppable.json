@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:beacon" },
+    "title": { "text": "Unstoppable" },
+    "description": { "text": "Unlock your tier 5 perk" },
+    "frame": "challenge",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

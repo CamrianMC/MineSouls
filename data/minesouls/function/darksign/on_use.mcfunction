@@ -40,3 +40,6 @@ execute at @s run playsound minecraft:block.portal.trigger player @s ~ ~ ~ 1 1
 # Start the 4-second (80 tick) countdown and record the first click
 scoreboard players set @s ms.darksign_timer 80
 scoreboard players set @s ms.darksign_clicks 1
+
+# If the player's HP is below 5 (< 2.5 hearts), flag this for the escape achievement
+execute if score @s ms.health matches ..4 run scoreboard players set @s ms.darksign_low_hp 1

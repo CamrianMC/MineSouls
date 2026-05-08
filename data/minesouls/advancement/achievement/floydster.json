@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:sand" },
+    "title": { "text": "Floydster" },
+    "description": { "text": "Suffocate to death" },
+    "frame": "task",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "suffocated": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "killing_blow": {
+          "type": {
+            "tags": [
+              { "id": "minecraft:bypasses_armor", "expected": true },
+              { "id": "minecraft:is_fire", "expected": false },
+              { "id": "minecraft:is_drowning", "expected": false },
+              { "id": "minecraft:is_fall", "expected": false },
+              { "id": "minecraft:is_lightning", "expected": false },
+              { "id": "minecraft:is_explosion", "expected": false },
+              { "id": "minecraft:is_freezing", "expected": false },
+              { "id": "minecraft:is_projectile", "expected": false }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

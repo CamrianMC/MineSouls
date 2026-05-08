@@ -15,6 +15,7 @@ execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players set @s 
 # Cancel any active Darksign countdown when the player dies
 execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players set @s ms.darksign_timer 0
 execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players set @s ms.darksign_clicks 0
+execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players set @s ms.darksign_low_hp 0
 execute if score @s ms.deaths > @s ms.prev_deaths run scoreboard players operation @s ms.prev_deaths = @s ms.deaths
 
 # Once the player is alive again (Health > 0, i.e. they clicked Respawn) and

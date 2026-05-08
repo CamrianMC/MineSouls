@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:nether_star" },
+    "title": { "text": "Dripping with Aura" },
+    "description": { "text": "Unlock your tier 4 perk" },
+    "frame": "goal",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

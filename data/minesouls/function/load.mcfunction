@@ -214,3 +214,16 @@ scoreboard objectives add ms.manus_move_timer dummy
 scoreboard objectives add ms.manus_lw_timer dummy
 scoreboard objectives add ms.manus_dw_timer dummy
 scoreboard objectives add ms.manus_temp dummy
+
+# Sin counter: tracks player sin for use by items like the Eucharist
+scoreboard objectives add ms.sin dummy
+
+# Achievement scoreboards
+# Tracks villager trades per player (for "Kissing the wall" achievement)
+scoreboard objectives add ms.trade_count dummy
+# Global lock for first-recipient rewards (fake player entries)
+scoreboard objectives add ms.first_reward dummy
+# Set to 1 when Manus is spawned; reset when he dies or the check fires
+scoreboard objectives add ms.manus_alive dummy
+# Flag set when Darksign is first used at low HP (< 5); cleared on resolve or death
+scoreboard objectives add ms.darksign_low_hp dummy

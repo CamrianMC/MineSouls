@@ -145,8 +145,14 @@ execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
 # Manus boss: clean up the health bar if Manus was killed rather than despawned
 execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
 
+# Manus boss: grant "Hero of Oolacile" to all players when Manus is killed (not despawned)
+execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
+
+# Yamaka: apply Hero of the Village to any player wearing the Yamaka helmet
+function minesouls:yamaka/tick
 
 # Check for players falling into the void to teleport them over to the abyss dimension instead of letting them die
 execute as @a[predicate=minesouls:falling_in_void] run effect give @s minecraft:slow_falling 1 0 true
