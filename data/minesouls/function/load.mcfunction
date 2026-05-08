@@ -171,6 +171,8 @@ scoreboard objectives add ms.acheron_fire dummy
 # Darkwraith mob scoreboards
 scoreboard objectives add ms.dw_hp dummy
 team add friendly
+team add manus
+team modify manus friendlyFire false
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
@@ -207,6 +209,8 @@ scoreboard objectives add ms.manus_phase dummy
 scoreboard objectives add ms.manus_skull_timer dummy
 scoreboard objectives add ms.manus_skull_pattern dummy
 scoreboard objectives add ms.manus_lightning_timer dummy
+scoreboard objectives add ms.manus_wave_timer dummy
+scoreboard objectives add ms.manus_move_timer dummy
 scoreboard objectives add ms.manus_lw_timer dummy
 scoreboard objectives add ms.manus_dw_timer dummy
 scoreboard objectives add ms.manus_temp dummy

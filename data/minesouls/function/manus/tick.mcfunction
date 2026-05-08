@@ -10,17 +10,14 @@ data merge entity @s {Silent:1b}
 # Refreshing it each tick (ttl:200 = 10 s) means it never expires.
 data modify entity @s Brain.memories."minecraft:dig_cooldown" set value {value:{},ttl:200}
 
-# Force Manus to chase and attack: write the nearest player's UUID directly into the
-# Warden's attack_target brain memory every tick. Without this, removing the invalid
-# angerLevel tag leaves the Warden with no target and it stands still.
-tag @p[distance=..64] add ms_manus_target_temp
-execute if entity @a[tag=ms_manus_target_temp] run data modify entity @s Brain.memories."minecraft:attack_target" set value {value:[I;0,0,0,0],ttl:100}
-execute if entity @a[tag=ms_manus_target_temp] run data modify entity @s Brain.memories."minecraft:attack_target".value.value set from entity @a[tag=ms_manus_target_temp,limit=1] UUID
-tag @a remove ms_manus_target_temp
+
 
 # Sync boss health bar value and update the visible-player list
 execute store result bossbar minesouls:manus value run data get entity @s Health 1
 bossbar set minesouls:manus players @a[distance=..80]
+
+# NoGravity keeps Manus airborne without the upward drift that levitation causes
+data merge entity @s {NoGravity:1b}
 
 # Ambient dark-magic particles (soul fire wisps + void ink)
 particle minecraft:soul_fire_flame ~ ~1.5 ~ 0.7 1.5 0.7 0.05 8 normal
@@ -36,6 +33,8 @@ execute if score @s ms.manus_phase matches 1 run function minesouls:manus/phase2
 # Decrement attack-fire timers
 scoreboard players remove @s ms.manus_skull_timer 1
 scoreboard players remove @s ms.manus_lightning_timer 1
+scoreboard players remove @s ms.manus_wave_timer 1
+scoreboard players remove @s ms.manus_move_timer 1
 
 # Decrement the Darkwraith re-summon timer in Phase 2
 execute if score @s ms.manus_phase matches 2 run scoreboard players remove @s ms.manus_dw_timer 1
@@ -45,6 +44,12 @@ execute if score @s ms.manus_skull_timer matches ..0 run function minesouls:manu
 
 # Strike random positions near Manus with lightning every 60 ticks (3 seconds)
 execute if score @s ms.manus_lightning_timer matches ..0 run function minesouls:manus/lightning_fire
+
+# Fire a dark-magic wave at a random player every 60 ticks (3 seconds)
+execute if score @s ms.manus_wave_timer matches ..0 run function minesouls:manus/wave_fire
+
+# Teleport Manus to 5 blocks in front of a random player every 100 ticks (5 seconds)
+execute if score @s ms.manus_move_timer matches ..0 run function minesouls:manus/move
 
 # Re-summon 4 Darkwraiths every 20 seconds (400 ticks) while in Phase 2
 execute if score @s ms.manus_phase matches 2 if score @s ms.manus_dw_timer matches ..0 run function minesouls:manus/summon_darkwraiths

@@ -3,7 +3,7 @@
 
 # Deal 40 magic damage (20 hearts) to all players within 3 blocks of the impact point.
 # Magic damage type bypasses armour, befitting a dark-magic attack.
-damage @a[distance=..3] 40 minecraft:magic
+execute as @a[distance=..3] run damage @s 40 minecraft:magic
 
 # Dramatic dark-magic impact visual
 particle minecraft:dragon_breath ~ ~ ~ 2.0 2.0 2.0 0.05 80 normal

@@ -10,7 +10,12 @@ scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_phase 1
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_skull_timer 10
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_skull_pattern 0
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_lightning_timer 60
+scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_wave_timer 60
+scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_move_timer 100
 scoreboard players set @e[tag=ms_manus_new,limit=1] ms.manus_dw_timer 0
+
+# Add Manus to team manus so friendly-fire rules protect him from retaliating Darkwraiths
+team join manus @e[tag=ms_manus_new,limit=1]
 
 # Cleanup temporary spawn tag
 tag @e[tag=ms_manus_new] remove ms_manus_new

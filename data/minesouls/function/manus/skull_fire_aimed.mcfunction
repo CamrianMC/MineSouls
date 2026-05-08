@@ -5,13 +5,13 @@
 # --- Marker direction trick: derive unit direction from eye-space markers ---
 
 # Origin: Manus' eye position
-execute anchored eyes positioned ^ ^ ^0 run summon minecraft:marker ~ ~ ~ {Tags:["ms_manus_sk_origin"]}
+execute anchored feet positioned ^ ^ ^0 run summon minecraft:marker ~ ~ ~ {Tags:["ms_manus_sk_origin"]}
 execute store result score #sk_ox ms.manus_temp run data get entity @e[tag=ms_manus_sk_origin,limit=1] Pos[0] 10000
 execute store result score #sk_oy ms.manus_temp run data get entity @e[tag=ms_manus_sk_origin,limit=1] Pos[1] 10000
 execute store result score #sk_oz ms.manus_temp run data get entity @e[tag=ms_manus_sk_origin,limit=1] Pos[2] 10000
 
 # Direction: 1 block ahead of Manus' eyes in look direction
-execute anchored eyes positioned ^ ^ ^1 run summon minecraft:marker ~ ~ ~ {Tags:["ms_manus_sk_dir"]}
+execute anchored feet positioned ^ ^ ^1 run summon minecraft:marker ~ ~ ~ {Tags:["ms_manus_sk_dir"]}
 execute store result score #sk_dx ms.manus_temp run data get entity @e[tag=ms_manus_sk_dir,limit=1] Pos[0] 10000
 execute store result score #sk_dy ms.manus_temp run data get entity @e[tag=ms_manus_sk_dir,limit=1] Pos[1] 10000
 execute store result score #sk_dz ms.manus_temp run data get entity @e[tag=ms_manus_sk_dir,limit=1] Pos[2] 10000
@@ -22,7 +22,7 @@ scoreboard players operation #sk_dy ms.manus_temp -= #sk_oy ms.manus_temp
 scoreboard players operation #sk_dz ms.manus_temp -= #sk_oz ms.manus_temp
 
 # Summon the wither skull 1.5 blocks ahead of Manus' eyes to clear his hitbox
-execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:wither_skull ~ ~ ~ {Tags:["ms_manus_skull_new"],Charged:0b}
+execute anchored feet positioned ^ ^0.5 ^1.5 run summon minecraft:wither_skull ~ ~ ~ {Tags:["ms_manus_skull_new"],Charged:0b}
 
 # Set Motion: scale 0.0001 × 10000-unit direction = ~1.0 blocks/tick initial speed (slower, more dodgeable)
 execute store result entity @e[tag=ms_manus_skull_new,limit=1] Motion[0] double 0.0001 run scoreboard players get #sk_dx ms.manus_temp

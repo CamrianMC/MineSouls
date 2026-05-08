@@ -23,7 +23,7 @@ scoreboard players operation #wv_dz ms.manus_temp -= #wv_oz ms.manus_temp
 # ExplosionPower:0b prevents block destruction.
 # The marker passenger will become orphaned (lose its vehicle) when the fireball hits
 # something, triggering custom damage logic in wave_tick.mcfunction.
-execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:large_fireball ~ ~ ~ {Tags:["ms_manus_wave_new"],ExplosionPower:0b,Passengers:[{id:"minecraft:marker",Tags:["ms_manus_wave_rider"]}]}
+execute anchored eyes positioned ^ ^ ^1.5 run summon minecraft:fireball ~ ~ ~ {Tags:["ms_manus_wave_new"],ExplosionPower:0b,Passengers:[{id:"minecraft:marker",Tags:["ms_manus_wave_rider"]}]}
 
 # Set Motion: scale 0.0001 × 10000-unit direction = ~1.0 blocks/tick initial speed.
 # AbstractHurtingProjectile applies 0.95 drag per tick, so the fireball decelerates
