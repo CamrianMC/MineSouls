@@ -149,9 +149,19 @@ execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
 execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
 
 # Knight Artorias boss: per-entity behaviour (attacks, phases)
-execute as @e[type=vindicator,tag=ms_artorias,nbt=!{AbsorptionAmount:0f}] at @s run function minesouls:artorias/main/tick
+execute as @e[type=vindicator,tag=ms_artorias] at @s run function minesouls:artorias/main/tick
 # Knight Artorias boss: music check (per-player)
 execute as @a run function minesouls:artorias/main/music_check
+# Knight Artorias boss: shockwave ring markers decay and deal damage
+execute as @e[type=marker,tag=ms_arta_shockwave] at @s run function minesouls:artorias/attack/slam/shockwave_tick
+execute as @e[type=marker,tag=ms_arta_shockwave_outer] at @s run function minesouls:artorias/attack/slam/shockwave_tick
+# Knight Artorias boss: combo rupture ground-blast countdown
+execute as @e[type=marker,tag=ms_arta_rupture] at @s run function minesouls:artorias/attack/combo/rupture_tick
+# Knight Artorias boss: kill orphaned armor stand and hide bossbar when boss is dead
+execute unless entity @e[type=vindicator,tag=ms_artorias] run kill @e[type=armor_stand,tag=ms_artorias_stand]
+execute unless entity @e[type=vindicator,tag=ms_artorias] run bossbar set minesouls:artorias visible false
+# Knight Artorias boss: grant "Champion of the Abyss" when killed (not despawned)
+execute unless entity @e[type=vindicator,tag=ms_artorias] if score #global ms.arta_alive matches 1 run function minesouls:achievement/grant_champion_of_abyss
 
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
