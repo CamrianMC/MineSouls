@@ -14,5 +14,6 @@ execute if score @s ms.arta_timer matches 1 run particle minecraft:cloud ~ ~0 ~ 
 particle minecraft:squid_ink ~ ~ ~ 0.3 0.3 0.3 0.02 4 normal
 particle minecraft:soul_fire_flame ~ ~ ~ 0.4 0.4 0.4 0.04 5 normal
 
-# After 15 ticks: slam down to the target marker
-execute if score @s ms.arta_timer matches 15.. run function minesouls:artorias/attack/slam/impact
+# After 15 ticks: transition to impact state (state 6); do NOT call impact directly
+execute if score @s ms.arta_timer matches 15.. run scoreboard players set @s ms.arta_state 6
+execute if score @s ms.arta_timer matches 15.. run scoreboard players set @s ms.arta_timer 0

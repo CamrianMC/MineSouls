@@ -13,12 +13,12 @@ execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 
 execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 run teleport @s ^ ^ ^0.7
 
 # Hit check on tick 1: forward cone (2.5 blocks in front + body)
-execute if score @s ms.arta_timer matches 1 run execute as @a[distance=..2.5] run damage @s 12 minecraft:player_attack
-execute if score @s ms.arta_timer matches 1 run execute positioned ^ ^ ^1.5 as @a[distance=..2] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 as @a[distance=..2.5] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2] run damage @s 12 minecraft:player_attack
 
 # Wither on hit
-execute if score @s ms.arta_timer matches 1 run execute as @a[distance=..2.5] run effect give @s minecraft:wither 2 0 true
-execute if score @s ms.arta_timer matches 1 run execute positioned ^ ^ ^1.5 as @a[distance=..2] run effect give @s minecraft:wither 2 0 true
+execute if score @s ms.arta_timer matches 1 as @a[distance=..2.5] run effect give @s minecraft:wither 2 0 true
+execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2] run effect give @s minecraft:wither 2 0 true
 
 # Phase 1: transition after 10 ticks  |  Phase 2: after 7 ticks
 execute if score @s ms.arta_phase matches 1 if score @s ms.arta_timer matches 10.. run scoreboard players set @s ms.arta_state 9

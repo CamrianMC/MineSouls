@@ -12,13 +12,13 @@ execute if score @s ms.arta_timer matches 1 run particle minecraft:explosion ~ ~
 execute if score @s ms.arta_timer matches 1 run particle minecraft:squid_ink ~ ~1 ~ 0.5 0.7 0.5 0.04 12 normal
 
 # Hit check on tick 1: wider hitbox (3 blocks) for the heavy overhead
-execute if score @s ms.arta_timer matches 1 run execute as @a[distance=..3] run damage @s 20 minecraft:player_attack
-execute if score @s ms.arta_timer matches 1 run execute positioned ^ ^ ^1.5 as @a[distance=..2.5] run damage @s 20 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 as @a[distance=..3] run damage @s 20 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2.5] run damage @s 20 minecraft:player_attack
 
 # Wither + slowness on the heavy hit
-execute if score @s ms.arta_timer matches 1 run execute as @a[distance=..3] run effect give @s minecraft:wither 4 0 true
-execute if score @s ms.arta_timer matches 1 run execute as @a[distance=..3] run effect give @s minecraft:slowness 40 1 true
-execute if score @s ms.arta_timer matches 1 run execute positioned ^ ^ ^1.5 as @a[distance=..2.5] run effect give @s minecraft:wither 4 0 true
+execute if score @s ms.arta_timer matches 1 as @a[distance=..3] run effect give @s minecraft:wither 4 0 true
+execute if score @s ms.arta_timer matches 1 as @a[distance=..3] run effect give @s minecraft:slowness 40 1 true
+execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2.5] run effect give @s minecraft:wither 4 0 true
 
 # Tick 3: plant a rupture marker at this position (delayed Abyss burst)
 execute if score @s ms.arta_timer matches 3 run summon minecraft:marker ~ ~ ~ {Tags:["ms_arta_rupture","ms_arta_rupture_new"]}

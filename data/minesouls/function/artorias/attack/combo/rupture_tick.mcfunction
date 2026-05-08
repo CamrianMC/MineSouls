@@ -17,8 +17,8 @@ execute if score @s ms.arta_temp matches ..0 run particle minecraft:soul_fire_fl
 execute if score @s ms.arta_temp matches ..0 run playsound minecraft:entity.elder_guardian.curse hostile @a[distance=..64] ~ ~ ~ 0.8 0.6
 
 # Damage players within 3 blocks of the rupture
-execute if score @s ms.arta_temp matches ..0 run execute as @a[distance=..3] run damage @s 12 minecraft:magic
-execute if score @s ms.arta_temp matches ..0 run execute as @a[distance=..3] run effect give @s minecraft:wither 3 0 true
+execute if score @s ms.arta_temp matches ..0 as @a[distance=..3] run damage @s 12 minecraft:magic
+execute if score @s ms.arta_temp matches ..0 as @a[distance=..3] run effect give @s minecraft:wither 3 0 true
 
 # Self-destruct after detonation
 execute if score @s ms.arta_temp matches ..0 run kill @s

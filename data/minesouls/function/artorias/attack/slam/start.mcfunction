@@ -17,7 +17,7 @@ tag @a[tag=ms_arta_slam_aim] remove ms_arta_slam_aim
 
 # After 20 ticks: pin a slam-target marker at the nearest player and enter air state
 execute if score @s ms.arta_timer matches 20 run tag @a[distance=..60,sort=nearest,limit=1] add ms_arta_slam_pin
-execute if score @s ms.arta_timer matches 20 if entity @a[tag=ms_arta_slam_pin] run execute as @a[tag=ms_arta_slam_pin] at @s run summon minecraft:marker ~ ~ ~ {Tags:["ms_arta_slam_target"]}
+execute if score @s ms.arta_timer matches 20 as @a[tag=ms_arta_slam_pin] at @s run summon minecraft:marker ~ ~ ~ {Tags:["ms_arta_slam_target"]}
 execute if score @s ms.arta_timer matches 20 run tag @a[tag=ms_arta_slam_pin] remove ms_arta_slam_pin
 
 execute if score @s ms.arta_timer matches 20.. run scoreboard players set @s ms.arta_state 5

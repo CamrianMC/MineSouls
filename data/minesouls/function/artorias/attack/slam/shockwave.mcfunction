@@ -31,4 +31,4 @@ scoreboard players set @e[tag=ms_arta_shockwave] ms.arta_temp 10
 scoreboard players set @e[tag=ms_arta_shockwave_outer] ms.arta_temp 20
 
 # Phase 2: stronger shockwave – extra outer damage
-execute if score @s ms.arta_phase matches 2 run execute as @a[distance=..9] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_phase matches 2 as @a[distance=..9] run damage @s 12 minecraft:player_attack
