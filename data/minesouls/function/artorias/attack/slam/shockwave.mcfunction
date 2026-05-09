@@ -7,23 +7,23 @@ execute as @a[distance=..5] run damage @s 25 minecraft:player_attack
 execute as @a[distance=..5] run effect give @s minecraft:slowness 30 1 true
 
 # Mid ring: 5–9 blocks (spawn 8 markers in a ring; they deal damage on landing)
-summon minecraft:marker ~5  ~0 ~0  {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~-5 ~0 ~0  {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~0  ~0 ~5  {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~0  ~0 ~-5 {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~4  ~0 ~4  {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~-4 ~0 ~4  {Tags:["ms_arta_shockwave"]}
-summon minecraft:marker ~4  ~0 ~-4 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~5 ~0 ~0 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~-5 ~0 ~0 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~0 ~0 ~5 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~0 ~0 ~-5 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~4 ~0 ~4 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~-4 ~0 ~4 {Tags:["ms_arta_shockwave"]}
+summon minecraft:marker ~4 ~0 ~-4 {Tags:["ms_arta_shockwave"]}
 summon minecraft:marker ~-4 ~0 ~-4 {Tags:["ms_arta_shockwave"]}
 
 # Outer ring: 9–13 blocks (slightly weaker, 10-tick delay)
-summon minecraft:marker ~9  ~0 ~0  {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~-9 ~0 ~0  {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~0  ~0 ~9  {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~0  ~0 ~-9 {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~7  ~0 ~7  {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~-7 ~0 ~7  {Tags:["ms_arta_shockwave_outer"]}
-summon minecraft:marker ~7  ~0 ~-7 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~9 ~0 ~0 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~-9 ~0 ~0 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~0 ~0 ~9 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~0 ~0 ~-9 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~7 ~0 ~7 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~-7 ~0 ~7 {Tags:["ms_arta_shockwave_outer"]}
+summon minecraft:marker ~7 ~0 ~-7 {Tags:["ms_arta_shockwave_outer"]}
 summon minecraft:marker ~-7 ~0 ~-7 {Tags:["ms_arta_shockwave_outer"]}
 
 # Set lifetime counters on the ring markers

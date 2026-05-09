@@ -18,7 +18,7 @@ particle minecraft:squid_ink ~ ~1 ~ 0.8 1.2 0.8 0.04 6 normal
 particle minecraft:dragon_breath ~ ~1 ~ 1.8 2.0 1.8 0.05 10 normal
 
 # Extra burst at the midpoint of the transition
-execute if score @s ms.arta_timer matches 30 run particle minecraft:explosion_emitter ~ ~1 ~ 0 0 0 1 normal
+execute if score @s ms.arta_timer matches 30 run particle minecraft:explosion_emitter ~ ~1 ~ 0 0 0 1 3 normal
 execute if score @s ms.arta_timer matches 30 run playsound minecraft:entity.warden.sonic_boom hostile @a[distance=..128] ~ ~ ~ 1 0.4
 
 # After 60 ticks: activate phase 2 effects and return to idle

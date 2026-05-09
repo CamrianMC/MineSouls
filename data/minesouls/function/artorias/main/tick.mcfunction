@@ -15,8 +15,8 @@ bossbar set minesouls:artorias players @a[distance=..80]
 particle minecraft:squid_ink ~ ~1 ~ 0.4 1.0 0.4 0.02 8 normal
 
 # Despawn when no player is within 60 blocks
-execute unless entity @a[distance=..60,limit=1] run function minesouls:artorias/despawn
-execute unless entity @a[distance=..60,limit=1] run return 0
+execute unless entity @a[distance=..60,limit=1,nbt=!{Health:0f}] run function minesouls:artorias/despawn
+execute unless entity @a[distance=..60,limit=1,nbt=!{Health:0f}] run return 0
 
 # Armor stand failsafe: re-summon visual if it went missing
 execute unless entity @e[type=armor_stand,tag=ms_artorias_stand,limit=1] run function minesouls:artorias/init_stand

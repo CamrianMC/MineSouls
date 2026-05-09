@@ -13,9 +13,9 @@ tag @a[distance=..60,sort=nearest,limit=1] add ms_arta_chase_target
 execute unless entity @a[tag=ms_arta_chase_target] run return 0
 
 # Phase 1 movement: face and advance 0.35 blocks toward target
-execute if score @s ms.arta_phase matches 1 if entity @a[tag=ms_arta_chase_target] facing entity @a[tag=ms_arta_chase_target] eyes run teleport @s ^ ^ ^0.35 facing entity @a[tag=ms_arta_chase_target] eyes
+execute if score @s ms.arta_phase matches 1 if entity @a[tag=ms_arta_chase_target] facing entity @a[tag=ms_arta_chase_target] eyes run teleport @s ^ ^ ^0.35 facing entity @a[tag=ms_arta_chase_target, limit=1] eyes
 
 # Phase 2 movement: face and advance 0.55 blocks toward target (faster)
-execute if score @s ms.arta_phase matches 2 if entity @a[tag=ms_arta_chase_target] facing entity @a[tag=ms_arta_chase_target] eyes run teleport @s ^ ^ ^0.55 facing entity @a[tag=ms_arta_chase_target] eyes
+execute if score @s ms.arta_phase matches 2 if entity @a[tag=ms_arta_chase_target] facing entity @a[tag=ms_arta_chase_target] eyes run teleport @s ^ ^ ^0.55 facing entity @a[tag=ms_arta_chase_target, limit=1] eyes
 
 tag @a[tag=ms_arta_chase_target] remove ms_arta_chase_target

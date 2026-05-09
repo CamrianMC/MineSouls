@@ -12,7 +12,7 @@ execute if score @s ms.arta_timer matches 1 run particle minecraft:squid_ink ~ ~
 
 # Face the nearest player throughout the windup
 tag @a[distance=..60,sort=nearest,limit=1] add ms_arta_lunge_aim
-execute if entity @a[tag=ms_arta_lunge_aim] run teleport @s ~ ~ ~ facing entity @a[tag=ms_arta_lunge_aim] eyes
+execute if entity @a[tag=ms_arta_lunge_aim] run teleport @s ~ ~ ~ facing entity @a[tag=ms_arta_lunge_aim,limit=1] eyes
 tag @a[tag=ms_arta_lunge_aim] remove ms_arta_lunge_aim
 
 # After 15 ticks: transition to dash

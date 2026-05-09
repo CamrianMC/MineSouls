@@ -10,4 +10,4 @@ execute as @a[distance=..4] run damage @s 3 minecraft:magic
 
 # Faint visual pulse so players know the aura is active
 particle minecraft:sculk_soul ~ ~1 ~ 0.6 0.8 0.6 0.03 6 normal
-particle minecraft:squid_ink ~ ~1 ~ 0.4 0.6 0.4 0.02 4 normal
+particle minecraft:squid_ink ~ ~1 ~ 0.2 0.6 0.2 0.02 4 normal

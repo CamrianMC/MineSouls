@@ -12,7 +12,7 @@ execute if score @s ms.arta_timer matches 1 run particle minecraft:soul_fire_fla
 
 # Face target throughout windup
 tag @a[distance=..60,sort=nearest,limit=1] add ms_arta_slam_aim
-execute if entity @a[tag=ms_arta_slam_aim] run teleport @s ~ ~ ~ facing entity @a[tag=ms_arta_slam_aim] eyes
+execute if entity @a[tag=ms_arta_slam_aim] run teleport @s ~ ~ ~ facing entity @a[tag=ms_arta_slam_aim, limit=1] eyes
 tag @a[tag=ms_arta_slam_aim] remove ms_arta_slam_aim
 
 # After 20 ticks: pin a slam-target marker at the nearest player and enter air state

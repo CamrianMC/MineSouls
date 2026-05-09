@@ -18,7 +18,7 @@ scoreboard players set @s ms.arta_aura_timer 20
 bossbar set minesouls:artorias color purple
 
 # Dramatic entry effects
-particle minecraft:explosion_emitter ~ ~1 ~ 0 0 0 1 normal
+particle minecraft:explosion_emitter ~ ~1 ~ 0 0 0 1 3 normal
 particle minecraft:soul_fire_flame ~ ~1 ~ 3.0 3.0 3.0 0.1 80 normal
 particle minecraft:sculk_soul ~ ~1 ~ 2.5 2.5 2.5 0.06 50 normal
 playsound minecraft:entity.warden.roar hostile @a[distance=..128] ~ ~ ~ 1 0.5
