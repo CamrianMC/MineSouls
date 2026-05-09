@@ -8,3 +8,6 @@ scoreboard players set #global ms.arta_alive 0
 # Grant advancement and tag to every online player
 advancement grant @a only minesouls:achievement/champion_of_the_abyss
 tag @a add ms.ach.champion_of_the_abyss
+
+# Drop the Greatsword of Artorias to every online player
+give @a minecraft:netherite_sword[minecraft:custom_name={"text":"Greatsword of Artorias","italic":false,"color":"gold"},minecraft:lore=[{"text":"Greatsword once wielded by one of the Four Knights of Gwyn.","italic":true,"color":"gray"},{"text":"Pierce the oppressive darkness of the Abyss.","italic":false,"color":"dark_purple"}],minecraft:custom_data={minesouls:{greatsword_of_artorias:true}},minecraft:enchantments={"minecraft:sharpness":5},minecraft:unbreakable={},minecraft:max_stack_size=1] 1
