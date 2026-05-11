@@ -214,6 +214,7 @@ scoreboard objectives add ms.manus_move_timer dummy
 scoreboard objectives add ms.manus_lw_timer dummy
 scoreboard objectives add ms.manus_dw_timer dummy
 scoreboard objectives add ms.manus_temp dummy
+scoreboard objectives add ms.manus_dark_timer dummy
 
 # Sin counter: tracks player sin for use by items like the Eucharist
 scoreboard objectives add ms.sin dummy

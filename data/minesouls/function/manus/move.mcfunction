@@ -23,3 +23,7 @@ execute at @e[tag=ms_manus,limit=1] run playsound minecraft:entity.enderman.tele
 
 # Remove the temporary move target tag
 tag @a[tag=ms_manus_move_target] remove ms_manus_move_target
+
+# Summon a descending dark energy ball at a random spot within 5 blocks (ground shockwave attack)
+# Uses execute at @e[tag=ms_manus,limit=1] to spawn relative to Manus' new position after teleport
+execute at @e[tag=ms_manus,limit=1] run function minesouls:manus/dark_ball_fire

@@ -139,6 +139,9 @@ execute as @e[type=minecraft:wither,tag=ms_acheron] at @s run function minesouls
 # Manus boss: lightning warning marker particle effects and strike detection (global tick)
 function minesouls:manus/lightning_tick
 
+# Manus boss: descending dark energy ball particle trail, movement, and shockwave (global tick)
+function minesouls:manus/dark_ball_tick
+
 # Manus boss: per-entity behaviour (attacks, phases, despawn)
 execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
 
