@@ -176,7 +176,7 @@
                 "minecraft:lore": [
                   {"text":"Seal of the Abysswalker Knight.","italic":true,"color":"dark_gray"},
                   {"text":"Its power stirs only within the void.","italic":true,"color":"dark_gray"},
-                  {"text":"Cannot be used beyond the End.","italic":false,"color":"dark_red"}
+                  {"text":"Can only be used within the End.","italic":false,"color":"dark_red"}
                 ],
                 "minecraft:custom_data": {"minesouls":{"artorias_summon":true}},
                 "minecraft:food": {"nutrition":0,"saturation":0.0,"can_always_eat":true},

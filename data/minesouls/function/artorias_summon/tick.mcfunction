@@ -1,7 +1,8 @@
 # Crest of Artorias countdown tick.
 # Runs once per tick for each player whose ms.arta_summon_timer is >= 1.
-# The timer counts down from 100 (5 seconds). Countdown titles are shown
-# to all players within 20 blocks of the summoner at each second mark.
+# "5" is shown immediately in on_use.mcfunction when the timer is set to 100.
+# This function handles the remaining countdown (4 → 3 → 2 → 1) and the summon,
+# checking each 20-tick (1-second) boundary after decrement.
 
 # Decrement the countdown timer by one tick
 scoreboard players remove @s ms.arta_summon_timer 1
