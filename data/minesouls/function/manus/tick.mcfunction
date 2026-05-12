@@ -20,8 +20,8 @@ bossbar set minesouls:manus players @a[distance=..80]
 data merge entity @s {NoGravity:1b}
 
 # Ambient dark-magic particles (soul fire wisps + void ink)
-particle minecraft:soul_fire_flame ~ ~1.5 ~ 0.7 1.5 0.7 0.05 8 normal
-particle minecraft:squid_ink ~ ~1.5 ~ 0.4 1.0 0.4 0.03 5 normal
+particle minecraft:reverse_portal ~ ~1.5 ~ 0.7 1.5 0.7 0.05 3 normal
+particle minecraft:squid_ink ~ ~1.5 ~ 0.4 1.0 0.4 0.03 10 normal
 
 # Despawn when no player is within 50 blocks (calls despawn.mcfunction then exits)
 execute unless entity @a[distance=..50,limit=1] run function minesouls:manus/despawn

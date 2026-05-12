@@ -5,17 +5,17 @@
 
 # Spawn a pool of 12 candidate positions around Manus at Y+6 for visual height.
 # All candidates are within 5 blocks of Manus horizontally.
-summon minecraft:marker ~3  ~6 ~0  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~-3 ~6 ~0  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~0  ~6 ~3  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~0  ~6 ~-3 {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~4  ~6 ~0  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~-4 ~6 ~0  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~0  ~6 ~4  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~0  ~6 ~-4 {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~3  ~6 ~3  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~-3 ~6 ~3  {Tags:["ms_manus_dark_cand"]}
-summon minecraft:marker ~3  ~6 ~-3 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~3 ~6 ~0 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~-3 ~6 ~0 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~0 ~6 ~3 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~0 ~6 ~-3 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~4 ~6 ~0 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~-4 ~6 ~0 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~0 ~6 ~4 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~0 ~6 ~-4 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~3 ~6 ~3 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~-3 ~6 ~3 {Tags:["ms_manus_dark_cand"]}
+summon minecraft:marker ~3 ~6 ~-3 {Tags:["ms_manus_dark_cand"]}
 summon minecraft:marker ~-3 ~6 ~-3 {Tags:["ms_manus_dark_cand"]}
 
 # Promote one randomly chosen candidate to the active dark energy ball

@@ -4,7 +4,7 @@
 
 # Deal 20 magic damage (10 hearts) to all players on the ground within 20 blocks.
 # OnGround:1b ensures only players who are standing are hit; jumping dodges the wave.
-execute as @a[distance=..20] if data entity @s {OnGround:1b} run damage @s 20 minecraft:magic
+execute as @a[distance=..30] if data entity @s {OnGround:1b} run damage @s 30 minecraft:magic
 
 # Massive shockwave visuals – radial burst of dark energy
 particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 3 normal

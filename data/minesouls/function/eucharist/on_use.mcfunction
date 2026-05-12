@@ -13,11 +13,11 @@ advancement revoke @s only minesouls:eucharist/consumed
 # Temporarily suppress the vanilla death message so only our custom tellraw is shown.
 # Note: showDeathMessages is a global gamerule; on a single-server datapack this
 # window is essentially instantaneous (same tick) and practically race-free.
-execute if score @s ms.sin matches 1.. run gamerule showDeathMessages false
+execute if score @s ms.sin matches 1.. run gamerule show_death_messages false
 execute if score @s ms.sin matches 1.. run kill @s
 execute if score @s ms.sin matches 1.. run summon minecraft:lightning_bolt ~ ~ ~
 execute if score @s ms.sin matches 1.. run tellraw @a [{"selector":"@s","color":"white"}," was smited by God"]
-execute if score @s ms.sin matches 1.. run gamerule showDeathMessages true
+execute if score @s ms.sin matches 1.. run gamerule show_death_messages true
 # Clear sin after divine punishment
 execute if score @s ms.sin matches 1.. run scoreboard players set @s ms.sin 0
 
