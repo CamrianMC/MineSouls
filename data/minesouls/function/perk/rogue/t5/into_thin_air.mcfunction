@@ -1,7 +1,7 @@
 # Into Thin Air – Rogue Tier 5 Perk 3
 # Completely untraceable while crouching.
 # Ranged and melee attacks disable this for 10 seconds.
-# Grants invisibility and sets follow_range to 0 on nearby hostile mobs.
+# Grants invisibility and adds the Rogue + nearby hostile mobs to the ms_into_thin_air team.
 
 # Decrement disable timer
 execute if score @s ms.ita_disable matches 1.. run scoreboard players remove @s ms.ita_disable 1
@@ -18,10 +18,14 @@ execute if score @s ms.ita_disable matches 1.. if entity @s[tag=ms_ita_active] r
 execute if score @s ms.ita_disable matches 1.. run tag @s remove ms_ita_active
 execute if score @s ms.ita_disable matches 1.. run return 0
 
-# Sneaking and not disabled: grant invisibility and blind nearby hostiles
+# Sneaking and not disabled: grant invisibility and join team
 effect give @s minecraft:invisibility 2 0 true
 tag @s add ms_ita_active
+team join ms_into_thin_air @s
 
-# Reduce follow_range to 0 on all hostile mobs within 10 blocks via -1.0 multiplier (modifier add silently fails if already present)
-execute as @e[type=#minesouls:hostile,distance=..10] run attribute @s minecraft:follow_range modifier add minesouls:into_thin_air -1.0 add_multiplied_base
-execute as @e[type=#minesouls:hostile,distance=..10] run tag @s add ms_ita_blinded
+# Add hostile mobs within 50 blocks that have not yet been tagged
+execute as @e[type=#minesouls:hostile,distance=..50,tag=!ms_ita_blinded] run team join ms_into_thin_air @s
+execute as @e[type=#minesouls:hostile,distance=..50,tag=!ms_ita_blinded] run tag @s add ms_ita_blinded
+
+# Suppress Warden anger each tick while perk is active
+execute as @e[type=minecraft:warden,distance=..50] run data modify entity @s anger set value []

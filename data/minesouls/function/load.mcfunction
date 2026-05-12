@@ -174,6 +174,10 @@ team add friendly
 team add manus
 team modify manus friendlyFire false
 
+# Into Thin Air: team used to suppress mob targeting while the perk is active
+team add ms_into_thin_air
+team modify ms_into_thin_air seeFriendlyInvisibles false
+
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
 scoreboard players set #-1 ms.const -1
