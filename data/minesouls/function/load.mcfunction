@@ -229,5 +229,8 @@ scoreboard objectives add ms.manus_alive dummy
 # Flag set when Darksign is first used at low HP (< 5); cleared on resolve or death
 scoreboard objectives add ms.darksign_low_hp dummy
 
+# Crest of Artorias summon countdown scoreboard
+scoreboard objectives add ms.arta_summon_timer dummy
+
 # Knight Artorias boss: initialise team, bossbar, and all scoreboard objectives
 function minesouls:artorias/main/load
