@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consumed_crest": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{artorias_summon:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:artorias_summon/on_use"
+  }
+}
