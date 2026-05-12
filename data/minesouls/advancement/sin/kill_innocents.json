@@ -3,23 +3,33 @@
     "kill_cat": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
-        "entity": { "type": "minecraft:cat" }
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:cat"
+            }
+          }
+        ]
       }
     },
     "kill_ocelot": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
-        "entity": { "type": "minecraft:ocelot" }
-      }
-    },
-    "kill_wolf": {
-      "trigger": "minecraft:player_killed_entity",
-      "conditions": {
-        "entity": { "type": "minecraft:wolf" }
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:ocelot"
+            }
+          }
+        ]
       }
     }
   },
-  "requirements": [["kill_cat", "kill_ocelot", "kill_wolf"]],
+  "requirements": [["kill_cat", "kill_ocelot"]],
   "rewards": {
     "function": "minesouls:sin/add_sin"
   }

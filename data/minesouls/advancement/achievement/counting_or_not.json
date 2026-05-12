@@ -15,18 +15,19 @@
         "entity": [
           {
             "condition": "minecraft:entity_properties",
-            "entity": "killer",
+            "entity": "attacking_player",
             "predicate": {
-              "type": "minecraft:skeleton"
+              "minecraft:entity_type": "minecraft:skeleton"
             }
           }
         ],
         "killing_blow": {
-          "type": {
-            "tags": [
-              { "id": "minecraft:is_projectile", "expected": true }
-            ]
-          }
+          "tags": [
+            {
+              "expected": true,
+              "id": "minecraft:is_projectile"
+            }
+          ]
         }
       }
     }

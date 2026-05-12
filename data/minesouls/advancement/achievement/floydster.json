@@ -12,17 +12,13 @@
     "suffocated": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
-        "killing_blow": {
+        "damage": {
           "type": {
             "tags": [
-              { "id": "minecraft:bypasses_armor", "expected": true },
-              { "id": "minecraft:is_fire", "expected": false },
-              { "id": "minecraft:is_drowning", "expected": false },
-              { "id": "minecraft:is_fall", "expected": false },
-              { "id": "minecraft:is_lightning", "expected": false },
-              { "id": "minecraft:is_explosion", "expected": false },
-              { "id": "minecraft:is_freezing", "expected": false },
-              { "id": "minecraft:is_projectile", "expected": false }
+              {
+                "expected": true,
+                "id": "minecraft:is_suffocation"
+              }
             ]
           }
         }
