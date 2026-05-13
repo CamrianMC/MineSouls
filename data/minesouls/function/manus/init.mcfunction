@@ -33,3 +33,27 @@ execute as @e[tag=ms_manus,limit=1] at @s run playsound minecraft:entity.warden.
 
 # Mark Manus as alive so the death-detection check in tick.mcfunction can fire
 scoreboard players set #global ms.manus_alive 1
+
+# ── Sif, the Great Grey Wolf ─────────────────────────────────────────────────
+# Summon Sif 10 blocks to the left of Manus (local ^-10 = left of Manus's facing direction).
+# PersistenceRequired prevents natural despawn; Health/attributes set her as a durable ally.
+execute as @e[tag=ms_manus,limit=1] at @s run summon minecraft:wolf ^-10 ^ ^ {Silent:1b,PersistenceRequired:1b,CustomNameVisible:1b,DeathLootTable:"minecraft:empty",Health:500f,Tags:["ms_sif","ms_sif_new"],CustomName:{"text":"Sif","color":"white","bold":true},attributes:[{id:"minecraft:max_health",base:500},{id:"minecraft:follow_range",base:64},{id:"minecraft:movement_speed",base:0.35},{id:"minecraft:attack_damage",base:8}]}
+
+# Apply the ashen (dark grey) wolf variant – matches Sif's appearance from Dark Souls 1
+data modify entity @e[tag=ms_sif_new,limit=1] variant set value "minecraft:ashen"
+
+# Join the alliance team so Sif never targets players (friendlyFire false on ms_sif_alliance)
+team join ms_sif_alliance @e[tag=ms_sif_new,limit=1]
+
+# Also add all current players to the alliance so they are mutual teammates with Sif
+team join ms_sif_alliance @a
+
+# Remove temporary spawn tag
+tag @e[tag=ms_sif_new] remove ms_sif_new
+
+# Summon the invisible sword armor stand at Sif's location.
+# Small:1b halves the stand's size so the held sword sits at wolf-head height.
+# ShowArms:1b is required for the mainhand item to render.
+# RightArm:[-90f,0f,0f] rotates the arm forward/horizontal so the sword points
+# in the direction Sif is facing, simulating the sword carried in her mouth.
+execute as @e[tag=ms_sif,limit=1] at @s run summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,NoGravity:1b,ShowArms:1b,Small:1b,Silent:1b,PersistenceRequired:1b,CustomNameVisible:0b,DeathLootTable:"minecraft:empty",Tags:["ms_sif_sword"],equipment:{mainhand:{id:"minecraft:netherite_sword",count:1}},drop_chances:{mainhand:0.0},Pose:{RightArm:[-90f,0f,0f]}}

@@ -174,6 +174,10 @@ team add friendly
 team add manus
 team modify manus friendlyFire false
 
+# Sif companion: players + Sif share this team so Sif never targets players
+team add ms_sif_alliance
+team modify ms_sif_alliance friendlyFire false
+
 # Into Thin Air: team used to suppress mob targeting while the perk is active
 team add ms_into_thin_air
 team modify ms_into_thin_air seeFriendlyInvisibles false

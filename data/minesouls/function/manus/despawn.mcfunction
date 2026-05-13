@@ -11,3 +11,15 @@ bossbar remove minesouls:manus
 scoreboard players set #global ms.manus_alive 0
 
 tp @s ~ ~-300 ~
+
+# ── Sif despawn ──────────────────────────────────────────────────────────────
+# Sif was summoned as a companion for this fight; when all players die and Manus
+# despawns she leaves the same way.
+execute as @e[type=minecraft:wolf,tag=ms_sif] run tp @s ~ ~-300 ~
+
+# Remove the sword armor stand immediately (no need to send it underground)
+kill @e[type=minecraft:armor_stand,tag=ms_sif_sword]
+
+# Release players from the alliance team so future sessions start clean
+team leave @a[team=ms_sif_alliance]
+

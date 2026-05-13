@@ -157,6 +157,13 @@ execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
 # Manus boss: grant "Hero of Oolacile" to all players when Manus is killed (not despawned)
 execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
 
+# Manus boss: Sif companion wolf – effects, sword position, targeting
+execute as @e[type=minecraft:wolf,tag=ms_sif] at @s run function minesouls:manus/sif/tick
+
+# Manus boss: kill orphaned sword stand and release alliance team if Sif is gone
+execute unless entity @e[type=minecraft:wolf,tag=ms_sif] run kill @e[type=minecraft:armor_stand,tag=ms_sif_sword]
+execute unless entity @e[type=minecraft:wolf,tag=ms_sif] run team leave @a[team=ms_sif_alliance]
+
 # Crest of Artorias: countdown tick for players with an active summon timer
 execute as @a[scores={ms.arta_summon_timer=1..}] at @s run function minesouls:artorias_summon/tick
 
