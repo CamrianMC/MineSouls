@@ -15,7 +15,7 @@
         "entity": [
           {
             "condition": "minecraft:entity_properties",
-            "entity": "attacking_player",
+            "entity": "this",
             "predicate": {
               "minecraft:entity_type": "minecraft:skeleton"
             }

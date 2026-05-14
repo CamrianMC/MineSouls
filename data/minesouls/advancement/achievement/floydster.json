@@ -9,20 +9,8 @@
   },
   "parent": "minesouls:achievement/root",
   "criteria": {
-    "suffocated": {
-      "trigger": "minecraft:entity_killed_player",
-      "conditions": {
-        "damage": {
-          "type": {
-            "tags": [
-              {
-                "expected": true,
-                "id": "minecraft:is_suffocation"
-              }
-            ]
-          }
-        }
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   }
 }
