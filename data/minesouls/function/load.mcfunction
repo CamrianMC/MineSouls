@@ -1,7 +1,10 @@
 # This function runs once when the datapack is loaded
 # Add your initialization commands here
 
-tellraw @a {"text":"MineSouls datapack loaded!","color":"green"}
+tellraw @a {"text":"MineSouls plugin loaded!","color":"green"}
+
+# Base game rules
+gamerule minecraft:natural_health_regeneration false
 
 # Estus Flask scoreboard: tracks the number of uses on the flask currently
 # held by each player (used to preserve the count across the consumption tick)

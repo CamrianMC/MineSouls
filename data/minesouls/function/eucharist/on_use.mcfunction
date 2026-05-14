@@ -20,6 +20,7 @@ execute if score @s ms.sin matches 1.. run tellraw @a [{"selector":"@s","color":
 execute if score @s ms.sin matches 1.. run gamerule show_death_messages true
 # Clear sin after divine punishment
 execute if score @s ms.sin matches 1.. run scoreboard players set @s ms.sin 0
+execute if score @s ms.sin matches 1.. run return 0
 
 # ── PURE path: divine blessing ───────────────────────────────────────────────
 # Instant Health X (amplifier 9) heals 100 HP – far more than any default
