@@ -1,7 +1,7 @@
-# target_manus – stores Manus's entity type and UUID into storage so the
-# Brain.memories macro can redirect Sif's attack target at him.
-# Runs as Sif, at Sif's position; called only when no Darkwraiths are nearby.
+# target_manus – when no Darkwraiths remain, provoke Sif to retaliate at Manus.
+# Resistance 5 (applied every tick) would absorb all damage, so it is cleared
+# here first. Manus is the damage cause, which triggers wolf retaliation AI to
+# lock onto him. Resistance 5 is re-applied on the very next tick by sif/tick.
+# Runs as Sif (ms_sif wolf), at Sif's position; called only when no Darkwraiths.
 
-data modify storage minesouls:sif target_data.type set value "minecraft:warden"
-execute as @e[tag=ms_manus,limit=1] run data modify storage minesouls:sif target_data.uuid set from entity @s UUID
-function minesouls:manus/sif/set_target with storage minesouls:sif target_data
+execute as @e[tag=ms_manus,limit=1] run damage @e[tag=ms_sif,limit=1] 1 minecraft:mob_attack by @s

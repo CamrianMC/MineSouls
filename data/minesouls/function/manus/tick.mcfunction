@@ -1,9 +1,12 @@
 # Per-entity tick for Manus, Father of the Abyss.
 # Called from the global tick as:
-#   execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
+#   execute as @e[tag=ms_manus,type=!minecraft:marker] at @s run function minesouls:manus/tick
 
 # Keep Manus permanently silent every tick
 data merge entity @s {Silent:1b}
+
+# Give Manus permanent resistance 2 to mimic the feel of 1500 hp
+effect give @e[tag=ms_manus_new,limit=1] minecraft:resistance 999999 1 true
 
 # Prevent Manus from burrowing: keep the dig_cooldown brain memory present.
 # When this memory is absent the Warden AI immediately triggers its dig-away sequence.

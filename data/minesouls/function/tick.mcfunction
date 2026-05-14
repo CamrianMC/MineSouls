@@ -149,13 +149,13 @@ function minesouls:manus/lightning_tick
 function minesouls:manus/dark_ball_tick
 
 # Manus boss: per-entity behaviour (attacks, phases, despawn)
-execute as @e[tag=ms_manus] at @s run function minesouls:manus/tick
+execute as @e[tag=ms_manus,type=!minecraft:marker] at @s run function minesouls:manus/tick
 
 # Manus boss: clean up the health bar if Manus was killed rather than despawned
-execute unless entity @e[tag=ms_manus] run bossbar remove minesouls:manus
+execute unless entity @e[tag=ms_manus,type=!minecraft:marker] run bossbar remove minesouls:manus
 
 # Manus boss: grant "Hero of Oolacile" to all players when Manus is killed (not despawned)
-execute unless entity @e[tag=ms_manus] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
+execute unless entity @e[tag=ms_manus,type=!minecraft:marker] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
 
 # Manus boss: Sif companion wolf – effects, sword position, targeting
 execute as @e[type=minecraft:wolf,tag=ms_sif] at @s run function minesouls:manus/sif/tick

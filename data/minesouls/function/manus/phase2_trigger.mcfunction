@@ -19,3 +19,4 @@ particle minecraft:explosion ~ ~1 ~ 1.5 1.5 1.5 0.2 30 normal
 
 # Immediately summon the first wave of Darkwraiths on phase entry
 function minesouls:manus/summon_darkwraiths
+

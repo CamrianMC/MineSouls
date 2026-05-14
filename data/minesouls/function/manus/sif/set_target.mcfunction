@@ -5,4 +5,4 @@
 #   target_data.uuid  – int-array UUID copied from entity @s UUID
 # ttl:100 (5 seconds) is refreshed every tick while the condition holds.
 
-$data modify entity @s Brain.memories."minecraft:attack_target" set value {value:{id:"$(type)",UUID:$(uuid)},ttl:100}
+#$data modify entity @s Brain.memories."minecraft:attack_target" set value {value:{id:"$(type)",UUID:$(uuid)},ttl:100}

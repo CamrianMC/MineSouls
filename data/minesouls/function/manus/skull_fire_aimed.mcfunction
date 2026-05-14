@@ -38,4 +38,4 @@ kill @e[tag=ms_manus_sk_dir]
 tag @e[tag=ms_manus_skull_new] remove ms_manus_skull_new
 
 # Audio cue so players know a skull has been fired
-execute at @s run playsound minecraft:entity.wither.shoot hostile @a[distance=..80] ~ ~ ~ 1 0.9
+execute at @s run playsound minecraft:entity.wither.shoot hostile @a[distance=..80] ~ ~ ~ 0.1 0.9

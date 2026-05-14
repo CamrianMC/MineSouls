@@ -13,6 +13,7 @@ scoreboard players remove @e[tag=ms_manus_lightning_warn] ms.manus_lw_timer 1
 
 # --- Step 3: Strike lightning at markers whose countdown has expired ---
 execute as @e[tag=ms_manus_lightning_warn,scores={ms.manus_lw_timer=..0}] at @s run summon minecraft:lightning_bolt ~ ~ ~
+execute as @e[tag=ms_manus_lightning_warn,scores={ms.manus_lw_timer=..0}] at @s run damage @a[distance=..1, limit=1] 500 lightning_bolt
 
 # --- Step 4: Remove spent warning markers ---
 kill @e[tag=ms_manus_lightning_warn,scores={ms.manus_lw_timer=..0}]
