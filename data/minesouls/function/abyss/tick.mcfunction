@@ -17,3 +17,13 @@ execute if score @s ms.abyss_init matches 1 if block ~ ~-1 ~ minecraft:blackston
 
 # Silence Wardens
 execute as @e[type=minecraft:warden,distance=..100] run data merge entity @s {Silent:1b}
+
+# Darkwraith mob: convert any hostile mob in the Abyss (except Wardens and Spiders) into Darkwraiths
+execute as @e[type=#minesouls:hostile,type=!minecraft:wither,type=!minecraft:warden,type=!minecraft:spider,type=!minecraft:cave_spider,tag=!ms_living_humanity,tag=!ms_darkwraith,predicate=minesouls:in_abyss] at @s run function minesouls:darkwraith/init
+
+# Darkwraith mob: per-entity behaviour (life steal + darkness buff)
+execute as @e[tag=ms_darkwraith] at @s run function minesouls:darkwraith/tick
+
+# Living humanity mob: convert any spider variant in the abyss to a Living Humanity, then remove the original
+execute as @e[type=#minesouls:spider_variant,tag=!ms_living_humanity,predicate=minesouls:in_abyss] at @s run function minesouls:living_humanity/init
+execute as @e[tag=ms_living_humanity] at @s run function minesouls:living_humanity/tick

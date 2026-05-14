@@ -1,7 +1,10 @@
 # This function runs once when the datapack is loaded
 # Add your initialization commands here
 
-tellraw @a {"text":"MineSouls datapack loaded!","color":"green"}
+tellraw @a {"text":"MineSouls plugin loaded!","color":"green"}
+
+# Base game rules
+gamerule minecraft:natural_health_regeneration false
 
 # Estus Flask scoreboard: tracks the number of uses on the flask currently
 # held by each player (used to preserve the count across the consumption tick)
@@ -167,7 +170,20 @@ scoreboard objectives add ms.bodyguard_active dummy
 scoreboard objectives add ms.acheron_timer dummy
 scoreboard objectives add ms.acheron_active dummy
 scoreboard objectives add ms.acheron_fire dummy
+
+# Darkwraith mob scoreboards
+scoreboard objectives add ms.dw_hp dummy
 team add friendly
+team add manus
+team modify manus friendlyFire false
+
+# Sif companion: players + Sif share this team so Sif never targets players
+team add ms_sif_alliance
+team modify ms_sif_alliance friendlyFire false
+
+# Into Thin Air: team used to suppress mob targeting while the perk is active
+team add ms_into_thin_air
+team modify ms_into_thin_air seeFriendlyInvisibles false
 
 # Constants for scoreboard math (used by class book perk selection)
 scoreboard objectives add ms.const dummy
@@ -198,3 +214,34 @@ scoreboard objectives add ms.dw_temp dummy
 
 # Abyss init scoreboard
 scoreboard objectives add ms.abyss_init dummy
+
+# Manus boss scoreboards
+scoreboard objectives add ms.manus_phase dummy
+scoreboard objectives add ms.manus_skull_timer dummy
+scoreboard objectives add ms.manus_skull_pattern dummy
+scoreboard objectives add ms.manus_lightning_timer dummy
+scoreboard objectives add ms.manus_wave_timer dummy
+scoreboard objectives add ms.manus_move_timer dummy
+scoreboard objectives add ms.manus_lw_timer dummy
+scoreboard objectives add ms.manus_dw_timer dummy
+scoreboard objectives add ms.manus_temp dummy
+scoreboard objectives add ms.manus_dark_timer dummy
+
+# Sin counter: tracks player sin for use by items like the Eucharist
+scoreboard objectives add ms.sin dummy
+
+# Achievement scoreboards
+# Tracks villager trades per player (for "Kissing the wall" achievement)
+scoreboard objectives add ms.trade_count dummy
+# Global lock for first-recipient rewards (fake player entries)
+scoreboard objectives add ms.first_reward dummy
+# Set to 1 when Manus is spawned; reset when he dies or the check fires
+scoreboard objectives add ms.manus_alive dummy
+# Flag set when Darksign is first used at low HP (< 5); cleared on resolve or death
+scoreboard objectives add ms.darksign_low_hp dummy
+
+# Crest of Artorias summon countdown scoreboard
+scoreboard objectives add ms.arta_summon_timer dummy
+
+# Knight Artorias boss: initialise team, bossbar, and all scoreboard objectives
+function minesouls:artorias/main/load

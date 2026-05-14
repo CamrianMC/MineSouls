@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:golden_apple" },
+    "title": { "text": "Explorer" },
+    "description": { "text": "Find a bonfire over 10,000 blocks from spawn" },
+    "frame": "goal",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "minesouls:achievement/explorer_reward"
+  }
+}

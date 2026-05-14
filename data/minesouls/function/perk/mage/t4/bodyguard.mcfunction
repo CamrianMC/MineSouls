@@ -14,8 +14,8 @@ execute if score @s ms.bodyguard_active matches 1 run return 0
 scoreboard players remove @s ms.mana 800
 
 # Summon 2 iron golems flanking the player
-summon minecraft:iron_golem ~2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b}
-summon minecraft:iron_golem ~-2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b}
+summon minecraft:iron_golem ~2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b,DeathLootTable:"minecraft:empty"}
+summon minecraft:iron_golem ~-2 ~ ~ {Tags:["ms_bodyguard","ms_bodyguard_new"],PersistenceRequired:1b,PlayerCreated:0b,CustomName:{"text":"Bodyguard","color":"gold"},CustomNameVisible:1b,DeathLootTable:"minecraft:empty"}
 
 # Give glowing effect (31 seconds, covers the full 30s lifetime)
 effect give @e[type=minecraft:iron_golem,tag=ms_bodyguard_new] minecraft:glowing 31 0 true

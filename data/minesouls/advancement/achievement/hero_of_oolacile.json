@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:warden_spawn_egg" },
+    "title": { "text": "Hero of Oolacile" },
+    "description": { "text": "Defeat Manus, Father of the Abyss" },
+    "frame": "challenge",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

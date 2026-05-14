@@ -45,6 +45,39 @@ execute if predicate minesouls:in_nether run scoreboard players set @s ms.bonfir
 execute if predicate minesouls:in_end run scoreboard players set @s ms.bonfire_dim 2
 execute unless predicate minesouls:in_overworld unless predicate minesouls:in_nether unless predicate minesouls:in_end run scoreboard players set @s ms.bonfire_dim 3
 
+# === Distance-based bonfire achievements ===
+# Uses Chebyshev distance (max of |X|, |Z|) from origin to check how far the bonfire is.
+# Each achievement is granted at most once (guarded by advancement check).
+
+# Stretching your legs: bonfire over 1,000 blocks from spawn (reward: 10 Golden Carrots)
+execute unless entity @s[tag=ms.ach.stretching_your_legs] if score @s ms.bonfire_x matches 1001.. run function minesouls:achievement/grant_stretching_your_legs
+execute unless entity @s[tag=ms.ach.stretching_your_legs] if score @s ms.bonfire_x matches ..-1001 run function minesouls:achievement/grant_stretching_your_legs
+execute unless entity @s[tag=ms.ach.stretching_your_legs] if score @s ms.bonfire_z matches 1001.. run function minesouls:achievement/grant_stretching_your_legs
+execute unless entity @s[tag=ms.ach.stretching_your_legs] if score @s ms.bonfire_z matches ..-1001 run function minesouls:achievement/grant_stretching_your_legs
+
+# Explorer: bonfire over 10,000 blocks from spawn (reward: 1 Golden Apple)
+execute unless entity @s[tag=ms.ach.explorer] if score @s ms.bonfire_x matches 10001.. run function minesouls:achievement/grant_explorer
+execute unless entity @s[tag=ms.ach.explorer] if score @s ms.bonfire_x matches ..-10001 run function minesouls:achievement/grant_explorer
+execute unless entity @s[tag=ms.ach.explorer] if score @s ms.bonfire_z matches 10001.. run function minesouls:achievement/grant_explorer
+execute unless entity @s[tag=ms.ach.explorer] if score @s ms.bonfire_z matches ..-10001 run function minesouls:achievement/grant_explorer
+
+# Marathoner: bonfire over 100,000 blocks from spawn (reward: 1 Ender Eye, first recipient only)
+execute unless entity @s[tag=ms.ach.marathoner] if score @s ms.bonfire_x matches 100001.. run function minesouls:achievement/grant_marathoner
+execute unless entity @s[tag=ms.ach.marathoner] if score @s ms.bonfire_x matches ..-100001 run function minesouls:achievement/grant_marathoner
+execute unless entity @s[tag=ms.ach.marathoner] if score @s ms.bonfire_z matches 100001.. run function minesouls:achievement/grant_marathoner
+execute unless entity @s[tag=ms.ach.marathoner] if score @s ms.bonfire_z matches ..-100001 run function minesouls:achievement/grant_marathoner
+
+# Escaping Samsara: bonfire over 1,000,000 blocks from spawn (reward: 5 Ender Eyes, first recipient only)
+execute unless entity @s[tag=ms.ach.escaping_samsara] if score @s ms.bonfire_x matches 1000001.. run function minesouls:achievement/grant_escaping_samsara
+execute unless entity @s[tag=ms.ach.escaping_samsara] if score @s ms.bonfire_x matches ..-1000001 run function minesouls:achievement/grant_escaping_samsara
+execute unless entity @s[tag=ms.ach.escaping_samsara] if score @s ms.bonfire_z matches 1000001.. run function minesouls:achievement/grant_escaping_samsara
+execute unless entity @s[tag=ms.ach.escaping_samsara] if score @s ms.bonfire_z matches ..-1000001 run function minesouls:achievement/grant_escaping_samsara
+
+# Please touch grass: bonfire over 10,000,000 blocks from spawn (reward: 20 Ender Eyes + 64 Enchanted Golden Apples, first recipient only)
+execute unless entity @s[tag=ms.ach.please_touch_grass] if score @s ms.bonfire_x matches 10000001.. run function minesouls:achievement/grant_please_touch_grass
+execute unless entity @s[tag=ms.ach.please_touch_grass] if score @s ms.bonfire_x matches ..-10000001 run function minesouls:achievement/grant_please_touch_grass
+execute unless entity @s[tag=ms.ach.please_touch_grass] if score @s ms.bonfire_z matches 10000001.. run function minesouls:achievement/grant_please_touch_grass
+execute unless entity @s[tag=ms.ach.please_touch_grass] if score @s ms.bonfire_z matches ..-10000001 run function minesouls:achievement/grant_please_touch_grass
 
 # Set cooldown to 200 ticks (10 seconds) to prevent message and effect spam
 scoreboard players set @s ms.bonfire_rest 200

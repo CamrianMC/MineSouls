@@ -33,4 +33,10 @@ scoreboard players set @s ms.initialized 1
 # Default Flask of Wondrous Physik type to 0 (Flask of Healing) for new players
 scoreboard players set @s ms.physik_type 0
 
+# Initialize sin to 0 so a fresh player is never smited by the Eucharist on first use
+scoreboard players set @s ms.sin 0
+
 execute as @a[name="Camrian"] run place structure minesouls:bonfire ~3 ~ ~
+
+# Grant "Big mistake" achievement on first login
+advancement grant @s only minesouls:achievement/big_mistake

@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:black_wool" },
+    "title": { "text": "Nyctophobia" },
+    "description": { "text": "Enter the Abyss" },
+    "frame": "task",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:netherite_sword" },
+    "title": { "text": "Champion of the Abyss" },
+    "description": { "text": "Defeat Knight Artorias, the Abysswalker" },
+    "frame": "challenge",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

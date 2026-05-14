@@ -13,6 +13,9 @@ execute as @a run function minesouls:estus_flask/track_uses
 # Bonfire rest: decrement the per-player cooldown each tick until it reaches 0
 execute as @a[scores={ms.bonfire_rest=1..}] run scoreboard players remove @s ms.bonfire_rest 1
 
+# Floydster: per-player suffocation death detection (must run before on_respawn syncs prev_deaths)
+execute as @a run function minesouls:achievement/floydster_check
+
 # Bonfire respawn: teleport each player to their bonfire after they die and respawn
 execute as @a run function minesouls:bonfire/on_respawn
 
@@ -48,6 +51,12 @@ execute as @a[scores={ms.class=1,ms.t5_perk=1..3}] at @s run function minesouls:
 
 # Ranger Tier 1 perks: Focused, Eagle's Nest (per-player tick)
 execute as @a[scores={ms.class=3,ms.t1_perk=1..3}] at @s run function minesouls:perk/ranger/t1/tick
+
+# Ranger Tier 2 perk: Explosive Shot – tag in-flight arrows for block-hit detection
+execute as @a[scores={ms.class=3,ms.t2_perk=2}] at @s run function minesouls:perk/ranger/t2/explosive_shot_tick
+
+# Explosive Shot: trigger explosion when a tagged arrow lands in a block
+execute as @e[tag=ms_es_arrow,nbt={inGround:1b}] at @s run function minesouls:perk/ranger/t2/explosive_shot_block_hit
 
 # Ranger Tier 3 perk: Ricochet arrow tracking (global tick)
 function minesouls:perk/ranger/t3/ricochet_tick
@@ -136,8 +145,54 @@ execute as @a[scores={ms.class=4,ms.t5_perk=1..3}] at @s run function minesouls:
 # Mage Tier 5: acheron wither entity tick (per-entity, runs even if owner is absent)
 execute as @e[type=minecraft:wither,tag=ms_acheron] at @s run function minesouls:perk/mage/t5/acheron_entity_tick
 
+# Manus boss: lightning warning marker particle effects and strike detection (global tick)
+function minesouls:manus/lightning_tick
+
+# Manus boss: descending dark energy ball particle trail, movement, and shockwave (global tick)
+function minesouls:manus/dark_ball_tick
+
+# Manus boss: per-entity behaviour (attacks, phases, despawn)
+execute as @e[tag=ms_manus,type=!minecraft:marker] at @s run function minesouls:manus/tick
+
+# Manus boss: clean up the health bar if Manus was killed rather than despawned
+execute unless entity @e[tag=ms_manus,type=!minecraft:marker] run bossbar remove minesouls:manus
+
+# Manus boss: grant "Hero of Oolacile" to all players when Manus is killed (not despawned)
+execute unless entity @e[tag=ms_manus,type=!minecraft:marker] if score #global ms.manus_alive matches 1 run function minesouls:achievement/hero_of_oolacile_grant
+
+# Manus boss: Sif companion wolf – effects, sword position, targeting
+execute as @e[type=minecraft:wolf,tag=ms_sif] at @s run function minesouls:manus/sif/tick
+
+# Manus boss: kill orphaned sword stand and release alliance team if Sif is gone
+execute unless entity @e[type=minecraft:wolf,tag=ms_sif] run kill @e[type=minecraft:armor_stand,tag=ms_sif_sword]
+execute unless entity @e[type=minecraft:wolf,tag=ms_sif] run team leave @a[team=ms_sif_alliance]
+
+# Crest of Artorias: countdown tick for players with an active summon timer
+execute as @a[scores={ms.arta_summon_timer=1..}] at @s run function minesouls:artorias_summon/tick
+
+# Knight Artorias boss: per-entity behaviour (attacks, phases)
+execute as @e[type=vindicator,tag=ms_artorias] at @s run function minesouls:artorias/main/tick
+# Knight Artorias boss: music check (per-player)
+execute as @a run function minesouls:artorias/main/music_check
+# Knight Artorias boss: shockwave ring markers decay and deal damage
+execute as @e[type=marker,tag=ms_arta_shockwave] at @s run function minesouls:artorias/attack/slam/shockwave_tick
+execute as @e[type=marker,tag=ms_arta_shockwave_outer] at @s run function minesouls:artorias/attack/slam/shockwave_tick
+# Knight Artorias boss: combo rupture ground-blast countdown
+execute as @e[type=marker,tag=ms_arta_rupture] at @s run function minesouls:artorias/attack/combo/rupture_tick
+# Knight Artorias boss: kill orphaned armor stand and hide bossbar when boss is dead
+execute unless entity @e[type=vindicator,tag=ms_artorias] run kill @e[type=armor_stand,tag=ms_artorias_stand]
+execute unless entity @e[type=vindicator,tag=ms_artorias] run bossbar set minesouls:artorias visible false
+# Knight Artorias boss: grant "Champion of the Abyss" when killed (not despawned)
+execute unless entity @e[type=vindicator,tag=ms_artorias] if score #global ms.arta_alive matches 1 run function minesouls:achievement/grant_champion_of_abyss
+
 # Reset spell use counter for all players (must come after mage tick)
 scoreboard players set @a ms.use_spell 0
+
+# Yamaka: apply Hero of the Village to any player wearing the Yamaka helmet
+function minesouls:yamaka/tick
+
+# Greatsword of Artorias: apply Night Vision to any player holding it in their main hand
+function minesouls:artorias/greatsword_tick
 
 # Check for players falling into the void to teleport them over to the abyss dimension instead of letting them die
 execute as @a[predicate=minesouls:falling_in_void] run effect give @s minecraft:slow_falling 1 0 true

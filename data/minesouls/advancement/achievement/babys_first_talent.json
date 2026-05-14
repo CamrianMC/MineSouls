@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:book" },
+    "title": { "text": "Baby's First Talent" },
+    "description": { "text": "Unlock your tier 1 perk" },
+    "frame": "task",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:bow" },
+    "title": { "text": "Counting or not counting illager violence?" },
+    "description": { "text": "Get killed by a skeleton shot" },
+    "frame": "task",
+    "announce_to_chat": true,
+    "show_toast": true
+  },
+  "parent": "minesouls:achievement/root",
+  "criteria": {
+    "killed_by_skeleton_arrow": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:skeleton"
+            }
+          }
+        ],
+        "killing_blow": {
+          "tags": [
+            {
+              "expected": true,
+              "id": "minecraft:is_projectile"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
