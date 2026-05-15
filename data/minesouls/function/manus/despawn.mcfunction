@@ -10,7 +10,8 @@ bossbar remove minesouls:manus
 # tick.mcfunction knows this entity disappearance was a despawn, not a kill.
 scoreboard players set #global ms.manus_alive 0
 
-tp @s ~ ~-300 ~
+tp @s ~ ~-500 ~
+kill @s
 
 # ── Sif despawn ──────────────────────────────────────────────────────────────
 # Sif was summoned as a companion for this fight; when all players die and Manus
