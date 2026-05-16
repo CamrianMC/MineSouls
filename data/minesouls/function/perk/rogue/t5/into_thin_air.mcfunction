@@ -27,5 +27,9 @@ team join ms_into_thin_air @s
 execute as @e[type=#minesouls:hostile,distance=..50,tag=!ms_ita_blinded] run team join ms_into_thin_air @s
 execute as @e[type=#minesouls:hostile,distance=..50,tag=!ms_ita_blinded] run tag @s add ms_ita_blinded
 
+# Reduce follow_range to 0 for hostile mobs within 12 blocks so they cannot track the rogue
+execute as @e[type=#minesouls:hostile,distance=..12,tag=!ms_ita_suppressed] run attribute @s minecraft:follow_range base set 0
+execute as @e[type=#minesouls:hostile,distance=..12,tag=!ms_ita_suppressed] run tag @s add ms_ita_suppressed
+
 # Suppress Warden anger each tick while perk is active
 execute as @e[type=minecraft:warden,distance=..50] run data modify entity @s anger set value []
