@@ -100,6 +100,9 @@ execute as @a[scores={ms.class=2,ms.t5_perk=1..3}] at @s run function minesouls:
 # Into Thin Air: cleanup blinded mobs that wandered out of range
 execute as @e[tag=ms_ita_blinded] at @s run function minesouls:perk/rogue/t5/into_thin_air_cleanup
 
+# Into Thin Air: restore follow_range on mobs that left the 12-block suppression zone
+execute as @e[tag=ms_ita_suppressed] at @s run function minesouls:perk/rogue/t5/into_thin_air_suppress_cleanup
+
 # Mark of Sacrifice: tick timers on marked entities (Rogue T4 Perk 1)
 execute as @e[tag=ms_mark_sacrifice] run function minesouls:perk/rogue/t4/mark_tick
 
