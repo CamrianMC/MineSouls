@@ -52,8 +52,8 @@ execute as @a[scores={ms.class=1,ms.t5_perk=1..3}] at @s run function minesouls:
 # Ranger Tier 1 perks: Focused, Eagle's Nest (per-player tick)
 execute as @a[scores={ms.class=3,ms.t1_perk=1..3}] at @s run function minesouls:perk/ranger/t1/tick
 
-# Ranger Tier 2 perk: Explosive Shot – tag in-flight arrows for block-hit detection
-execute as @a[scores={ms.class=3,ms.t2_perk=2}] at @s run function minesouls:perk/ranger/t2/explosive_shot_tick
+# Ranger Tier 2 perk: Explosive Shot – tag arrows by ownership (global tick)
+function minesouls:perk/ranger/t2/explosive_shot_tick
 
 # Explosive Shot: trigger explosion when a tagged arrow lands in a block
 execute as @e[tag=ms_es_arrow,nbt={inGround:1b}] at @s run function minesouls:perk/ranger/t2/explosive_shot_block_hit
