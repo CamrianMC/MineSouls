@@ -20,12 +20,13 @@ execute if score @s ms.estus_uses matches 1.. run effect give @s minecraft:regen
 # Decrement uses
 scoreboard players remove @s ms.estus_uses 1
 
-# Mirror the new count into command storage so the macro function can read it
+# Mirror the new count and active hotbar slot into command storage so the macro functions can read them
 execute store result storage minesouls:estus_flask flask_data.uses int 1 run scoreboard players get @s ms.estus_uses
+execute store result storage minesouls:estus_flask flask_data.slot int 1 run data get entity @s SelectedItemSlot
 
 # Give a flask with the updated use count (if uses remain) …
 execute if score @s ms.estus_uses matches 1.. run function minesouls:estus_flask/give_macro with storage minesouls:estus_flask flask_data
 
 # … or give the depleted flask when all uses are exhausted
-execute if score @s ms.estus_uses matches ..0 run function minesouls:estus_flask/give_depleted
+execute if score @s ms.estus_uses matches ..0 run function minesouls:estus_flask/give_depleted with storage minesouls:estus_flask flask_data
 
