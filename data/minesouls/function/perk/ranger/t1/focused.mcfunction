@@ -30,4 +30,4 @@ execute if score @s ms.focus_timer matches 60 run playsound minecraft:entity.exp
 execute if score @s ms.focus_timer matches 60 run particle minecraft:enchant ~ ~1 ~ 0.3 0.5 0.3 0.5 20
 
 # Subtle particles while focused
-execute if entity @s[tag=ms_focused] if score @s ms.focus_timer matches 61.. run particle minecraft:enchant ~ ~1 ~ 0.2 0.3 0.2 0.1 3
+#execute if entity @s[tag=ms_focused] if score @s ms.focus_timer matches 61.. run particle minecraft:enchant ~ ~1 ~ 0.2 0.3 0.2 0.1 3
