@@ -5,6 +5,7 @@ tellraw @a {"text":"MineSouls plugin loaded!","color":"green"}
 
 # Base game rules
 gamerule minecraft:natural_health_regeneration false
+gamerule players_sleeping_percentage 50
 
 # Estus Flask scoreboard: tracks the number of uses on the flask currently
 # held by each player (used to preserve the count across the consumption tick)
