@@ -10,10 +10,12 @@ scoreboard players remove @s ms.arta_temp 1
 execute if score @s ms.arta_temp matches ..0 run particle minecraft:sculk_charge_pop ~ ~ ~ 1.5 0.3 1.5 0.05 30 normal
 execute if score @s ms.arta_temp matches ..0 run particle minecraft:soul_fire_flame ~ ~ ~ 1.0 0.3 1.0 0.06 15 normal
 
-# Inner ring (ms_arta_shockwave): 3-block damage radius, 15 damage
-execute if entity @s[tag=ms_arta_shockwave] if score @s ms.arta_temp matches ..0 as @a[distance=..3] run damage @s 15 minecraft:player_attack
+# Inner ring (ms_arta_shockwave): 3-block damage radius, 15 damage (30 in phase 2)
+execute if entity @s[tag=ms_arta_shockwave] if score @s ms.arta_temp matches ..0 unless entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 15 minecraft:player_attack
+execute if entity @s[tag=ms_arta_shockwave] if score @s ms.arta_temp matches ..0 if entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 30 minecraft:player_attack
 
-# Outer ring (ms_arta_shockwave_outer): 3-block radius, 8 damage
-execute if entity @s[tag=ms_arta_shockwave_outer] if score @s ms.arta_temp matches ..0 as @a[distance=..3] run damage @s 8 minecraft:player_attack
+# Outer ring (ms_arta_shockwave_outer): 3-block radius, 8 damage (16 in phase 2)
+execute if entity @s[tag=ms_arta_shockwave_outer] if score @s ms.arta_temp matches ..0 unless entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 8 minecraft:player_attack
+execute if entity @s[tag=ms_arta_shockwave_outer] if score @s ms.arta_temp matches ..0 if entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 16 minecraft:player_attack
 
 execute if score @s ms.arta_temp matches ..0 run kill @s

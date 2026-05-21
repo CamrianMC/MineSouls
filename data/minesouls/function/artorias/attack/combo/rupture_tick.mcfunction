@@ -16,8 +16,9 @@ execute if score @s ms.arta_temp matches ..0 run particle minecraft:dragon_breat
 execute if score @s ms.arta_temp matches ..0 run particle minecraft:soul_fire_flame ~ ~ ~ 1.0 0.5 1.0 0.06 15 normal
 execute if score @s ms.arta_temp matches ..0 run playsound minecraft:entity.elder_guardian.curse hostile @a[distance=..64] ~ ~ ~ 0.8 0.6
 
-# Damage players within 3 blocks of the rupture
-execute if score @s ms.arta_temp matches ..0 as @a[distance=..3] run damage @s 12 minecraft:magic
+# Damage players within 3 blocks of the rupture (doubled in phase 2)
+execute if score @s ms.arta_temp matches ..0 unless entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 12 minecraft:magic
+execute if score @s ms.arta_temp matches ..0 if entity @e[tag=ms_artorias,scores={ms.arta_phase=2},limit=1] as @a[distance=..3] run damage @s 24 minecraft:magic
 execute if score @s ms.arta_temp matches ..0 as @a[distance=..3] run effect give @s minecraft:wither 3 0 true
 
 # Self-destruct after detonation

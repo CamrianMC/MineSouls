@@ -18,6 +18,13 @@ execute if score @s ms.abyss_init matches 1 if block ~ ~-1 ~ minecraft:blackston
 # Silence Wardens
 execute as @e[type=minecraft:warden,distance=..100] run data merge entity @s {Silent:1b}
 
+# Gatekeeping: if the Abyss has not been unlocked (no player has earned "Champion of the Abyss"),
+# afflict every player currently inside with oppressive debuffs.
+execute if score #global ms.abyss_unlocked matches ..0 run effect give @s minecraft:weakness 2 2 true
+execute if score #global ms.abyss_unlocked matches ..0 run effect give @s minecraft:mining_fatigue 2 255 true
+execute if score #global ms.abyss_unlocked matches ..0 run effect give @s minecraft:blindness 2 0 true
+execute if score #global ms.abyss_unlocked matches ..0 run effect give @s minecraft:slowness 2 4 true
+
 # Darkwraith mob: convert any hostile mob in the Abyss (except Wardens and Spiders) into Darkwraiths
 execute as @e[type=#minesouls:hostile,type=!minecraft:wither,type=!minecraft:warden,type=!minecraft:spider,type=!minecraft:cave_spider,tag=!ms_living_humanity,tag=!ms_darkwraith,predicate=minesouls:in_abyss] at @s run function minesouls:darkwraith/init
 

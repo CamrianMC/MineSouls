@@ -216,6 +216,10 @@ scoreboard objectives add ms.dw_temp dummy
 # Abyss init scoreboard
 scoreboard objectives add ms.abyss_init dummy
 
+# Global flag: set to 1 once any player earns "Champion of the Abyss" to unlock the Abyss for everyone
+scoreboard objectives add ms.abyss_unlocked dummy
+scoreboard players set #global ms.abyss_unlocked 0
+
 # Manus boss scoreboards
 scoreboard objectives add ms.manus_phase dummy
 scoreboard objectives add ms.manus_skull_timer dummy

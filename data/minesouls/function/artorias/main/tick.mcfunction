@@ -32,6 +32,8 @@ execute if score @s ms.arta_phase matches 2 run function minesouls:artorias/aura
 
 # Decrement global attack cooldown
 execute if score @s ms.arta_attack_cd matches 1.. run scoreboard players remove @s ms.arta_attack_cd 1
+# Phase 2: halve the cooldown by decrementing a second time each tick
+execute if score @s ms.arta_phase matches 2 if score @s ms.arta_attack_cd matches 1.. run scoreboard players remove @s ms.arta_attack_cd 1
 
 # Run exactly one state handler then return (dispatch uses return run to prevent double execution)
 function minesouls:artorias/main/dispatch
