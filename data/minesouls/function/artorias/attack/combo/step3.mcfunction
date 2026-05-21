@@ -12,8 +12,10 @@ execute if score @s ms.arta_timer matches 1 run particle minecraft:explosion ~ ~
 execute if score @s ms.arta_timer matches 1 run particle minecraft:squid_ink ~ ~1 ~ 0.5 0.7 0.5 0.04 12 normal
 
 # Hit check on tick 1: wider hitbox (3 blocks) for the heavy overhead
-execute if score @s ms.arta_timer matches 1 as @a[distance=..3] run damage @s 20 minecraft:player_attack
-execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2.5] run damage @s 20 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 as @a[distance=..3] run damage @s 20 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 as @a[distance=..3] run damage @s 40 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 positioned ^ ^ ^1.5 as @a[distance=..2.5] run damage @s 20 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 positioned ^ ^ ^1.5 as @a[distance=..2.5] run damage @s 40 minecraft:player_attack
 
 # Wither + slowness on the heavy hit
 execute if score @s ms.arta_timer matches 1 as @a[distance=..3] run effect give @s minecraft:wither 4 0 true

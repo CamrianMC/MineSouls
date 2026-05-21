@@ -13,8 +13,10 @@ execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 
 execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 run teleport @s ^ ^ ^0.7
 
 # Hit check on tick 1
-execute if score @s ms.arta_timer matches 1 as @a[distance=..2.5] run damage @s 12 minecraft:player_attack
-execute if score @s ms.arta_timer matches 1 positioned ^ ^ ^1.5 as @a[distance=..2] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 as @a[distance=..2.5] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 as @a[distance=..2.5] run damage @s 24 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 1 positioned ^ ^ ^1.5 as @a[distance=..2] run damage @s 12 minecraft:player_attack
+execute if score @s ms.arta_timer matches 1 if score @s ms.arta_phase matches 2 positioned ^ ^ ^1.5 as @a[distance=..2] run damage @s 24 minecraft:player_attack
 
 # Wither on hit
 execute if score @s ms.arta_timer matches 1 as @a[distance=..2.5] run effect give @s minecraft:wither 2 0 true

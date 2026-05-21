@@ -15,6 +15,9 @@ tag @a[distance=..60,sort=nearest,limit=1] add ms_arta_lunge_aim
 execute if entity @a[tag=ms_arta_lunge_aim] run teleport @s ~ ~ ~ facing entity @a[tag=ms_arta_lunge_aim,limit=1] eyes
 tag @a[tag=ms_arta_lunge_aim] remove ms_arta_lunge_aim
 
+# Phase 2: halve windup duration by advancing the timer an extra tick each game tick
+execute if score @s ms.arta_phase matches 2 run scoreboard players add @s ms.arta_timer 1
+
 # After 15 ticks: transition to dash
 execute if score @s ms.arta_timer matches 15.. run scoreboard players set @s ms.arta_state 2
 execute if score @s ms.arta_timer matches 15.. run scoreboard players set @s ms.arta_timer 0

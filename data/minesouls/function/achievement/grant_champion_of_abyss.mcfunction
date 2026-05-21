@@ -5,6 +5,9 @@
 # Reset alive flag immediately to prevent re-firing every tick
 scoreboard players set #global ms.arta_alive 0
 
+# Unlock the Abyss globally — only one player needs this achievement
+scoreboard players set #global ms.abyss_unlocked 1
+
 # Grant advancement and tag to every online player
 advancement grant @a only minesouls:achievement/champion_of_the_abyss
 tag @a add ms.ach.champion_of_the_abyss

@@ -3,7 +3,8 @@
 # Runs as the base entity at its position.
 
 # Close-range burst: all players within 5 blocks take heavy damage + knockback
-execute as @a[distance=..5] run damage @s 25 minecraft:player_attack
+execute if score @s ms.arta_phase matches 1 as @a[distance=..5] run damage @s 25 minecraft:player_attack
+execute if score @s ms.arta_phase matches 2 as @a[distance=..5] run damage @s 50 minecraft:player_attack
 execute as @a[distance=..5] run effect give @s minecraft:slowness 30 1 true
 
 # Mid ring: 5–9 blocks (spawn 8 markers in a ring; they deal damage on landing)
@@ -29,6 +30,3 @@ summon minecraft:marker ~-7 ~0 ~-7 {Tags:["ms_arta_shockwave_outer"]}
 # Set lifetime counters on the ring markers
 scoreboard players set @e[tag=ms_arta_shockwave] ms.arta_temp 10
 scoreboard players set @e[tag=ms_arta_shockwave_outer] ms.arta_temp 20
-
-# Phase 2: stronger shockwave – extra outer damage
-execute if score @s ms.arta_phase matches 2 as @a[distance=..9] run damage @s 12 minecraft:player_attack
