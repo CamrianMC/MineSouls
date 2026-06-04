@@ -12,7 +12,7 @@ execute unless entity @e[tag=ms_se_target,limit=1] run return 0
 # ──────────────────────────────────────────────────────
 # BASE DAMAGE  (fully charged arrow equivalent)
 # ──────────────────────────────────────────────────────
-damage @e[tag=ms_se_target,limit=1] 9 minecraft:arrow by @s
+damage @e[tag=ms_se_target,limit=1] 27 minecraft:arrow by @s
 
 # ──────────────────────────────────────────────────────
 # ENCHANTMENT BONUSES  (read from stored weapon data)
@@ -21,11 +21,11 @@ damage @e[tag=ms_se_target,limit=1] 9 minecraft:arrow by @s
 #   Lv1 +3, Lv2 +4, Lv3 +6, Lv4 +7, Lv5+ +9
 scoreboard players set #se_power ms.arrow_temp 0
 execute store result score #se_power ms.arrow_temp run data get storage minesouls:se_bow Weapon.components."minecraft:enchantments".levels."minecraft:power"
-execute if score #se_power ms.arrow_temp matches 1 run damage @e[tag=ms_se_target,limit=1] 3 minecraft:arrow by @s
-execute if score #se_power ms.arrow_temp matches 2 run damage @e[tag=ms_se_target,limit=1] 4 minecraft:arrow by @s
-execute if score #se_power ms.arrow_temp matches 3 run damage @e[tag=ms_se_target,limit=1] 6 minecraft:arrow by @s
-execute if score #se_power ms.arrow_temp matches 4 run damage @e[tag=ms_se_target,limit=1] 7 minecraft:arrow by @s
-execute if score #se_power ms.arrow_temp matches 5.. run damage @e[tag=ms_se_target,limit=1] 9 minecraft:arrow by @s
+execute if score #se_power ms.arrow_temp matches 1 run damage @e[tag=ms_se_target,limit=1] 31 minecraft:arrow by @s
+execute if score #se_power ms.arrow_temp matches 2 run damage @e[tag=ms_se_target,limit=1] 32 minecraft:arrow by @s
+execute if score #se_power ms.arrow_temp matches 3 run damage @e[tag=ms_se_target,limit=1] 33 minecraft:arrow by @s
+execute if score #se_power ms.arrow_temp matches 4 run damage @e[tag=ms_se_target,limit=1] 34 minecraft:arrow by @s
+execute if score #se_power ms.arrow_temp matches 5.. run damage @e[tag=ms_se_target,limit=1] 36 minecraft:arrow by @s
 
 # Flame: set target on fire (100 ticks = 5 seconds)
 scoreboard players set #se_flame ms.arrow_temp 0
@@ -43,7 +43,7 @@ execute if score #se_punch ms.arrow_temp matches 2.. run damage @e[tag=ms_se_tar
 # ──────────────────────────────────────────────────────
 
 # --- T1 Perk 1: Focused – +2 bonus damage if stationary for 3s ---
-execute if score @s ms.t1_perk matches 1 if entity @s[tag=ms_focused] run damage @e[tag=ms_se_target,limit=1] 2 minecraft:generic by @s
+execute if score @s ms.t1_perk matches 1 if entity @s[tag=ms_focused] run damage @e[tag=ms_se_target,limit=1] 29 minecraft:generic by @s
 execute if score @s ms.t1_perk matches 1 if entity @s[tag=ms_focused] run scoreboard players set @s ms.focus_timer 0
 execute if score @s ms.t1_perk matches 1 if entity @s[tag=ms_focused] run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 1 1.5
 execute if score @s ms.t1_perk matches 1 if entity @s[tag=ms_focused] at @e[tag=ms_se_target,limit=1] run particle minecraft:enchanted_hit ~ ~1 ~ 0.5 0.5 0.5 0.3 15
@@ -66,8 +66,8 @@ execute if score @s ms.t2_perk matches 2 at @e[tag=ms_se_target,limit=1] run par
 execute if score @s ms.t2_perk matches 2 at @e[tag=ms_se_target,limit=1] run playsound minecraft:entity.generic.explode player @a ~ ~ ~ 1 1.2
 execute if score @s ms.t2_perk matches 2 at @e[tag=ms_se_target,limit=1] as @e[type=!minecraft:player,tag=!ms_se_target,distance=..10,limit=10] run damage @s 3 minecraft:explosion by @p
 
-# --- T2 Perk 3: Venomous Arrows – Slowness I for 5 seconds ---
-execute if score @s ms.t2_perk matches 3 run effect give @e[tag=ms_se_target,limit=1] minecraft:slowness 5 0
+# --- T2 Perk 3: Venomous Arrows – Slowness II for 5 seconds ---
+execute if score @s ms.t2_perk matches 3 run effect give @e[tag=ms_se_target,limit=1] minecraft:slowness 5 1
 execute if score @s ms.t2_perk matches 3 run playsound minecraft:entity.arrow.hit player @s ~ ~ ~ 1 1.5
 
 # --- T3 Perk 3: Bleachscoped – Headshot bonus if ray is at head height ---
@@ -77,7 +77,7 @@ execute if score @s ms.t3_perk matches 3 store result score #hs_ay ms.arrow_temp
 execute if score @s ms.t3_perk matches 3 store result score #hs_ey ms.arrow_temp run data get entity @e[tag=ms_se_target,limit=1] Pos[1] 100
 # Head zone threshold: feet Y + 1.5 blocks (150 at scale ×100)
 execute if score @s ms.t3_perk matches 3 run scoreboard players add #hs_ey ms.arrow_temp 150
-execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run damage @e[tag=ms_se_target,limit=1] 3 minecraft:arrow by @s
+execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run damage @e[tag=ms_se_target,limit=1] 30 minecraft:arrow by @s
 execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 20 2
 execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp at @e[tag=ms_se_target,limit=1] run particle minecraft:crit ~ ~2 ~ 0.3 0.3 0.3 0.2 15
 execute if score @s ms.t3_perk matches 3 if score #hs_ay ms.arrow_temp >= #hs_ey ms.arrow_temp run tellraw @s {"text":"☠ Headshot!","color":"red","bold":true}

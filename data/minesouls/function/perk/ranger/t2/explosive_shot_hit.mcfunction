@@ -11,7 +11,7 @@ tag @e[type=!minecraft:player,sort=nearest,distance=..64,limit=1] add ms_explosi
 # Visual explosion effect and AoE damage at the tagged entity
 execute at @e[tag=ms_explosive_target,limit=1] run particle minecraft:explosion ~ ~0.5 ~ 1 1 1 0.1 5
 execute at @e[tag=ms_explosive_target,limit=1] run playsound minecraft:entity.generic.explode player @a ~ ~ ~ 1 1.2
-execute at @e[tag=ms_explosive_target,limit=1] as @e[type=!minecraft:player,tag=!ms_explosive_target,distance=..10,limit=10] run damage @s 3 minecraft:explosion by @p
+execute at @e[tag=ms_explosive_target,limit=1] as @e[type=!item,type=!minecraft:player,tag=!ms_explosive_target,distance=..10,limit=10] run damage @s 3 minecraft:explosion by @p
 
 # Clean up
 tag @e[tag=ms_explosive_target] remove ms_explosive_target
