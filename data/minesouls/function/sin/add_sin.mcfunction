@@ -4,3 +4,5 @@
 
 advancement revoke @s only minesouls:sin/kill_innocents
 scoreboard players add @s ms.sin 1
+
+tellraw @s "Sin +1 (Kill cat route)"
