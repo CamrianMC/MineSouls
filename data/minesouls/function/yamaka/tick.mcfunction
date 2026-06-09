@@ -10,5 +10,7 @@ execute as @a if items entity @s armor.head minecraft:leather_helmet[minecraft:c
 execute as @a if items entity @s armor.head minecraft:leather_helmet[minecraft:custom_data~{minesouls:{yamaka:true}}] unless entity @s[tag=ms_yamaka_equipped] run scoreboard players add @s ms.sin 1
 execute as @a if items entity @s armor.head minecraft:leather_helmet[minecraft:custom_data~{minesouls:{yamaka:true}}] unless entity @s[tag=ms_yamaka_equipped] run tag @s add ms_yamaka_equipped
 
+tellraw @s "Sin +1 (Yamaka route)"
+
 # Remove the equipped flag when the Yamaka is no longer worn
 execute as @a[tag=ms_yamaka_equipped] unless items entity @s armor.head minecraft:leather_helmet[minecraft:custom_data~{minesouls:{yamaka:true}}] run tag @s remove ms_yamaka_equipped
