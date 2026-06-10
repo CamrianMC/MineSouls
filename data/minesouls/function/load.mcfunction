@@ -250,3 +250,6 @@ scoreboard objectives add ms.arta_summon_timer dummy
 
 # Knight Artorias boss: initialise team, bossbar, and all scoreboard objectives
 function minesouls:artorias/main/load
+
+# Cleanse sin count one-time
+scoreboard objectives add ms.sin_cleanse dummy

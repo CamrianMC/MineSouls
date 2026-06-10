@@ -211,3 +211,6 @@ execute as @e[tag=ms_stunned] run function minesouls:perk/warrior/t3/stun_tick
 execute as @a[scores={ms.classperk_reset=1}] run function minesouls:class_book/perk/reset_confimation
 execute as @a[scores={ms.class_wipe=1}] run function minesouls:class_book/perk/reset_all
 
+# One time sin cleanse due to bugged mechanics during development
+execute as @a unless score @s ms.sin_cleanse matches 1 run scoreboard players set @s ms.sin 0
+execute as @a unless score @s ms.sin_cleanse matches 1 run scoreboard players set @s ms.sin_cleanse 1
