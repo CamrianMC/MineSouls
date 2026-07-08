@@ -1,5 +1,5 @@
 # Void Salts Effect 9: Randomly shuffle inventory items
-tellraw @s {"text":"Your belongings rearrange themselves...","color":"dark_purple","italic":true}
+# tellraw @s {"text":"Your belongings rearrange themselves...","color":"dark_purple","italic":true}
 execute at @s run playsound minecraft:entity.enderman.teleport player @s ~ ~ ~ 1 0.5
 
 # Perform 18 random slot swaps to thoroughly shuffle the inventory

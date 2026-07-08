@@ -4,6 +4,7 @@
 # ── Chicken Rain (ms.void_salts_chicken) ────────────────────────────────────
 # Spawns chickens above the player at specific tick values (one every 4 ticks, ~50 total)
 execute if score @s ms.void_salts_chicken matches 1.. run scoreboard players remove @s ms.void_salts_chicken 1
+execute if score @s ms.void_salts_chicken matches 1.. run summon minecraft:chicken ~ ~2 ~
 
 # ── Monster Noises (ms.void_salts_noise) ─────────────────────────────────────
 # Play random spooky sounds at intervals throughout 30 seconds
