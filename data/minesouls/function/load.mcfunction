@@ -261,7 +261,6 @@ scoreboard objectives add ms.void_salts_noise dummy
 scoreboard objectives add ms.void_salts_swaps dummy
 scoreboard objectives add ms.void_salts_src dummy
 scoreboard objectives add ms.void_salts_dst dummy
-scoreboard objectives add ms.void_salts_temp dummy
 
 # Void Salts: initialize data storage for shuffle swap
 data merge storage minesouls:void_salts {}
