@@ -253,3 +253,14 @@ function minesouls:artorias/main/load
 
 # Cleanse sin count one-time
 scoreboard objectives add ms.sin_cleanse dummy
+
+# Void Salts scoreboards
+scoreboard objectives add ms.void_salts_roll dummy
+scoreboard objectives add ms.void_salts_chicken dummy
+scoreboard objectives add ms.void_salts_noise dummy
+scoreboard objectives add ms.void_salts_swaps dummy
+scoreboard objectives add ms.void_salts_src dummy
+scoreboard objectives add ms.void_salts_dst dummy
+
+# Void Salts: initialize data storage for shuffle swap
+data merge storage minesouls:void_salts {}

@@ -214,3 +214,7 @@ execute as @a[scores={ms.class_wipe=1}] run function minesouls:class_book/perk/r
 # One time sin cleanse due to bugged mechanics during development
 execute as @a unless score @s ms.sin_cleanse matches 1 run scoreboard players set @s ms.sin 0
 execute as @a unless score @s ms.sin_cleanse matches 1 run scoreboard players set @s ms.sin_cleanse 1
+
+# Void Salts: tick ongoing effects (chicken rain, monster noises) for affected players
+execute as @a at @s if score @s ms.void_salts_chicken matches 1.. run function minesouls:void_salts/tick
+execute as @a at @s unless score @s ms.void_salts_chicken matches 1.. if score @s ms.void_salts_noise matches 1.. run function minesouls:void_salts/tick
