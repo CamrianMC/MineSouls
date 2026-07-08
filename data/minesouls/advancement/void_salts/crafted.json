@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "crafted_void_salts": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minesouls:void_salts"
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:void_salts/on_craft"
+  }
+}

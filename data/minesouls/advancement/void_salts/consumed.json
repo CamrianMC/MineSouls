@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consumed_void_salts": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{minesouls:{void_salts:true}}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minesouls:void_salts/on_use"
+  }
+}
